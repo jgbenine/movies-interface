@@ -62,10 +62,9 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 .container{
-  max-width: 52rem;
-  padding: 0 1rem;
+  max-width: 100%;
+  padding: 2rem;
   margin: 0 auto;
-  border: 1px solid red;
 }
 
 
@@ -75,7 +74,8 @@ select:-webkit-autofill:focus {
   padding-bottom: 5px;
   position: relative;
   font-weight: 500;
-  max-width: 100%;
+  width: 100%;
+  max-width: 650px;
 }
 
 .title-main::after{
@@ -87,6 +87,23 @@ select:-webkit-autofill:focus {
     width: 20%;
 }
 
+
+.description{
+  padding: 10px 0px;
+  opacity: 0.5;
+  font-size: 0.8rem;
+}
+
+
+.cartaz{
+  height: 250px;
+  width: 180px;
+ background-repeat: no-repeat;
+  background-size: cover;
+  cursor: pointer;
+  overflow: hidden;
+  border: 1px solid red;
+}
 
 
 
