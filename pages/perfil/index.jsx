@@ -1,4 +1,5 @@
-import React from 'react'
+'use client'
+import React, { useState } from 'react'
 import '../perfil/perfil.css';
 import '../../pages/pages.css'
 import Input from '@/app/componentes/Input';
@@ -6,10 +7,38 @@ import Label from '@/app/componentes/Label';
 import Button from '@/app/componentes/Button';
 
 function Perfil() {
+  const [isEmailDisabled, setEmailDisabled] = useState(true);
+  const [isNomeDisabled, setNomeDisabled] = useState(true);
+  const [isContatoDisabled, setContatoDisabled] = useState(true);
+  const [isEnderecoDisabled, setEnderecoDisabled] = useState(true);
+  const [isSenhaDisabled, setSenhaDisabled] = useState(true);
+
+
+  const handleEmailClick = () => {
+    setEmailDisabled(false);
+  };
+
+  const handleNomeClick = () => {
+    setNomeDisabled(false);
+  };
+
+  const handleContatoClick = () => {
+    setContatoDisabled(false);
+  };
+
+  const handleEnderecoClick = () => {
+    setEnderecoDisabled(false);
+  };
+
+  const handleSenhaClick = () => {
+    setSenhaDisabled(false);
+  };
+
+
   return (
-    <section>
+    <section className="perfil">
       <h2 className="title-main">
-        Perfil Usuário
+        Perfil do Usuário
       </h2>
 
       <div className="perfil-content">
@@ -18,7 +47,7 @@ function Perfil() {
           <div className="perfil-user">
             <img src="https://avatars.githubusercontent.com/u/32625236?v=4" alt="" />
           </div>
-            <Button textInfo="Alterar" />
+          <Button textInfo="Alterar" />
         </div>
 
         <div className="perfil-data">
@@ -26,28 +55,28 @@ function Perfil() {
           <div className="perfil-grid">
             <div className="perfil-edit">
               <Label htmlFor="email" textInfo="E-mail" />
-              <Input idInput="email" type="text" placeholder="email-ficticio@gmail.com" />
-             <Button textInfo="Editar e-mail" />
+              <Input idInput="email" type="text" placeholder="email-ficticio@gmail.com" disabled={isEmailDisabled} />
+              <Button textInfo="Editar e-mail" onClick={handleEmailClick} />
             </div>
             <div className="perfil-edit">
               <Label htmlFor="nome" textInfo="Nome" />
-              <Input idInput="nome" type="text" placeholder="João Guilherme" />
-              <Button textInfo="Editar Nome" />
+              <Input idInput="nome" type="text" placeholder="João Guilherme" disabled={isNomeDisabled} />
+              <Button textInfo="Editar Nome" onClick={handleNomeClick} />
             </div>
             <div className="perfil-edit">
               <Label htmlFor="contato" textInfo="Contato" />
-              <Input idInput="contato" type="number" placeholder="(41) 99234-****" />
-              <Button textInfo="Editar Telefone" />
+              <Input idInput="contato" type="number" placeholder="(41) 99234-****" disabled={isContatoDisabled} />
+              <Button textInfo="Editar Telefone" onClick={handleContatoClick} />
             </div>
             <div className="perfil-edit">
               <Label htmlFor="endereço" textInfo="Endereço" />
-              <Input idInput="endereço" type="text" placeholder="Rua Candido de Abreu" />
-              <Button textInfo="Editar Endereço" />
+              <Input idInput="endereço" type="text" placeholder="Rua Candido de Abreu" disabled={isEnderecoDisabled} />
+              <Button textInfo="Editar Endereço" onClick={handleEnderecoClick} />
             </div>
             <div className="perfil-edit">
               <Label htmlFor="senha" textInfo="Senha" />
-              <Input idInput="senha" type="password" placeholder="*********" />
-              <Button textInfo="Editar Senha" />
+              <Input idInput="senha" type="password" placeholder="*********" disabled={isSenhaDisabled} />
+              <Button textInfo="Editar Senha" onClick={handleSenhaClick} />
             </div>
           </div>
         </div>
