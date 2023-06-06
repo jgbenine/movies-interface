@@ -1,16 +1,15 @@
 import React from 'react'
-
 function Cartaz({backgroundImage, children, titleMovie, sinceFilme, director}) {
-
   const styles ={
     backgroundImage: `url(${backgroundImage})`,
   }
   return (
-    <div className="cartaz" style={styles}>
-      <div className="cartaz-description">
-        <p>{titleMovie}</p>
-        <p>{sinceFilme}</p>
-        <p>{director}</p>
+    <div className="group cartaz" style={styles}>
+      <div className="cartaz-filter group-hover:block"></div>
+      <div className="cartaz-description group-hover:block">
+        <p>Título: {titleMovie}</p>
+        <p>Ano: {sinceFilme}</p>
+        <p>Diretor: {director}</p>
       </div>
       {children}
     </div>
