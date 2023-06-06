@@ -55,35 +55,88 @@ function Perfil() {
           <h3>Dados do Pefil:</h3>
           <div className="perfil-grid">
             <div className="perfil-edit">
-              <Label htmlFor="email" textInfo="E-mail" />
-              <Input idInput="email" type="text" placeholder="email-ficticio@gmail.com" disabled={isEmailDisabled} />
-              <Button textInfo="Editar e-mail" onClick={handleEmailClick} />
+              <Label
+                htmlFor="email"
+                textInfo="E-mail"
+              />
+              <Input
+                idInput="email"
+                type="text"
+                placeholder="email-ficticio@gmail.com"
+                disabled={isEmailDisabled}
+              />
+              <Button
+                textInfo="Editar e-mail"
+                onClick={handleEmailClick} />
             </div>
             <div className="perfil-edit">
-              <Label htmlFor="nome" textInfo="Nome" />
-              <Input idInput="nome" type="text" placeholder="João Guilherme" disabled={isNomeDisabled} />
-              <Button textInfo="Editar Nome" onClick={handleNomeClick} />
+              <Label
+                htmlFor="nome"
+                textInfo="Nome"
+              />
+              <Input
+                idInput="nome"
+                type="text"
+                placeholder="João Guilherme"
+                disabled={isNomeDisabled}
+              />
+              <Button
+                textInfo="Editar Nome"
+                onClick={handleNomeClick}
+              />
             </div>
             <div className="perfil-edit">
-              <Label htmlFor="contato" textInfo="Contato" />
-              <Input idInput="contato" type="number" placeholder="(41) 99234-****" disabled={isContatoDisabled} />
-              <Button textInfo="Editar Telefone" onClick={handleContatoClick} />
+              <Label
+                htmlFor="contato"
+                textInfo="Contato"
+              />
+              <Input
+                idInput="contato"
+                type="number"
+                placeholder="(41) 99234-****"
+                disabled={isContatoDisabled} />
+              <Button 
+              textInfo="Editar Telefone" 
+              onClick={handleContatoClick}
+              />
             </div>
             <div className="perfil-edit">
-              <Label htmlFor="endereço" textInfo="Endereço" />
-              <Input idInput="endereço" type="text" placeholder="Rua Candido de Abreu" disabled={isEnderecoDisabled} />
-              <Button textInfo="Editar Endereço" onClick={handleEnderecoClick} />
+              <Label
+                htmlFor="endereço"
+                textInfo="Endereço" />
+              <Input
+                idInput="endereço"
+                type="text"
+                placeholder="Rua Candido de Abreu"
+                disabled={isEnderecoDisabled} />
+              <Button
+                textInfo="Editar Endereço"
+                onClick={handleEnderecoClick}
+              />
             </div>
             <div className="perfil-edit">
-              <Label htmlFor="senha" textInfo="Senha" />
-              <Input idInput="senha" type="password" placeholder="*********" disabled={isSenhaDisabled} />
-              <Button textInfo="Editar Senha" onClick={handleSenhaClick} />
+              <Label
+                htmlFor="senha"
+                textInfo="Senha"
+              />
+              <Input
+                idInput="senha"
+                type="password"
+                placeholder="*********"
+                disabled={isSenhaDisabled}
+              />
+              <Button
+                textInfo="Editar Senha"
+                onClick={handleSenhaClick}
+              />
             </div>
           </div>
         </div>
-        <Link className="link-nav" href="/">
-        Voltar para home
-      </Link>
+        <Link
+          className="link-nav"
+          href="/">
+          Voltar para home
+        </Link>
       </div>
     </section>
   )

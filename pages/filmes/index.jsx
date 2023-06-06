@@ -14,38 +14,58 @@ function Filmes() {
 
   return (
     <section className="container">
-      <div className="cartaz-menu">
+      <nav className="cartaz-menu">
         <div className="cartaz-menu__wrapper">
           <div className={`cartaz-category ${activeDropdown === 'filmes' ? 'active' : ''}`} onClick={() => toggleDropdown('filmes')}>
             Filmes
             <ul className={activeDropdown === 'filmes' ? 'flex' : 'hidden'}>
-              <li>Ação</li>
-              <li>Terror</li>
-              <li>Suspense</li>
-              <li>Comédia</li>
-              <li>Sci-fi</li>
+              <li>
+                <a href=""> Ação</a>
+              </li>
+              <li>
+                <a href=""> Terror</a>
+              </li>
+              <li>
+                <a href=""> Suspense</a>
+              </li>
+              <li>
+                <a href=""> Comédia</a>
+              </li>
+              <li>
+                <a href=""> Sci-fi</a>
+              </li>
             </ul>
           </div>
           <div className={`cartaz-category ${activeDropdown === 'series' ? 'active' : ''}`} onClick={() => toggleDropdown('series')}>
             Series
             <ul className={`${activeDropdown === 'series' ? 'flex' : 'hidden'}`}>
-              <li>Terror</li>
-              <li>Ação</li>
-              <li>Comédia</li>
-              <li>Sci-fi</li>
-              <li>Suspense</li>
+              <li>
+                <a href=""> Terror</a>
+              </li>
+              <li>
+                <a href=""> Ação</a>
+              </li>
+              <li>
+                <a href=""> Comédia</a>
+              </li>
+              <li>
+                <a href=""> Sci-fi</a>
+              </li>
+              <li>
+                <a href=""> Suspense</a>
+              </li>
             </ul>
           </div>
         </div>
         <div className="cartaz-menu__link">
-          <Link className="text-sm w-36" href="/login">
+          <Link className="link-nav" href="/login">
             Realizar Login
           </Link>
-          <Link className="text-sm w-36" href="/perfil">
+          <Link className="link-nav" href="/perfil">
             Perfil
           </Link>
         </div>
-      </div>
+      </nav>
 
       <div className="cartaz-content">
         <h2 className="title-main">Assistir Filmes</h2>

@@ -14,12 +14,21 @@ function Login() {
         <h2 className="title-main">Login</h2>
         <form className=''>
           <div className="wrapper-login__items">
-            <Label htmlFor="username" textInfo="Informe user/e-mail" />
-            <Input idInput="username" type="text" />
+            <Label
+              htmlFor="username"
+              textInfo="Informe user/e-mail" />
+            <Input
+              idInput="username"
+              type="text" />
           </div>
           <div className="wrapper-login__items">
-            <Label htmlFor="password" textInfo="Informe sua senha" />
-            <Input idInput="password" type="password" />
+            <Label
+              htmlFor="password"
+              textInfo="Informe sua senha" />
+            <Input
+              idInput="password"
+
+              type="password" />
           </div>
         </form>
         <div className="footer-login">
