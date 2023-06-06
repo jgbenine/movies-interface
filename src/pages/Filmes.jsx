@@ -1,13 +1,20 @@
+'use client'
 import Cartaz from '@/app/componentes/Cartaz'
-import React from 'react'
+import React, { useState } from 'react'
 
 function Filmes() {
+  const [activeDropdown, setActiveDropdown] = useState('');
+
+  const toggleDropdown = (dropdownName) => {
+    setActiveDropdown(activeDropdown === dropdownName ? '' : dropdownName);
+  };
+
   return (
-    <section>
+    <section className="container">
       <div className="cartaz-menu">
-        <div className="group cartaz-category">
+        <div className={`cartaz-category ${activeDropdown === 'filmes' ? 'active' : ''}`} onClick={() => toggleDropdown('filmes')}>
           Filmes
-          <ul className="group-hover:flex">
+          <ul className={activeDropdown === 'filmes' ? 'flex' : 'hidden'}>
             <li>Ação</li>
             <li>Terror</li>
             <li>Suspense</li>
@@ -15,9 +22,9 @@ function Filmes() {
             <li>Sci-fi</li>
           </ul>
         </div>
-        <div className="group cartaz-category">
+        <div className={`cartaz-category ${activeDropdown === 'series' ? 'active' : ''}`} onClick={() => toggleDropdown('series')}>
           Series 
-          <ul className="group-hover:flex">
+          <ul className={`${activeDropdown === 'series' ? 'flex' : 'hidden'}`}>
             <li>Terror</li>
             <li>Ação</li>
             <li>Comédia</li>
@@ -26,7 +33,7 @@ function Filmes() {
           </ul>
         </div>
       </div>
-      <h2 className="title-main">Filmes</h2>
+      <h2 className="title-main">Assistir Filmes</h2>
       <p className="description">Selecione um filme da lista para assistir</p>
       <div className="mt-2 grid grid-cols-6 gap-8">
         <Cartaz

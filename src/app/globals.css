@@ -55,7 +55,7 @@ select:-webkit-autofill:focus {
   display: flex;
   align-items: flex-end;
   height: 250px;
-  width: 180px;
+  width: 190px;
   background-repeat: no-repeat;
   background-size: cover;
   cursor: pointer;
@@ -86,10 +86,13 @@ select:-webkit-autofill:focus {
 
 .cartaz-menu{
   width: 100%;
-  padding: 20px 0px;
+  padding: 10px;
   margin-bottom: 20px; 
   display: flex;
-  gap: 5rem;
+  align-items: center;
+  gap: 2rem;
+  background: #243054;
+  border-radius: 5px;
 }
 
 .cartaz-category{
@@ -99,6 +102,7 @@ select:-webkit-autofill:focus {
   letter-spacing: 0.1rem;
   padding-right: 15px;
   cursor: pointer;
+  /* padding-bottom: 10px; */
 }
 
 .cartaz-category:after{
@@ -111,9 +115,8 @@ select:-webkit-autofill:focus {
 }
 
 .cartaz-menu ul{
-  margin-top: 5px;
   position: absolute;
-  display: none;
+  top: 20px;
   flex-direction: column;
   gap: 5px;
   font-size: 0.7rem;
@@ -125,12 +128,21 @@ select:-webkit-autofill:focus {
   border-radius: 5px;
 }
 
-
 .cartaz-menu li{
-  /* position: absolute;
-  padding-top: 5px;
-  height: 100px;
-  border: 1px solid red; */
+  padding-bottom: 5px;
+  border-bottom: 1px solid #111827;
+}
+
+.cartaz-menu li:last-child{
+  border-bottom: unset;
+}
+
+.active{
+  display: flex !important;
+}
+
+.hidden{
+  display: none !important;
 }
 
 @keyframes opacityFade {
