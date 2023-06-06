@@ -18,11 +18,21 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: transparent;
   transition: background-color 5000s ease-in-out 0s;
 }
+
+
 .container{
   width: 100%;
   max-width: 1400px;
   padding: 2rem;
   margin: 0 auto;
+}
+
+
+.grid-filmes{
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 2rem;
 }
 
 
@@ -63,6 +73,10 @@ select:-webkit-autofill:focus {
   position: relative;
 }
 
+.cartaz-content{
+  margin-top: 50px;
+}
+
 .cartaz-filter{
   display: none;
   position: absolute;
@@ -90,9 +104,15 @@ select:-webkit-autofill:focus {
   margin-bottom: 20px; 
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 2rem;
   background: #243054;
   border-radius: 5px;
+}
+
+.cartaz-menu__wrapper{
+  display: flex;
+  gap: 20px;
 }
 
 .cartaz-category{
@@ -102,7 +122,6 @@ select:-webkit-autofill:focus {
   letter-spacing: 0.1rem;
   padding-right: 15px;
   cursor: pointer;
-  /* padding-bottom: 10px; */
 }
 
 .cartaz-category:after{

@@ -1,12 +1,13 @@
+import React from 'react'
+import 'tailwindcss/tailwind.css';
 import Button from '@/app/componentes/Button';
 import Input from '@/app/componentes/Input'
 import Label from '@/app/componentes/Label'
-import React from 'react'
-import 'tailwindcss/tailwind.css';
 
 function Login() {
   return (
-    <div className="w-[650px] border border-teal-100 p-5 flex flex-col">
+    <section className="border border-zinc-950">
+    <div className="w-[650px] p-5 flex flex-col">
       <h2 className="title-main">Login</h2>
       <form>
         <div className="flex flex-col gap-2 mt-4">
@@ -20,6 +21,7 @@ function Login() {
       </form>
       <Button textInfo="Acessar"/>
     </div>
+    </section>
   )
 }
 
