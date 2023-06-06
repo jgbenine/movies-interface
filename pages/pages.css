@@ -2,9 +2,9 @@ body{
   height: 100vh;
   display: flex;
   justify-content: center;
-  padding-top: 5rem;
+  /* padding-top: 5rem; */
   background: #111827;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 }
 
 .title-main{

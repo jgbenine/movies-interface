@@ -18,8 +18,8 @@ function Login() {
             <Input idInput="username" type="text" />
           </div>
           <div className="wrapper-login__items">
-            <Label htmlFor="username" textInfo="Informe sua senha" />
-            <Input idInput="username" type="password" />
+            <Label htmlFor="password" textInfo="Informe sua senha" />
+            <Input idInput="password" type="password" />
           </div>
         </form>
         <div className="footer-login">
