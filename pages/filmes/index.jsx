@@ -1,7 +1,9 @@
 'use client'
+import '../filmes/filmes.css'
 import Cartaz from '@/app/componentes/Cartaz'
 import React, { useState } from 'react'
 import Link from 'next/link';
+
 
 function Filmes() {
   const [activeDropdown, setActiveDropdown] = useState('');
@@ -39,7 +41,6 @@ function Filmes() {
           Realizar Login
         </Link>
       </div>
-
 
       <div className="cartaz-content">
         <h2 className="title-main">Assistir Filmes</h2>
