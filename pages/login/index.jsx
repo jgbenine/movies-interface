@@ -9,7 +9,7 @@ import Link from 'next/link';
 
 function Login() {
   return (
-    <section className="mt-10">
+    <section className="login">
       <div className="wrapper-login">
         <h2 className="title-main">Login</h2>
         <form className=''>

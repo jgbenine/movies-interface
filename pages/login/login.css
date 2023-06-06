@@ -1,3 +1,7 @@
+.login{
+  padding-top: 40px;
+}
+
 .wrapper-login{
   display: flex;
   flex-direction: column;
@@ -16,23 +20,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.link-nav{
-  color: white;
-  font-size: 0.8rem;
-  position: relative;
-  padding-bottom: 5px;
-}
-
-
-.link-nav:after{
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 form{

@@ -5,6 +5,7 @@ import '../../pages/pages.css'
 import Input from '@/app/componentes/Input';
 import Label from '@/app/componentes/Label';
 import Button from '@/app/componentes/Button';
+import Link from 'next/link';
 
 function Perfil() {
   const [isEmailDisabled, setEmailDisabled] = useState(true);
@@ -80,6 +81,9 @@ function Perfil() {
             </div>
           </div>
         </div>
+        <Link className="link-nav" href="/">
+        Voltar para home
+      </Link>
       </div>
     </section>
   )

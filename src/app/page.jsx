@@ -1,12 +1,8 @@
-// import Filmes from '../../pages/filmes';
-import Perfil from '../../pages/perfil';
-// import Login from '../../pages/login';
+import Filmes from '../../pages/filmes';
 export default function Home() {
   return (
     <main className="h-screen flex justify-center w-full pt-20">
-      {/* <Login /> */}
-      {/* <Filmes /> */}
-      <Perfil />
+      <Filmes />
     </main>
   )
 }

@@ -37,9 +37,14 @@ function Filmes() {
             </ul>
           </div>
         </div>
-        <Link className="text-sm w-36" href="/login">
-          Realizar Login
-        </Link>
+        <div className="cartaz-menu__link">
+          <Link className="text-sm w-36" href="/login">
+            Realizar Login
+          </Link>
+          <Link className="text-sm w-36" href="/perfil">
+            Perfil
+          </Link>
+        </div>
       </div>
 
       <div className="cartaz-content">
