@@ -1,3 +1,5 @@
+import Footer from './componentes/Footer'
+import Header from './componentes/Header'
 import './globals.css'
 
 export const metadata = {
@@ -8,7 +10,14 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="pt-br">
-      <body className="bg-gray-900">{children}</body>
+      <body className="bg-gray-900 container mx-auto">
+        <Header />
+        <main>
+          {children}
+        </main>
+        <Footer />
+      </body>
     </html>
+
   )
 }
