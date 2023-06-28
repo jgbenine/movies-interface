@@ -2,14 +2,35 @@
   padding: 20px 15px;
   background: #090C15;
   color: white;
+  border-radius: 5px;
+  box-shadow: 10px 10px 40px -19px rgba(0,0,0,0.75);
 }
 
 .headerContainer{
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
-.headerLinks{
+.headerNav{
   display: flex;
   gap: 3rem;
+
+  li{
+    letter-spacing: 1px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+  }
+}
+
+.headerMenu{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+
+  a{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
 }

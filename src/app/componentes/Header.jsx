@@ -1,5 +1,6 @@
 import React from 'react'
-import { Search } from 'lucide-react'
+import { Search, UserCircle, LogIn, MonitorPlay } from 'lucide-react'
+import Link from 'next/link'
 import styles from '../css/Header.module.scss'
 
 function Header() {
@@ -7,18 +8,31 @@ function Header() {
     <header className={styles.header}>
       <div className={styles.headerContainer}>
         <div>
-          <p>
-            Filmes
-          </p>
+          <Link href="/" title='Monitor Play'>
+            <MonitorPlay size={22} color='#e3e3e3' />
+          </Link>
         </div>
-        <ul className={styles.headerLinks}>
-          <li><a href="">Filmes</a></li>
-          <li><a href="">Séries</a></li>
-          <li><a href="">Episódios</a></li>
-          <Search />
+        <ul className={styles.headerNav}>
+          <li>
+            <Link href="">Filmes</Link>
+          </li>
+          <li>
+            <Link href="">Séries</Link>
+          </li>
+          <li>
+            <Link href="">Episódios</Link>
+          </li>
         </ul>
 
-
+        <div className={styles.headerMenu}>
+          <Link href="/login" title='Login'>
+            <LogIn size={18} />
+          </Link>
+          <Link href="/perfil" title='Perfil'>
+            <UserCircle size={18} />
+          </Link>
+          <Search size={18} />
+        </div>
       </div>
     </header>
   )
