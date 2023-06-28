@@ -14,13 +14,13 @@ function Header() {
         </div>
         <ul className={styles.headerNav}>
           <li>
-            <Link href="">Filmes</Link>
+            <Link href="/filmes">Filmes</Link>
           </li>
           <li>
-            <Link href="">Séries</Link>
+            <Link href="/series">Séries</Link>
           </li>
           <li>
-            <Link href="">Episódios</Link>
+            <Link href="/episodios">Episódios</Link>
           </li>
         </ul>
 

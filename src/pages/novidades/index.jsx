@@ -1,5 +1,5 @@
 'use client'
-import '../filmes/filmes.css'
+// import '../filmes/filmes.css'
 import Cartaz from '@/app/componentes/Cartaz'
 import React from 'react'
 
@@ -8,7 +8,7 @@ function Filmes() {
   return (
     <section className="container">
       <div className="cartaz-content">
-        <h2 className="title-main">Assistir Filmes</h2>
+        <h2 className="title-main">Novidades</h2>
         <p className="description">Selecione um filme da lista para assistir</p>
         <div className="grid-filmes">
           <Cartaz
@@ -46,48 +46,6 @@ function Filmes() {
             titleMovie="Interstelar"
             sinceFilme="2014"
             director="Christopher Nolan"
-          />
-          <Cartaz
-            backgroundImage="/assets/cartaz-img7.jpg"
-            titleMovie="Constantine"
-            sinceFilme="2005"
-            director="Francis Lawrence"
-          />
-          <Cartaz
-            backgroundImage="/assets/cartaz-img8.jpg"
-            titleMovie="Watchmen"
-            sinceFilme="2009"
-            director="Zack Snyder"
-          />
-          <Cartaz
-            backgroundImage="/assets/cartaz-img9.jpg"
-            titleMovie="Matrix"
-            sinceFilme="1999"
-            director="Lana Wachowski"
-          />
-          <Cartaz
-            backgroundImage="/assets/cartaz-img11.jpg"
-            titleMovie="Mad Max"
-            sinceFilme="2015"
-            director="George Miller"
-          />
-          <Cartaz
-            backgroundImage="/assets/cartaz-img10.jpg"
-            titleMovie="Até o último Homem"
-            sinceFilme="2017"
-            director="Mel Gibson"
-          />
-          <Cartaz
-            backgroundImage="/assets/cartaz-img12.jpg"
-            titleMovie="Sniper Americano"
-            sinceFilme="2014"
-            director="Clint Eastwood"
-          />
-          <Cartaz
-            backgroundImage="/assets/cartaz-img13.jpg"
-            titleMovie="Os Imperdoáveis"
-            sinceFilme="1992"
-            director="Clint Eastwood"
           />
         </div>
       </div>

@@ -9,15 +9,18 @@ function Cartaz({ backgroundImage, children, titleMovie, sinceFilme, director })
     <div className={styles.cartaz} style={stylesBg}>
       <div className={styles.cartazFilter}></div>
       <div className={styles.cartazDescription}>
-        <p>Título:
-          {titleMovie}
-        </p>
-        <p>Ano:
-          {sinceFilme}
-        </p>
-        <p>Diretor:
-          {director}
-        </p>
+        <article>
+          <label>Título:</label>
+          <p>{titleMovie}</p>
+        </article>
+        <article>
+          <label>Ano:</label>
+          <p>{sinceFilme}</p>
+        </article>
+        <article>
+          <label>Diretor:</label>
+          <p>{director}</p>
+        </article>
       </div>
       {children}
     </div>

@@ -2,16 +2,21 @@
   padding-top: 40px;
 }
 
-.perfil-content{
+.perfilContent{
   width: 100%;
   min-width: 850px;
   border: 1px solid white;
   color: white;
   padding: 1rem;
   margin-top: 20px;
+
+  h3{
+    padding: 15px 0px;
+    font-size: 1.2rem;
+  }
 }
 
-.perfil-intro{
+.perfilIntro{
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,12 +24,8 @@
   gap: 5px;
 }
 
-.perfil-content h3{
-  padding: 15px 0px;
-  font-size: 1.2rem;
-}
 
-.perfil-user{
+.perfilUser{
   height: 100px;
   width: 100px;
   border-radius: 50%;
@@ -34,28 +35,28 @@
   box-shadow: 10px 10px 40px -19px rgba(0,0,0,0.75);
   border: 1px solid white;
   margin-bottom: 15px;
+
+  img{
+    object-fit: cover;
+  }
 }
 
-.perfil-grid{
+.perfilGrid{
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.perfil-user img{
-  object-fit: cover;
-}
-
-
-.perfil-edit{
+.perfilEdit{
   display: flex;
   align-items: flex-start;
   flex-direction: column;
   gap: 5px;
   padding-bottom: 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
+  &::last-child{
+  border-bottom: unset;
+  }
 }
 
-.perfil-edit:last-child{
-  border-bottom: unset;
-}
