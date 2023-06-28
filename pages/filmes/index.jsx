@@ -1,72 +1,12 @@
 'use client'
 import '../filmes/filmes.css'
 import Cartaz from '@/app/componentes/Cartaz'
-import React, { useState } from 'react'
-import Link from 'next/link';
+import React from 'react'
 
 
 function Filmes() {
-  const [activeDropdown, setActiveDropdown] = useState('');
-
-  const toggleDropdown = (dropdownName) => {
-    setActiveDropdown(activeDropdown === dropdownName ? '' : dropdownName);
-  };
-
   return (
     <section className="container">
-      <nav className="cartaz-menu">
-        <div className="cartaz-menu__wrapper">
-          <div className={`cartaz-category ${activeDropdown === 'filmes' ? 'active' : ''}`} onClick={() => toggleDropdown('filmes')}>
-            Filmes
-            <ul className={activeDropdown === 'filmes' ? 'flex' : 'hidden'}>
-              <li>
-                <a href=""> Ação</a>
-              </li>
-              <li>
-                <a href=""> Terror</a>
-              </li>
-              <li>
-                <a href=""> Suspense</a>
-              </li>
-              <li>
-                <a href=""> Comédia</a>
-              </li>
-              <li>
-                <a href=""> Sci-fi</a>
-              </li>
-            </ul>
-          </div>
-          <div className={`cartaz-category ${activeDropdown === 'series' ? 'active' : ''}`} onClick={() => toggleDropdown('series')}>
-            Series
-            <ul className={`${activeDropdown === 'series' ? 'flex' : 'hidden'}`}>
-              <li>
-                <a href=""> Terror</a>
-              </li>
-              <li>
-                <a href=""> Ação</a>
-              </li>
-              <li>
-                <a href=""> Comédia</a>
-              </li>
-              <li>
-                <a href=""> Sci-fi</a>
-              </li>
-              <li>
-                <a href=""> Suspense</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div className="cartaz-menu__link">
-          <Link className="link-nav" href="/login">
-            Realizar Login
-          </Link>
-          <Link className="link-nav" href="/perfil">
-            Perfil
-          </Link>
-        </div>
-      </nav>
-
       <div className="cartaz-content">
         <h2 className="title-main">Assistir Filmes</h2>
         <p className="description">Selecione um filme da lista para assistir</p>
