@@ -1,0 +1,15 @@
+.header{
+  padding: 20px 15px;
+  background: #090C15;
+  color: white;
+}
+
+.headerContainer{
+  display: flex;
+  justify-content: space-between;
+}
+
+.headerLinks{
+  display: flex;
+  gap: 3rem;
+}
