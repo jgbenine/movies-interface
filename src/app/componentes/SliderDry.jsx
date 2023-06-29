@@ -10,6 +10,12 @@ function SliderDry() {
   return (
     <section className={styles.sliderDry}>
       <Swiper
+        modules={[Autoplay]}
+        autoplay={{
+          delay: 3000,
+          disableOnInteraction: false,
+        }}
+        loop={true}
         spaceBetween={50}
         slidesPerView={1}
       >
