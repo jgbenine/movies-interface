@@ -21,7 +21,6 @@ input[type=number]::-webkit-inner-spin-button {
   -webkit-appearance: none;
 }
 
-
 .container{
   max-width: 1250px;
   padding: 0px 10px;
