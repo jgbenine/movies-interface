@@ -1,4 +1,5 @@
 import React from 'react'
+import {Plus} from 'lucide-react'
 import styles from '../css/Cartaz.module.scss'
 
 function Cartaz({ backgroundImage, children, titleMovie, sinceFilme, director }) {
@@ -7,7 +8,13 @@ function Cartaz({ backgroundImage, children, titleMovie, sinceFilme, director })
   }
   return (
     <div className={styles.cartaz} style={stylesBg}>
-      <div className={styles.cartazFilter}></div>
+      <div className={styles.cartazFilter}>
+        <Plus 
+        className={styles.cartazFilterIcon}
+        color='#f3f3f397'
+        size={35} 
+        />
+      </div>
       <div className={styles.cartazDescription}>
         <article>
           <label>Título:</label>

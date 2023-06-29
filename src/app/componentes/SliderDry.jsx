@@ -1,20 +1,23 @@
 import React from 'react'
 import styles from '../css/Sliders.module.scss'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay, Pagination, Navigation, } from "swiper";
+import { Autoplay, EffectFade , Pagination, Navigation, } from "swiper";
 import 'swiper/css';
 import 'swiper/css/autoplay';
+import 'swiper/css/effect-fade'
 import MovieWrapper from './MovieWrapper';
 
 function SliderDry() {
   return (
     <section className={styles.sliderDry}>
       <Swiper
-        modules={[Autoplay]}
+        modules={[Autoplay, EffectFade]}
         autoplay={{
-          delay: 3000,
+          delay: 8000,
           disableOnInteraction: false,
         }}
+        EffectFade
+        effect='fade'
         loop={true}
         spaceBetween={50}
         slidesPerView={1}

@@ -26,14 +26,6 @@ input[type=number]::-webkit-inner-spin-button {
   padding: 0px 10px;
 }
 
-.grid-filmes{
-  margin-top: 10px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 2rem;
-  padding-bottom: 40px;
-}
-
 .title-main{
   font-size: 25px;
   letter-spacing: 2px;
@@ -49,7 +41,7 @@ input[type=number]::-webkit-inner-spin-button {
     position: absolute;
     bottom: 0;
     left: 0;
-    border-bottom: 0.5px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 0.5px solid rgba(255, 255, 255, 0.1);
     width: 100%;
 }
 

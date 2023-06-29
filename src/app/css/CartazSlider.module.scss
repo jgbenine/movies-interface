@@ -13,7 +13,6 @@
   backdrop-filter: blur(5px) saturate(110%) brightness(100%);
 }
 
-
 .movieContent{
   color: white;
   height: 100%;
@@ -23,8 +22,8 @@
   flex-direction: column;
   justify-items: center;
   gap: 1rem;
-
   margin: 0 auto;
+  
   h4{
     font-size: 3rem;
     font-weight: 700;

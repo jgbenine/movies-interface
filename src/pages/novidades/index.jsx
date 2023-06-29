@@ -17,7 +17,7 @@ function Novidades() {
           <Swiper
             modules={[Autoplay]}
             autoplay={{
-              delay: 2500,
+              delay: 5000,
               disableOnInteraction: false,
             }}
             breakpoints={{
@@ -28,7 +28,7 @@ function Novidades() {
                 slidesPerView: 3,
               },
               865:{
-                slidesPerView:4
+                slidesPerView:4,
               },
               1000:{
                 slidesPerView:5
@@ -40,28 +40,11 @@ function Novidades() {
                 slidesPerView:7
               }
             }}
-            centeredSlides={true}
+            // centeredSlides={true}
             spaceBetween={50}
-            slidesPerView={6}
+            slidesPerView={5}
             loop={true}
-            onSwiper={(swiper) => console.log(swiper)}
           >
-            <SwiperSlide>
-              <Cartaz
-                backgroundImage="/assets/cartaz-img1.jpg"
-                titleMovie="Coringa"
-                sinceFilme="2019"
-                director="Todd Phillips"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Cartaz
-                backgroundImage="/assets/cartaz-img2.jpg"
-                titleMovie="Pulp Fiction"
-                sinceFilme="1994"
-                director="Quentin Tarantino"
-              />
-            </SwiperSlide>
             <SwiperSlide>
               <Cartaz
                 backgroundImage="/assets/cartaz-img2.jpg"
@@ -132,30 +115,6 @@ function Novidades() {
                 titleMovie="Watchmen"
                 sinceFilme="2009"
                 director="Zack Snyder"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Cartaz
-                backgroundImage="/assets/cartaz-img7.jpg"
-                titleMovie="Constantine"
-                sinceFilme="2005"
-                director="Francis Lawrence"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Cartaz
-                backgroundImage="/assets/cartaz-img12.jpg"
-                titleMovie="Sniper Americano"
-                sinceFilme="2014"
-                director="Clint Eastwood"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Cartaz
-                backgroundImage="/assets/cartaz-img13.jpg"
-                titleMovie="Os Imperdoáveis"
-                sinceFilme="1992"
-                director="Clint Eastwood"
               />
             </SwiperSlide>
           </Swiper>

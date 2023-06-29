@@ -1,0 +1,31 @@
+.homeSection{
+  margin: 0 auto;
+  padding: 60px 10px;
+}
+
+.homeGrid{
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding-bottom: 40px;
+
+  @media (min-width: 480px ) {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  @media (min-width: 680px ) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 920px ) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  @media (min-width: 1200px ) {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+}
+
+
+
