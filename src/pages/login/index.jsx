@@ -1,6 +1,5 @@
 import React from 'react'
 import 'tailwindcss/tailwind.css';
-import '../../app/global.css'
 import styles from '../../app/css/Login.module.scss'
 import Button from '@/app/componentes/Button';
 import Input from '@/app/componentes/Input';
