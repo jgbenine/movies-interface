@@ -11,7 +11,7 @@ function Cartaz({ backgroundImage, children, titleMovie, sinceFilme, director })
       <div className={styles.cartazFilter}>
         <Plus 
         className={styles.cartazFilterIcon}
-        color='#f3f3f397'
+        color='#f3f3f3'
         size={35} 
         />
       </div>

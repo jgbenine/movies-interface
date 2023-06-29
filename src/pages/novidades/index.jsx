@@ -12,7 +12,7 @@ function Novidades() {
     <section className={`container ${styles.news}`}>
       <div className={styles.newsWrapper}>
         <h2 className="title-main">Novidades</h2>
-        <p className="description">Filmes que estão em alta</p>
+        <p className="description"></p>
         <div className={styles.newsSlider}>
           <Swiper
             modules={[Autoplay]}

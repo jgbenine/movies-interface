@@ -9,7 +9,7 @@ export default function Home() {
     <main className={styles.home}>
       <SliderDry />
       <section className={`container ${styles.homeSection}`}>
-          <h2 className="title-main">Disponiveis:</h2>
+          <h2 className="title-main">Disponiveis</h2>
           <p className="description">Selecione um filme da lista para assistir</p>
           <div className={styles.homeGrid}>
             <Cartaz
@@ -73,7 +73,11 @@ export default function Home() {
               director="George Miller"
             />
           </div>
-        <Novidades />
+      </section>
+      <section className={styles.homeWrapperSlider}>
+          <div className={`container ${styles.homeNews}`}>
+            <Novidades />
+          </div>
       </section>
     </main>
   )
