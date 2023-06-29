@@ -4,7 +4,7 @@ import SliderDry from './componentes/SliderDry'
 
 export default function Home() {
   return (
-    <main className="h-screen flex flex-col justify-center w-full">
+    <main className="h-screen flex flex-col w-full">
       <SliderDry />
       <Novidades />
     </main>
