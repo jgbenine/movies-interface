@@ -23,18 +23,19 @@
 .cartazFilter{
   display: none;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  top: 45%;
+  left: 41%;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
   background: rgba(0, 0, 0, 0.8);
-  animation: slideFromTop 0.6s ease-in;
+  animation: heightFullRadius 0.3s ease forwards;
   align-items: center;
   justify-content: center;
 }
 
 .cartazFilterIcon{
-  animation: opacityFade 1.2s ease-in;
+  animation: opacityFade 0.8s ease-in;
 }
 
 
@@ -44,7 +45,7 @@
   width: 100%;
   padding: 10px;
   z-index: 999;
-  animation: opacityFade 1.2s ease-in-out;
+  animation: opacityFade 0.8s ease-in-out;
   color: white;
 
   article{
@@ -86,5 +87,17 @@
 
   100% {
     top: 0;
+  }
+}
+
+@keyframes heightFullRadius {
+
+
+  to {
+   width: 100%;
+   height: 100%;
+   border-radius: unset;
+   top: 0;
+   left: 0;
   }
 }
