@@ -2,7 +2,7 @@
 import React from 'react'
 import Cartaz from '@/app/componentes/Cartaz'
 import { Swiper, SwiperSlide} from 'swiper/react'
-import { Autoplay, Pagination, Navigation, } from "swiper";
+import { Pagination, Navigation, } from "swiper";
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import styles from '../../app/css/Novidades.module.scss'
@@ -15,11 +15,6 @@ function Novidades() {
         <p className="description"></p>
         <div className={styles.newsSlider}>
           <Swiper
-            modules={[Autoplay]}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-            }}
             breakpoints={{
               400:{
                 slidesPerView:2,

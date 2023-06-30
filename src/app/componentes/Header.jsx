@@ -1,5 +1,5 @@
 import React from 'react'
-import { Search, UserCircle, LogIn, MonitorPlay } from 'lucide-react'
+import { Search, UserCircle, LogIn, Clapperboard } from 'lucide-react'
 import Link from 'next/link'
 import styles from '../css/Header.module.scss'
 
@@ -7,9 +7,9 @@ function Header() {
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
-        <div>
-          <Link href="/" title='Monitor Play'>
-            <MonitorPlay size={22} color='#e3e3e3' />
+        <div className={styles.logo}>
+          <Link href="/" title='JG | Filmes'>
+            <Clapperboard size={22} color='#e3e3e3' />
           </Link>
         </div>
         <ul className={styles.headerNav}>

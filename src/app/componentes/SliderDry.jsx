@@ -13,7 +13,7 @@ function SliderDry() {
       <Swiper
         modules={[Autoplay, EffectFade]}
         autoplay={{
-          delay: 8000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         EffectFade

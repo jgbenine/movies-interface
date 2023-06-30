@@ -1,26 +1,28 @@
 import React from 'react'
 import styles from '../css/Footer.module.scss'
-import { AtSign, Github, Linkedin, MonitorPlay } from 'lucide-react'
+import { AtSign, Github, Linkedin, Clapperboard } from 'lucide-react'
 import Link from 'next/link'
 
 function Footer() {
   return (
     <footer className={`bg-gray-900 ${styles.footer}`}>
       <div className={`bg-gray-900 ${styles.footerWrapper}`}>
+        <Link href="/" className={styles.logo}>
+        <Clapperboard 
+          color='#fff'
+        />
+        </Link>
         <p className={styles.description}>
           Uma plataforma dedicada a fornecer informações sobre filmes.
-          Os usuários podem explorar uma ampla variedade de filmes, desde os mais
+          Os usuários podem explorar uma ampla variedade de conteúdos, desde os mais
           recentes lançamentos até os clássicos atemporais.
         </p>
-        <div className={styles.logo}>
-
-        </div>
         <ul className={styles.footerSocial}>
           <li>
             <Link href="" title='Email'>
               <AtSign
                 size={20}
-                color='#fff'
+                color='#ffffff62'
               />
             </Link>
           </li>
@@ -31,7 +33,7 @@ function Footer() {
               title='Github'>
               <Github
                 size={20}
-                color='#fff'
+                color='#ffffff62'
               />
             </Link>
           </li>
@@ -39,7 +41,7 @@ function Footer() {
             <Link href="" title='Linkedin'>
               <Linkedin
                 size={20}
-                color='#fff'
+                color='#ffffff62'
               />
             </Link>
           </li>
