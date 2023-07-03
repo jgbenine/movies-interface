@@ -1,5 +1,36 @@
 .episode{
   width: 230px;
-  height: 130px;
-  border: 1px solid red;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  object-fit: cover;
+  cursor: pointer;
+  overflow: hidden;
+  img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-height: 130px;
+    object-fit: cover;
+
+  }
+}
+
+
+.episodeInfo{
+  text-align: center;
+  color: #030303;
+  font-size: 0.7rem;
+  padding: 5px;
+  background: #f3f3f3e5;
+  border: 1px solid rgba($color: #f3f3f3, $alpha: 1);
+  border-radius: 2px;
+  letter-spacing: 1px;
+  word-break: break-all;
+  text-overflow: ellipsis;  
+  overflow: hidden;
+  height: 28px;
+  max-width: 100%;
+  white-space: nowrap;
 }

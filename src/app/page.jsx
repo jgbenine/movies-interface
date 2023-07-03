@@ -84,15 +84,32 @@ export default function Home() {
       <section className={styles.homeEpisodes}>
         <div className='container'>
           <h3 className='title-main'>
-            Novos Episódios
+            Séries
           </h3>
           <div className={styles.episodesWrapper}>
-            <Episode 
-              infoSerie="Nova temproada"
+
+            <Episode
+              ImageSerie={"/assets/series/prisionbreak.jpg"}
+              infoSerie="Prision Break - Todas Temporadas"
             />
-            <Episode />
-            <Episode />
-            <Episode />
+            <Episode
+              ImageSerie={"/assets/series/breaking.jpg"}
+              infoSerie="Breaking Bad - Todas Temporadas"
+            />
+
+            <Episode
+              ImageSerie={"/assets/series/snowpierce.jpg"}
+              infoSerie="Snowpierce - Nova temporada"
+            />
+            <Episode
+              ImageSerie={"/assets/series/wutang.jpg"}
+              infoSerie="Wu-Tang: An American Saga"
+            />
+
+            <Episode
+              ImageSerie={"/assets/series/stranger.jpg"}
+              infoSerie="Stranger Things"
+            />
           </div>
         </div>
       </section>
