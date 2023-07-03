@@ -42,18 +42,42 @@ function Novidades() {
           >
             <SwiperSlide>
               <Cartaz
-                backgroundImage="/assets/cartaz-img2.jpg"
-                titleMovie="Pulp Fiction"
-                sinceFilme="1994"
-                director="Quentin Tarantino"
+                backgroundImage="/assets/series/blackmirror.jpg"
+                titleMovie="Black Mirror"
+                sinceFilme="2011"
+                director="Charlie Brooker"
               />
             </SwiperSlide>
             <SwiperSlide>
               <Cartaz
-                backgroundImage="/assets/cartaz-img3.jpg"
-                titleMovie="Django Livre"
-                sinceFilme="2012"
-                director="Quentin Tarantino"
+              backgroundImage="/assets/series/breaking.jpg"
+                titleMovie="Breaking Bad"
+                sinceFilme="2013"
+                director="Vince Gilligan"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Cartaz
+                backgroundImage="/assets/series/snowpierce.jpg"
+                titleMovie="Expresso do Amanhã"
+                sinceFilme="2022"
+                director="Bong Joon-ho"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Cartaz
+                backgroundImage="/assets/cartaz-img10.jpg"
+                titleMovie="Até o último Homem"
+                sinceFilme="2017"
+                director="Mel Gibson"
+              />
+            </SwiperSlide>
+            <SwiperSlide>
+              <Cartaz
+                backgroundImage="/assets/series/the-wire.jpg"
+                titleMovie="A Escuta"
+                sinceFilme="2002"
+                director="David Simon"
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -62,14 +86,6 @@ function Novidades() {
                 titleMovie="Ilha do Medo"
                 sinceFilme="2010"
                 director="Martin Scorsese"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Cartaz
-                backgroundImage="/assets/cartaz-img5.jpg"
-                titleMovie="Clube da Luta"
-                sinceFilme="1999"
-                director="David Fincher"
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -86,30 +102,6 @@ function Novidades() {
                 titleMovie="Mad Max"
                 sinceFilme="2015"
                 director="George Miller"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Cartaz
-                backgroundImage="/assets/cartaz-img9.jpg"
-                titleMovie="Matrix"
-                sinceFilme="1999"
-                director="Lana Wachowski"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Cartaz
-                backgroundImage="/assets/cartaz-img10.jpg"
-                titleMovie="Até o último Homem"
-                sinceFilme="2017"
-                director="Mel Gibson"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Cartaz
-                backgroundImage="/assets/cartaz-img8.jpg"
-                titleMovie="Watchmen"
-                sinceFilme="2009"
-                director="Zack Snyder"
               />
             </SwiperSlide>
           </Swiper>

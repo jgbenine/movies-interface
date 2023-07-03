@@ -10,8 +10,8 @@ export default function Home() {
     <main className={styles.home}>
       <SliderDry />
       <section className={`container ${styles.homeSection}`}>
-        <h2 className="title-main">Disponiveis</h2>
-        <p className="description">Selecione um filme da lista para assistir</p>
+        <h2 className="title-main">Filmes Disponíveis</h2>
+        <p className="description">Selecione um filme da lista</p>
         <div className={styles.homeGrid}>
           <Cartaz
             backgroundImage="/assets/cartaz-img1.jpg"
