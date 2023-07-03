@@ -8,7 +8,7 @@ function Header() {
     <header className={styles.header}>
       <div className={styles.headerContainer}>
         <div className={styles.logo}>
-          <Link href="/" title='JG | Filmes'>
+          <Link href="/" title='Nin9 | Filmes'>
             <Clapperboard size={22} color='#e3e3e3' />
           </Link>
         </div>

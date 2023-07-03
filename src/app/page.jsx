@@ -1,6 +1,7 @@
 'use client'
 import Novidades from '../pages/novidades'
 import Cartaz from './componentes/Cartaz'
+import Episodes from './componentes/Episodes'
 import SliderDry from './componentes/SliderDry'
 import styles from './css/Home.module.scss'
 
@@ -79,6 +80,8 @@ export default function Home() {
             <Novidades />
           </div>
       </section>
+
+      <Episodes />
     </main>
   )
 }
