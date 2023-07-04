@@ -24,6 +24,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 body{
   background-color: #0D1117;
+  padding: unset;
 }
 
 .container{
@@ -130,14 +131,4 @@ body{
 
 .hidden{
   display: none !important;
-}
-
-
-@keyframes slideFromTop {
-  0% {
-    top: -200px;
-  } 
-  100% {
-    top: 0;
-  }
 }

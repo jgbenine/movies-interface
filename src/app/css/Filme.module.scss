@@ -1,0 +1,22 @@
+.filme{
+  // border: 1px solid blue;
+  height: 100vh;
+}
+
+.viewIntro{
+  position: relative;
+  height: 400px;
+  width: 100%;
+  border: 1px solid red;
+  background: url('../../../public/assets/filme-view.png')no-repeat center center;
+  background-size: cover;
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 1px solid blue;
+    background: linear-gradient(90deg, rgb(9, 12, 21) 0%, rgb(17, 24, 39) 10%, rgba(9, 12, 21, 0.3281687675) 100%);
+  }
+}
