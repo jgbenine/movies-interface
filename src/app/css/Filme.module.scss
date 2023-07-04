@@ -29,8 +29,11 @@
   flex-direction: column;
   margin-top: -100px;
   z-index: 999;
-  height: 400px;
   background-color: #111827;
+  background-image: url('../../../public/assets/cartaz-img11.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
   border-radius: 5px;
   padding: 40px 50px !important;
@@ -105,6 +108,7 @@
   p{
     font-size: 0.9rem;
     color: #f3f3f3;
+    max-width: 800px;
   }
 
   button{
@@ -122,6 +126,10 @@
     max-width: 200px;
     margin: 40px 0px;
   }
+}
+
+.movieBgContent{
+  border: 1px solid red;
 }
 
 // .movieDirector{
