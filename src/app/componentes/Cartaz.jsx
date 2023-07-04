@@ -1,13 +1,14 @@
 import React from 'react'
 import {Plus} from 'lucide-react'
 import styles from '../css/Cartaz.module.scss'
+import Link from 'next/link'
 
 function Cartaz({ backgroundImage, children, titleMovie, sinceFilme, director }) {
   const stylesBg = {
     backgroundImage: `url(${backgroundImage})`,
   }
   return (
-    <div className={styles.cartaz} style={stylesBg}>
+    <Link href="/filme" className={styles.cartaz} style={stylesBg}>
       <div className={styles.cartazFilter}>
         <Plus 
         className={styles.cartazFilterIcon}
@@ -30,7 +31,7 @@ function Cartaz({ backgroundImage, children, titleMovie, sinceFilme, director })
         </article>
       </div>
       {children}
-    </div>
+    </Link>
   )
 }
 
