@@ -131,3 +131,13 @@ body{
 .hidden{
   display: none !important;
 }
+
+
+@keyframes slideFromTop {
+  0% {
+    top: -200px;
+  } 
+  100% {
+    top: 0;
+  }
+}

@@ -87,7 +87,6 @@ export default function Home() {
             Séries
           </h3>
           <div className={styles.episodesWrapper}>
-
             <Episode
               ImageSerie={"/assets/series/prisionbreak.jpg"}
               infoSerie="Prision Break - Todas Temporadas"

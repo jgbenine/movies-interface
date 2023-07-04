@@ -28,12 +28,6 @@ function Novidades() {
               1000:{
                 slidesPerView:5
               },
-              1500:{
-                slidesPerView:6
-              },
-              1700:{
-                slidesPerView:7
-              }
             }}
             // centeredSlides={true}
             spaceBetween={50}

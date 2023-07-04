@@ -48,7 +48,7 @@ function Footer() {
         </ul>
       </div>
       <p className={styles.copyright}>
-        © 2023 · JG · Alguns os direitos reservados.
+        © 2023 · JG · Alguns direitos reservados.
       </p>
     </footer>
   )

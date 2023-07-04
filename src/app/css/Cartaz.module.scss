@@ -32,7 +32,7 @@
 }
 
 .cartazFilterIcon{
-  animation: opacityFade 0.8s ease-in;
+  animation: opacityFade 0.5s ease-in;
 }
 
 .cartazDescription{
@@ -75,20 +75,8 @@
   }
 }
 
-@keyframes slideFromTop {
-  0% {
-    top: -200px;
-
-  } 
-
-  100% {
-    top: 0;
-  }
-}
 
 @keyframes heightFullRadius {
-
-
   to {
    width: 100%;
    height: 100%;
