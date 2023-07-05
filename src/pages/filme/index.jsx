@@ -4,6 +4,7 @@ import Header from '@/app/componentes/Header'
 import '../../app/globals.css'
 import Footer from '@/app/componentes/Footer'
 import { Star, Play } from 'lucide-react'
+import TopSection from '@/app/componentes/TopSection'
 
 function Filme() {
   return (
@@ -55,6 +56,7 @@ function Filme() {
               Assistir Trailer
             </button>
         </article>
+        <TopSection />
       </section>
       <Footer />
     </>

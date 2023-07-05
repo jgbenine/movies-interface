@@ -1,10 +1,10 @@
 import React from 'react'
-import styles from '../css/Episode.module.scss'
+import styles from '../css/CartazHorizontal.module.scss'
 import { PlusCircle } from 'lucide-react'
 
-function Episode({ infoSerie, ImageSerie, altItem }) {
+function CartazHorizontal({ infoSerie, ImageSerie, altItem }) {
   return (
-    <div className={styles.episode}>
+    <div className={styles.cartazHorizontal}>
       <div className={styles.episodeImg}>
         <img src={ImageSerie} alt={altItem} />
         <span className={styles.filter}>
@@ -18,4 +18,4 @@ function Episode({ infoSerie, ImageSerie, altItem }) {
   )
 }
 
-export default Episode
+export default CartazHorizontal

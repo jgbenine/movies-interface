@@ -1,7 +1,7 @@
 'use client'
 import Novidades from '../pages/novidades'
 import Cartaz from './componentes/Cartaz'
-import Episode from './componentes/Episode'
+import CartazHorizontal from './componentes/CartazHorizontal'
 import SliderDry from './componentes/SliderDry'
 import styles from './css/Home.module.scss'
 
@@ -87,25 +87,25 @@ export default function Home() {
             Séries
           </h3>
           <div className={styles.episodesWrapper}>
-            <Episode
+            <CartazHorizontal
               ImageSerie={"/assets/series/prisionbreak.jpg"}
               infoSerie="Prision Break - Todas Temporadas"
             />
-            <Episode
+            <CartazHorizontal
               ImageSerie={"/assets/series/breaking.jpg"}
               infoSerie="Breaking Bad - Todas Temporadas"
             />
 
-            <Episode
+            <CartazHorizontal
               ImageSerie={"/assets/series/snowpierce.jpg"}
               infoSerie="Snowpierce - Nova temporada"
             />
-            <Episode
+            <CartazHorizontal
               ImageSerie={"/assets/series/wutang.jpg"}
               infoSerie="Wu-Tang: An American Saga"
             />
 
-            <Episode
+            <CartazHorizontal
               ImageSerie={"/assets/series/stranger.jpg"}
               infoSerie="Stranger Things"
             />

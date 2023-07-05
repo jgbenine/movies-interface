@@ -1,4 +1,4 @@
-.episode{
+.cartazHorizontal{
   width: 230px;
   border-radius: 5px;
   display: flex;
@@ -15,7 +15,7 @@
   }
 }
 
-.episodeImg{
+.horizontalImg{
   position: relative;
   img{
     display: flex;
@@ -40,7 +40,7 @@
   animation: slideFromTop 0.5s ease-in-out;
 }
 
-.episodeInfo{
+.horizontalInfo{
   text-align: center;
   color: #030303;
   font-size: 0.7rem;
