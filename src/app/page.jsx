@@ -88,25 +88,25 @@ export default function Home() {
           </h3>
           <div className={styles.episodesWrapper}>
             <CartazHorizontal
-              ImageSerie={"/assets/series/prisionbreak.jpg"}
+              ImageHorizontal={"/assets/series/prisionbreak.jpg"}
               infoSerie="Prision Break - Todas Temporadas"
             />
             <CartazHorizontal
-              ImageSerie={"/assets/series/breaking.jpg"}
+              ImageHorizontal={"/assets/series/breaking.jpg"}
               infoSerie="Breaking Bad - Todas Temporadas"
             />
 
             <CartazHorizontal
-              ImageSerie={"/assets/series/snowpierce.jpg"}
+              ImageHorizontal={"/assets/series/snowpierce.jpg"}
               infoSerie="Snowpierce - Nova temporada"
             />
             <CartazHorizontal
-              ImageSerie={"/assets/series/wutang.jpg"}
+              ImageHorizontal={"/assets/series/wutang.jpg"}
               infoSerie="Wu-Tang: An American Saga"
             />
 
             <CartazHorizontal
-              ImageSerie={"/assets/series/stranger.jpg"}
+              ImageHorizontal={"/assets/series/stranger.jpg"}
               infoSerie="Stranger Things"
             />
           </div>

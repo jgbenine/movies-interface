@@ -2,16 +2,16 @@ import React from 'react'
 import styles from '../css/CartazHorizontal.module.scss'
 import { PlusCircle } from 'lucide-react'
 
-function CartazHorizontal({ infoSerie, ImageSerie, altItem }) {
+function CartazHorizontal({ infoSerie, ImageHorizontal, altItem }) {
   return (
     <div className={styles.cartazHorizontal}>
-      <div className={styles.episodeImg}>
-        <img src={ImageSerie} alt={altItem} />
+      <div className={styles.horizontalImg}>
+        <img src={ImageHorizontal} alt={altItem} />
         <span className={styles.filter}>
           <PlusCircle color='#f3f3f3a5' size={30} />
         </span>
       </div>
-      <p className={styles.episodeInfo}>
+      <p className={styles.horizontalInfo}>
         {infoSerie}
       </p>
     </div>
