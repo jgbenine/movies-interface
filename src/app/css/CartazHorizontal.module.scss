@@ -45,7 +45,7 @@
   color: #030303;
   font-size: 0.7rem;
   padding: 5px;
-  background: #f3f3f3e5;
+  background: #f3f3f3;
   border: 1px solid rgba($color: #f3f3f3, $alpha: 1);
   border-radius: 2px;
   letter-spacing: 1px;
@@ -57,6 +57,12 @@
   white-space: nowrap;
 }
 
+.topFilme{
+  font-size: 9.9rem;
+  color: #F3F3F3;
+  position: absolute;
+  left: 0;
+}
 
 @keyframes slideFromTop {
   0% {
