@@ -25,6 +25,8 @@ input[type=number]::-webkit-inner-spin-button {
 body{
   background-color: #0D1117;
   padding: unset;
+  height: 100%;
+  position: relative;
 }
 
 .container{

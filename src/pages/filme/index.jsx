@@ -5,6 +5,7 @@ import '../../app/globals.css'
 import Footer from '@/app/componentes/Footer'
 import { Star, Play } from 'lucide-react'
 import TopSection from '@/app/componentes/TopSection'
+import Modal from '@/app/componentes/Modal'
 
 function Filme() {
   return (
@@ -59,6 +60,7 @@ function Filme() {
         <TopSection />
       </section>
       <Footer />
+      <Modal />
     </>
   )
 }
