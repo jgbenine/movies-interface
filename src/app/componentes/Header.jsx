@@ -9,18 +9,21 @@ function Header() {
   function toggleMenuMobile() {
     setMenuMobile(!menuMobile);
   }
-  
-  React.useEffect(() => {
-    const mediaQueryMenu = window.matchMedia('(min-width: 680px)');
 
-    function handleResize(e) {
-      if (mediaQueryMenu.matches) {
+  React.useEffect(() => {
+    function handleResize() {
+      const isMobile = window.innerWidth < 680;
+      if(!isMobile){
         setMenuMobile(true)
+      }else{
+        setMenuMobile(false)
       }
     }
-    window.addEventListener('resize', handleResize)
-  }, [])
+    handleResize(); 
+    window.addEventListener('resize', handleResize);
 
+  }, []);
+  
   return (
     <header className={styles.header}>
       <div className={styles.headerContainer}>
