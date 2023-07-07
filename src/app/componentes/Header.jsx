@@ -8,8 +8,18 @@ function Header() {
 
   function toggleMenuMobile() {
     setMenuMobile(!menuMobile);
-    console.log('click menu')
   }
+  
+  React.useEffect(() => {
+    const mediaQueryMenu = window.matchMedia('(min-width: 680px)');
+
+    function handleResize(e) {
+      if (mediaQueryMenu.matches) {
+        setMenuMobile(true)
+      }
+    }
+    window.addEventListener('resize', handleResize)
+  }, [])
 
   return (
     <header className={styles.header}>
