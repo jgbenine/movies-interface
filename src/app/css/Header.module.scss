@@ -4,6 +4,7 @@
   color: white;
   border-radius: 5px;
   box-shadow: 10px 10px 40px -19px rgba(0,0,0,0.75);
+  position: relative;
 }
 
 .headerContainer{
@@ -26,12 +27,51 @@
 
 .headerNav{
   display: flex;
-  gap: 3rem;
+  flex-direction: column;
+  position: absolute;
+  right: 0;
+  top: 5.6rem;
+  z-index: 1000;
+  background: #111827;
+  border-radius: 2px;
+  box-shadow: 5px 8px 10px -3px rgba(48, 48, 101, 0.659);
+  min-width: 100%;
+  gap: 1.6rem;
+  padding: 40px 10px;
 
   li{
+    display: flex;
+    gap: 15px;
+    align-items: center;
     letter-spacing: 1px;
-    font-size: 1rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #e3e3e325;
+  }
+
+  @media (min-width: 680px) {
+    flex-direction: row;
+    position: unset;
+    border-radius: unset;
+    border: unset;
+    background: unset;
+    z-index: unset;
+    gap: 3rem;
+    padding: unset;
+    font-size: unset;
+    box-shadow: unset;
+    min-width: unset;
+
+    svg{
+      display: none;
+    }
+
+    li{
+      font-size: unset;
+      border-bottom: unset;
+      padding-bottom: unset;
+    }
   }
 }
 
@@ -47,13 +87,12 @@
   }
 }
 
-.nav{
-  display: none;
-
-  @media (min-width: 680px) {
-    display: flex;
-  }
-}
+// .nav{
+//   display: flex;
+//   @media (min-width: 680px) {
+//     display: flex;
+//   }
+// }
 
 .btnMobile{
   @media (min-width: 680px) {

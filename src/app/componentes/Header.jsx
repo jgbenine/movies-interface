@@ -1,5 +1,5 @@
 import React from 'react'
-import { Search, UserCircle, LogIn, Clapperboard, Menu } from 'lucide-react'
+import { Search, UserCircle, LogIn, Clapperboard, Menu, Play } from 'lucide-react'
 import Link from 'next/link'
 import styles from '../css/Header.module.scss'
 
@@ -18,13 +18,22 @@ function Header() {
         <nav className={styles.nav}>
           <ul className={styles.headerNav}>
             <li>
-              <Link href="/filmes">Filmes</Link>
+              <Play size={15} color='#e3e3e3' />
+              <Link href="/filmes">
+                Filmes
+              </Link>
             </li>
             <li>
-              <Link href="/series">Séries</Link>
+              <Play size={15} color='#e3e3e3' />
+              <Link href="/series">
+                Séries
+              </Link>
             </li>
             <li>
-              <Link href="/episodios">Episódios</Link>
+              <Play size={15} color='#e3e3e3' />
+              <Link href="/episodios">
+                Episódios
+              </Link>
             </li>
           </ul>
         </nav>
