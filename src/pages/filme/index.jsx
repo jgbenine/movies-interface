@@ -8,6 +8,16 @@ import TopSection from '@/app/componentes/TopSection'
 import Modal from '@/app/componentes/Modal'
 
 function Filme() {
+  const [isModalOpen, setIsModalOpen] = React.useState(false)
+
+  function handleModalOpen() {
+    setIsModalOpen(true)
+  }
+
+  function handleCloseModal() {
+    setIsModalOpen(false)
+  }
+
   return (
     <>
       <Header />
@@ -16,19 +26,10 @@ function Filme() {
         <article className={`container ${styles.movieContent}`}>
           <h3>Mad Max: Estrada da Fúria</h3>
           <ul>
-            <li>
-              2015
-            </li>
-            <li>
-              120 Min
-            </li>
-            <li>
-              Ação /
-              Ficção Científica
-            </li>
-            <li>
-              US$ 150 milhões
-            </li>
+            <li>2015</li>
+            <li>120 Min</li>
+            <li>Ação / Ficção Científica</li>
+            <li> US$ 150 milhões</li>
             <li className={styles.movieRating}>
               <Star size={15} />
               <Star size={15} />
@@ -47,12 +48,7 @@ function Filme() {
             Max se vê no meio de uma guerra mortal iniciada pela Imperatriz Furiosa,
             que tenta salvar um grupo de garotas. Também tentando fugir, Max aceita ajudá-la.
           </p>
-
-          {/* <div className={styles.movieDirector}>
-            Diretor: 
-            <img src="https://upload.wikimedia.org/wikipedia/commons/1/13/George_Miller_%2835706244922%29.jpg" alt=""  style={{width: '55px', height: '42px'}}/>
-          </div> */}
-          <button>
+          <button onClick={handleModalOpen}>
             <Play color='#f3f3f3' />
             Assistir Trailer
           </button>
@@ -60,16 +56,21 @@ function Filme() {
         <TopSection />
       </section>
       <Footer />
-      <Modal contentModal={
-        <iframe
-          width="100%" height="100%"
-          src="https://www.youtube.com/embed/IVmf82obaaA"
-          title="YouTube video player"
-          frameborder="0" allow="accelerometer; autoplay;
-          clipboard-write; encrypted-media; gyroscope;
-           picture-in-picture; web-share" allowfullscreen>
-        </iframe>}
-      />
+      {isModalOpen && (
+        <Modal
+          onClose={handleCloseModal}
+          contentModal={
+            <iframe
+              width="100%" height="100%"
+              src="https://www.youtube.com/embed/IVmf82obaaA"
+              title="YouTube video player"
+              frameborder="0" allow="accelerometer; autoplay;
+            clipboard-write; encrypted-media; gyroscope;
+            picture-in-picture; web-share" allowfullscreen>
+            </iframe>
+          }
+        />
+      )}
     </>
   )
 }
