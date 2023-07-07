@@ -58,6 +58,7 @@ function Filme() {
       <Footer />
       {isModalOpen && (
         <Modal
+          isOpen={false}
           onClose={handleCloseModal}
           contentModal={
             <iframe
