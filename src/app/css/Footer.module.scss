@@ -1,4 +1,5 @@
 .footer{
+  width: 100%;
   padding: 40px 10px 5px 10px;
   color: #ffffff80;
   display: flex;
@@ -7,6 +8,8 @@
   justify-content: center;
   gap: 10px;
   font-size: 0.9rem;
+  flex-shrink: 0;
+
 }
 
 .description{

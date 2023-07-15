@@ -1,6 +1,7 @@
 @import './style.scss';
 
 .header{
+  width: 100%;
   padding: 20px 15px;
   background: #090C15;
   color: white;
@@ -16,6 +17,7 @@
   justify-content: space-between;
   align-items: center;
   max-width: 1250px;
+  width: 100%;
   margin: 0 auto;
 }
 

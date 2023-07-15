@@ -1,21 +1,21 @@
-import React from 'react'
-import styles from '../../app/css/Filme.module.scss'
-import Header from '@/app/componentes/Header'
-import '../../app/globals.css'
-import Footer from '@/app/componentes/Footer'
-import { Star, Play } from 'lucide-react'
-import TopSection from '@/app/componentes/TopSection'
-import Modal from '@/app/componentes/Modal'
+import React, { useEffect } from "react";
+import styles from "../../app/css/Filme.module.scss";
+import Header from "@/app/componentes/Header";
+import "../../app/globals.css";
+import Footer from "@/app/componentes/Footer";
+import { Star, Play } from "lucide-react";
+import TopSection from "@/app/componentes/TopSection";
+import Modal from "@/app/componentes/Modal";
 
 function Filme() {
-  const [isModalOpen, setIsModalOpen] = React.useState(false)
+  const [isModalOpen, setIsModalOpen] = React.useState(null);
 
   function handleModalOpen() {
-    setIsModalOpen(true)
+    setIsModalOpen(true);
   }
 
   function handleCloseModal() {
-    setIsModalOpen(false)
+    setIsModalOpen(false);
   }
 
   return (
@@ -42,14 +42,15 @@ function Filme() {
             </li>
           </ul>
           <p>
-            Em um mundo pós-apocalíptico, Max Rockatansky acredita
-            que a melhor forma de sobreviver é não depender de ninguém.
-            Porém, após ser capturado pelo tirano Immortan Joe e seus rebeldes,
-            Max se vê no meio de uma guerra mortal iniciada pela Imperatriz Furiosa,
-            que tenta salvar um grupo de garotas. Também tentando fugir, Max aceita ajudá-la.
+            Em um mundo pós-apocalíptico, Max Rockatansky acredita que a melhor
+            forma de sobreviver é não depender de ninguém. Porém, após ser
+            capturado pelo tirano Immortan Joe e seus rebeldes, Max se vê no
+            meio de uma guerra mortal iniciada pela Imperatriz Furiosa, que
+            tenta salvar um grupo de garotas. Também tentando fugir, Max aceita
+            ajudá-la.
           </p>
           <button onClick={handleModalOpen}>
-            <Play color='#f3f3f3' />
+            <Play color="#f3f3f3" />
             Assistir Trailer
           </button>
         </article>
@@ -58,22 +59,26 @@ function Filme() {
       <Footer />
       {isModalOpen && (
         <Modal
-          isOpen={false}
+          isOpen={isModalOpen}
           onClose={handleCloseModal}
           contentModal={
             <iframe
-              width="100%" height="100%"
+              className="rounded-md shadow-md border border-zinc-400"
+              width="100%"
+              height="100%"
               src="https://www.youtube.com/embed/IVmf82obaaA"
               title="YouTube video player"
-              frameborder="0" allow="accelerometer; autoplay;
-            clipboard-write; encrypted-media; gyroscope;
-            picture-in-picture; web-share" allowfullscreen>
-            </iframe>
+              // frameBorder="0"
+              allow="accelerometer; autoplay;
+                clipboard-write; encrypted-media; gyroscope;
+                picture-in-picture; web-share"
+              allowFullScreen
+            ></iframe>
           }
         />
       )}
     </>
-  )
+  );
 }
 
-export default Filme
+export default Filme;

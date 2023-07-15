@@ -80,7 +80,6 @@ export default function Home() {
           <Novidades />
         </div>
       </section>
-
       <section className={styles.homeEpisodes}>
         <div className='container'>
           <h3 className='title-main'>

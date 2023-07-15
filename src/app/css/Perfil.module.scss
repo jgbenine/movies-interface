@@ -1,18 +1,27 @@
 .perfil{
   padding-top: 40px;
+  width: 100%;
 }
 
 .perfilContent{
+  display: flex;
+  max-width: 920px;
+  margin: 0 auto;
+  flex-direction: column;
+  gap: 20px;
   width: 100%;
-  min-width: 850px;
-  border: 1px solid white;
   color: white;
   padding: 1rem;
   margin-top: 20px;
+  padding-bottom: 40px;
 
   h3{
     padding: 15px 0px;
     font-size: 1.2rem;
+  }
+
+  .link-nav{
+    padding: 10px 0px;
   }
 }
 
