@@ -2,13 +2,14 @@ import React from "react";
 import Head from "next/head";
 import { Helmet } from "react-helmet";
 
-function HeadEdit({props, titlePage, descriptionPage }) {
+function HeadEdit({titlePage, descriptionPage }) {
   React.useEffect(() => {
     document.title = titlePage + " | Claquete Filmes";
-    document
-      .querySelector("meta[name='description']")
-      .setAttribute("content", descriptionPage || "");
-  }, [props]);
+    const metaDados = document.querySelector("meta[name='description']");
+      if(metaDados){
+        metaDados.setAttribute("content", descriptionPage || "");
+    }
+  }, [titlePage, descriptionPage]);
 
   return (
     <>
