@@ -43,7 +43,7 @@ function Header() {
               </li>
               <li>
                 <Play size={15} color='#e3e3e3' />
-                <Link href="/filmes">
+                <Link href="/filme">
                   Filmes
                 </Link>
               </li>
