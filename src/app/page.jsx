@@ -1,14 +1,18 @@
 "use client";
 import Novidades from "../pages/novidades";
 import Cartaz from "./componentes/Cartaz";
-import CartazHorizontal from "./componentes/CartazHorizontal";
 import SliderDry from "./componentes/SliderDry";
 import TopSection from "./componentes/TopSection";
 import styles from "./css/Home.module.scss";
+import HeadEdit from "./helpers/Head";
 
 export default function Home() {
   return (
     <main className={styles.home}>
+      <HeadEdit
+        titlePage="Home"
+        descriptionPage="Melhor informação sobre seu filme."
+      />
       <SliderDry />
       <section className={`container ${styles.homeSection}`}>
         <h2 className="title-main">Filmes Disponíveis</h2>

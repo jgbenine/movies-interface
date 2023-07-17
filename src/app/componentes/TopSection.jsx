@@ -7,7 +7,8 @@ function TopSection() {
   return (
     <section className={styles.topSection}>
       <div className={`container ${styles.topGrid}`}>
-        <h3 className={`title-main ${styles.topTitle}`}>Top 5 Filmes da Semana</h3>
+        <h3 className={`title-main ${styles.topTitle}`}>Top 5 Filmes do mês</h3>
+        <p class="description">Seleção dos filmes com melhores avaliações</p>
         <div className={styles.topContent}>
           <CartazHorizontal
             ImageHorizontal={"/assets/cartaz-img1.jpg"}

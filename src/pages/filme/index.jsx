@@ -6,6 +6,7 @@ import Footer from "@/app/componentes/Footer";
 import { Star, Play } from "lucide-react";
 import TopSection from "@/app/componentes/TopSection";
 import Modal from "@/app/componentes/Modal";
+import HeadEdit from "@/app/helpers/Head";
 
 function Filme() {
   const [isModalOpen, setIsModalOpen] = React.useState(null);
@@ -20,6 +21,11 @@ function Filme() {
 
   return (
     <>
+      <HeadEdit
+        titlePage="
+Mad Max: Estrada da Fúria"
+        descriptionPage="Filme Mad Max: Estrada da Fúria"
+      />
       <Header />
       <section className={styles.movie}>
         <div className={styles.viewIntro}></div>

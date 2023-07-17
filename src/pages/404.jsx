@@ -3,10 +3,12 @@ import styles from "../app/css/404.scss";
 import "../app/globals.css";
 import Link from "next/link";
 import { Home } from "lucide-react";
+import HeadEdit from "@/app/helpers/Head";
 
 function NotFound() {
   return (
     <>
+       <HeadEdit titlePage="Página não encontrada" />
       <section className="notFound">
         <div className="notFound-filter"></div>
         <section className="sectionTop">

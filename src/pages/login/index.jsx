@@ -8,10 +8,15 @@ import Label from "@/app/componentes/Label";
 import Link from "next/link";
 import Footer from "@/app/componentes/Footer";
 import Header from "@/app/componentes/Header";
+import HeadEdit from "@/app/helpers/Head";
 
 function Login() {
   return (
     <>
+        <HeadEdit
+        titlePage="Login"
+        descriptionPage="Acesso."
+      />
       <Header />
       <section className={styles.login}>
         <div className={styles.loginWrapper}>

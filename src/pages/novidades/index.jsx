@@ -56,9 +56,9 @@ function Novidades() {
             <SwiperSlide>
               <Cartaz
                 backgroundImage="/assets/series/stranger.jpg"
-                titleMovie="Até o último Homem"
-                sinceFilme="2017"
-                director="Mel Gibson"
+                titleMovie="Stranger Things"
+                sinceFilme="2016"
+                director="Ross Duffer"
               />
             </SwiperSlide>
             <SwiperSlide>
@@ -79,10 +79,10 @@ function Novidades() {
             </SwiperSlide>
             <SwiperSlide>
               <Cartaz
-                backgroundImage="/assets/series/the-wire.jpg"
-                titleMovie="Mad Max"
-                sinceFilme="2015"
-                director="George Miller"
+                backgroundImage="/assets/series/the-last.jpg"
+                titleMovie="The last of us"
+                sinceFilme="2023"
+                director="Craig Mazin, Neil Druckmann"
               />
             </SwiperSlide>
           </Swiper>

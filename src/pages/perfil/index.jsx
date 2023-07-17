@@ -7,7 +7,7 @@ import Label from "@/app/componentes/Label";
 import Button from "@/app/componentes/Button";
 import Header from "@/app/componentes/Header";
 import Footer from "@/app/componentes/Footer";
-import '../../app/globals.css'
+import "../../app/globals.css";
 
 function Perfil() {
   const [isEmailDisabled, setEmailDisabled] = useState(true);
@@ -18,6 +18,7 @@ function Perfil() {
 
   return (
     <>
+      <HeadEdit titlePage="Seu Perfil" descriptionPage="Pefil." />
       <Header />
       <section className={styles.perfil}>
         <main className="container mx-auto p-4">

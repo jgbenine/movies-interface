@@ -8,7 +8,7 @@
 .topGrid{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
   margin: 0 auto;
 }
 
@@ -16,8 +16,4 @@
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
-}
-
-.topTitle{
-  margin-bottom: 30px;
 }
