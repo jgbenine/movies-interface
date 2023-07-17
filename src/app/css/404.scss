@@ -1,3 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+
 .notFound{
-  border: 1px solid red;
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-rows: 5fr 1fr 1fr;
+}
+
+.notFound .sectionTop{
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.notFound .sectionMiddle {
+  background: blue;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.notFound .sectionBottom {
+  background: purple;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+}
+
+.sectionContent {
+  display: grid;
+  height: 100vh;
+  position: absolute;
+  top: -5rem;
+  left: 0;
+  place-items: center;
+}
+
+.message {
+  grid-area: message;
+  color: white;
+  font-size: 2rem;
+  font-family: 'Press Start 2P', cursive;
+  background: black;
+  margin: 0;
+}
+
+.message2{
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  color: white;
+  max-width: 700px;
+}
+
+
+.message-container {
+  padding: 1rem 7rem;
+  align-items: center;
+  display: flex;
+  gap: 10px;
+  text-align: center;
+  flex-direction: column;
+  width: 100vw;
+  background: black;
+  justify-items: center;
+}
+
+
+.bg-shell {
+  background: lightgray;
+}
+
+.bg-yellow {
+  background: yellow;
+}
+
+.bg-light-blue {
+  background: skyblue;
+}
+
+.bg-green {
+  background: lightgreen;
+}
+
+.bg-purple {
+  background: purple;
+}
+
+.bg-red {
+  background: red;
+}
+
+.bg-blue {
+  background: blue;
+}
+
+.bg-black {
+  background: black;
+}
+
+.bg-white {
+  background: white;
+}
+
+.bg-dark-blue { 
+background: darkblue;
 }
