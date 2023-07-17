@@ -1,9 +1,10 @@
-'use client'
-import Novidades from '../pages/novidades'
-import Cartaz from './componentes/Cartaz'
-import CartazHorizontal from './componentes/CartazHorizontal'
-import SliderDry from './componentes/SliderDry'
-import styles from './css/Home.module.scss'
+"use client";
+import Novidades from "../pages/novidades";
+import Cartaz from "./componentes/Cartaz";
+import CartazHorizontal from "./componentes/CartazHorizontal";
+import SliderDry from "./componentes/SliderDry";
+import TopSection from "./componentes/TopSection";
+import styles from "./css/Home.module.scss";
 
 export default function Home() {
   return (
@@ -75,16 +76,9 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className={styles.homeWrapperSlider}>
-        <div className={`container ${styles.homeNews}`}>
-          <Novidades />
-        </div>
-      </section>
       <section className={styles.homeEpisodes}>
-        <div className='container'>
-          <h3 className='title-main'>
-            Séries
-          </h3>
+        <div className="container">
+          <h3 className="title-main">Séries</h3>
           <div className={styles.episodesWrapper}>
             <CartazHorizontal
               ImageHorizontal={"/assets/series/prisionbreak.jpg"}
@@ -111,6 +105,16 @@ export default function Home() {
           </div>
         </div>
       </section>
+      
+      <section className={styles.homeWrapperSlider}>
+        <div className={`container ${styles.homeNews}`}>
+          <Novidades />
+        </div>
+      </section>
+
+      <section>
+        <TopSection />
+      </section>
     </main>
-  )
+  );
 }

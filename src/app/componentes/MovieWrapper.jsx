@@ -1,6 +1,7 @@
 import React from 'react'
 import styles from '../css/CartazSlider.module.scss'
 import { Plus } from 'lucide-react'
+import Link from 'next/link'
 
 function MovieWrapper({ backgroundImage, title, sinopse, ano, genero }) {
   const stylesBg = {
@@ -16,12 +17,12 @@ function MovieWrapper({ backgroundImage, title, sinopse, ano, genero }) {
             <li>{genero}</li>
           </ul>
           <p>{sinopse}</p>
-          <button>
+          <Link href="/filme" className={styles.movieLink}>
             <Plus 
               size={15}
             />
             Mais informações
-          </button>
+          </Link>
         </article>
       </div>
     </div>

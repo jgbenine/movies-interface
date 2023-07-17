@@ -20,9 +20,6 @@
     font-size: 1.2rem;
   }
 
-  .link-nav{
-    padding: 10px 0px;
-  }
 }
 
 .perfilIntro{
@@ -32,7 +29,6 @@
   justify-content: center;
   gap: 5px;
 }
-
 
 .perfilUser{
   height: 100px;
@@ -60,9 +56,9 @@
   display: flex;
   align-items: flex-start;
   flex-direction: column;
-  gap: 5px;
+  gap: 10px;
   padding-bottom: 20px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+
 
   &::last-child{
   border-bottom: unset;
