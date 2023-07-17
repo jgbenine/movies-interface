@@ -1,9 +1,9 @@
 "use client";
-import Novidades from "../pages/novidades";
-import Cartaz from "./componentes/Cartaz";
-import SliderDry from "./componentes/SliderDry";
-import TopSection from "./componentes/TopSection";
-import styles from "./css/Home.module.scss";
+import Novidades from "./components/Novidades";
+import Cartaz from "./components/Cartaz";
+import SliderDry from "./components/SliderDry";
+import TopSection from "./components/TopSection";
+import styles from "./css/pages/Home.module.scss";
 import HeadEdit from "./helpers/Head";
 
 export default function Home() {

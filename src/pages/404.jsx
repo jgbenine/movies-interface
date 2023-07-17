@@ -1,6 +1,5 @@
 import React from "react";
-import styles from "../app/css/404.scss";
-import "../app/globals.css";
+import styles from "../app/css/pages/404.scss";
 import Link from "next/link";
 import { Home } from "lucide-react";
 import HeadEdit from "@/app/helpers/Head";
@@ -39,13 +38,14 @@ function NotFound() {
         </section>
         <section className="sectionContent">
           <div className="message-container">
-            <p className="message">Not Found</p>
+            <p className="message">Página indisponível </p>
             <p className="message2">
-              Rota não encontrada.. Infelizmente essa rota ainda não está
-              disponível, acesse outra página.
+              Rota não encontrada.. Infelizmente essa rota ainda não foi 
+              construida, navegue por outras páginas.
             </p>
               <Link href="/" className="notFound-link">
                 <Home size={20} color="#e3e3e3"  />
+                voltar
               </Link>
           </div>
         </section>

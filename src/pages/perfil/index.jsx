@@ -1,13 +1,14 @@
 "use client";
 import React, { useState } from "react";
-import styles from "../../app/css/Perfil.module.scss";
+import styles from "../../app/css/pages/Perfil.module.scss"
 import "../../pages/pages.css";
-import Input from "@/app/componentes/Input";
-import Label from "@/app/componentes/Label";
-import Button from "@/app/componentes/Button";
-import Header from "@/app/componentes/Header";
-import Footer from "@/app/componentes/Footer";
+import Input from "@/app/components/Input";
+import Label from "@/app/components/Label";
+import Button from "@/app/components/Button";
+import Header from "@/app/components/Header";
+import Footer from "@/app/components/Footer";
 import "../../app/globals.css";
+import HeadEdit from "@/app/helpers/Head";
 
 function Perfil() {
   const [isEmailDisabled, setEmailDisabled] = useState(true);

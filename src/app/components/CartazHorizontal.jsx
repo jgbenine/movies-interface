@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../css/CartazHorizontal.module.scss'
+import styles from '../css/components/CartazHorizontal.module.scss'
 import { PlusCircle } from 'lucide-react'
 
 function CartazHorizontal({ infoSerie, ImageHorizontal, altItem, topFilme }) {

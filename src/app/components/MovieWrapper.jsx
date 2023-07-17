@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../css/CartazSlider.module.scss'
+import styles from '../css/components/CartazSlider.module.scss'
 import { Plus } from 'lucide-react'
 import Link from 'next/link'
 

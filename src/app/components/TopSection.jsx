@@ -1,6 +1,6 @@
 import React from 'react'
 import '../../app/globals.css'
-import styles from '../css/TopSection.module.scss'
+import styles from '../css/components/TopSection.module.scss'
 import CartazHorizontal from './CartazHorizontal'
 
 function TopSection() {

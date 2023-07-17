@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet";
 
 function HeadEdit({props, titlePage, descriptionPage }) {
   React.useEffect(() => {
-    document.title = titlePage + " | Nine";
+    document.title = titlePage + " | Claquete Filmes";
     document
       .querySelector("meta[name='description']")
       .setAttribute("content", descriptionPage || "");

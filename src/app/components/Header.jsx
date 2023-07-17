@@ -1,7 +1,7 @@
 import React from 'react'
 import { Search, UserCircle, LogIn, Clapperboard, Menu, Play, Home } from 'lucide-react'
 import Link from 'next/link'
-import styles from '../css/Header.module.scss'
+import styles from '../css/components/Header.module.scss'
 
 function Header() {
   const [menuMobile, setMenuMobile] = React.useState(false);

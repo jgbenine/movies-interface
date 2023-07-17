@@ -16,6 +16,10 @@ module.exports = {
       colors:{
         darkBlue: '#090C15',
       },
+      fontFamily: {
+        barlow: ['Barlow', 'sans-serif'],
+        relway: ['Relway', 'sans-serif'],
+      },
     },
   },
   plugins: [],

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Josefin+Sans:wght@500&family=Press+Start+2P&family=Raleway:wght@300;400;600&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -23,6 +25,7 @@ input[type=number]::-webkit-inner-spin-button {
 
 html, body{
   height: 100vh;
+  font-family: 'Raleway', sans-serif;
 }
 
 body{
@@ -45,6 +48,7 @@ body{
   font-weight: 500;
   width: 100%;
   color: white;
+  font-family: 'Raleway', sans-serif;
 }
 
 .title-main::after{

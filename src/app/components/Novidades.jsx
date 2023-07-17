@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import Cartaz from "@/app/componentes/Cartaz";
+import Cartaz from "@/app/components/Cartaz";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import styles from "../../app/css/Novidades.module.scss";
+import styles from "../css/components/Novidades.module.scss";
 
 function Novidades() {
   return (

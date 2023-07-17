@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../css/Footer.module.scss'
+import styles from '../css/components/Footer.module.scss'
 import { AtSign, Github, Linkedin, Clapperboard } from 'lucide-react'
 import Link from 'next/link'
 

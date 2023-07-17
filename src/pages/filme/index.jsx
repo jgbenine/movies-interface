@@ -1,11 +1,11 @@
 import React, { useEffect } from "react";
-import styles from "../../app/css/Filme.module.scss";
-import Header from "@/app/componentes/Header";
+import styles from "../../app/css/pages/Filme.module.scss";
+import Header from "@/app/components/Header";
 import "../../app/globals.css";
-import Footer from "@/app/componentes/Footer";
+import Footer from "@/app/components/Footer";
 import { Star, Play } from "lucide-react";
-import TopSection from "@/app/componentes/TopSection";
-import Modal from "@/app/componentes/Modal";
+import TopSection from "@/app/components/TopSection";
+import Modal from "@/app/components/Modal";
 import HeadEdit from "@/app/helpers/Head";
 
 function Filme() {
@@ -23,7 +23,7 @@ function Filme() {
     <>
       <HeadEdit
         titlePage="
-Mad Max: Estrada da Fúria"
+        Mad Max: Estrada da Fúria"
         descriptionPage="Filme Mad Max: Estrada da Fúria"
       />
       <Header />
