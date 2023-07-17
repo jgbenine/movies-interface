@@ -7,7 +7,6 @@ function Modal({ contentModal, isOpen, onClose, children }) {
   const modalRef = useRef(null);
 
   useEffect(() => {
-    console.log(isOpen)
     if (isOpen) {
       const windowHeight = window.innerHeight;
       const windowWidth = window.innerWidth;
@@ -23,22 +22,16 @@ function Modal({ contentModal, isOpen, onClose, children }) {
       }
       setModalStyles(modalStyles);
     }
-
-    function handleClickOutside(event) {
-      if (modalRef.current && !modalRef.current.contains(event.target)) {
-        console.log('executou')
-        onClose();
-      }
-      // console.log(modalRef.current)
-    }
-
-    return () => {
-      document.removeEventListener('click', handleClickOutside);
-    };
   }, [isOpen]);
 
+  function handleOutsideClick(event){
+    if(event.target === event.currentTarget){
+      onClose();
+    }
+}
+
   return (
-    <div className={styles.modal}>
+    <div className={styles.modal} onClick={handleOutsideClick}>
       <div className={`${styles.modalWrapper}`} style={modalStyles} ref={modalRef}>
         <button className={styles.modalClose} onClick={onClose}>
           <X color="#090C15" strokeWidth={3} />
