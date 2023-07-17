@@ -1,38 +1,33 @@
-'use client'
-import React from 'react'
-import Cartaz from '@/app/componentes/Cartaz'
-import { Swiper, SwiperSlide} from 'swiper/react'
-import { Pagination, Navigation, } from "swiper";
-import 'swiper/css';
-import 'swiper/css/autoplay';
-import styles from '../../app/css/Novidades.module.scss'
+"use client";
+import React from "react";
+import Cartaz from "@/app/componentes/Cartaz";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import styles from "../../app/css/Novidades.module.scss";
 
 function Novidades() {
   return (
     <section className={`container ${styles.news}`}>
       <div className={styles.newsWrapper}>
-        <h2 className="title-main">Novidades</h2>
-        <p className="description"></p>
+        <h2 className="title-main">Series</h2>
+        <p className="description">Series disponíveis</p>
         <div className={styles.newsSlider}>
           <Swiper
+            spaceBetween={50}
             breakpoints={{
-              400:{
-                slidesPerView:2,
+              400: {
+                slidesPerView: 2,
               },
               639: {
                 slidesPerView: 3,
               },
-              865:{
-                slidesPerView:4,
+              865: {
+                slidesPerView: 4,
               },
-              1000:{
-                slidesPerView:5
+              1000: {
+                slidesPerView: 5,
               },
             }}
-            // centeredSlides={true}
-            spaceBetween={50}
-            slidesPerView={5}
-            loop={true}
           >
             <SwiperSlide>
               <Cartaz
@@ -44,7 +39,7 @@ function Novidades() {
             </SwiperSlide>
             <SwiperSlide>
               <Cartaz
-              backgroundImage="/assets/series/breaking.jpg"
+                backgroundImage="/assets/series/breaking.jpg"
                 titleMovie="Breaking Bad"
                 sinceFilme="2013"
                 director="Vince Gilligan"
@@ -60,7 +55,7 @@ function Novidades() {
             </SwiperSlide>
             <SwiperSlide>
               <Cartaz
-                backgroundImage="/assets/cartaz-img10.jpg"
+                backgroundImage="/assets/series/stranger.jpg"
                 titleMovie="Até o último Homem"
                 sinceFilme="2017"
                 director="Mel Gibson"
@@ -76,15 +71,7 @@ function Novidades() {
             </SwiperSlide>
             <SwiperSlide>
               <Cartaz
-                backgroundImage="/assets/cartaz-img4.jpg"
-                titleMovie="Ilha do Medo"
-                sinceFilme="2010"
-                director="Martin Scorsese"
-              />
-            </SwiperSlide>
-            <SwiperSlide>
-              <Cartaz
-                backgroundImage="/assets/cartaz-img6.jpg"
+                backgroundImage="/assets/series/wutang.jpg"
                 titleMovie="Interstelar"
                 sinceFilme="2014"
                 director="Christopher Nolan"
@@ -92,7 +79,7 @@ function Novidades() {
             </SwiperSlide>
             <SwiperSlide>
               <Cartaz
-                backgroundImage="/assets/cartaz-img11.jpg"
+                backgroundImage="/assets/series/the-wire.jpg"
                 titleMovie="Mad Max"
                 sinceFilme="2015"
                 director="George Miller"
@@ -100,9 +87,9 @@ function Novidades() {
             </SwiperSlide>
           </Swiper>
         </div>
-      </div >
-    </section >
-  )
+      </div>
+    </section>
+  );
 }
 
-export default Novidades
+export default Novidades;

@@ -76,36 +76,6 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className={styles.homeEpisodes}>
-        <div className="container">
-          <h3 className="title-main">Séries</h3>
-          <div className={styles.episodesWrapper}>
-            <CartazHorizontal
-              ImageHorizontal={"/assets/series/prisionbreak.jpg"}
-              infoSerie="Prision Break - Todas Temporadas"
-            />
-            <CartazHorizontal
-              ImageHorizontal={"/assets/series/breaking.jpg"}
-              infoSerie="Breaking Bad - Todas Temporadas"
-            />
-
-            <CartazHorizontal
-              ImageHorizontal={"/assets/series/snowpierce.jpg"}
-              infoSerie="Snowpierce - Nova temporada"
-            />
-            <CartazHorizontal
-              ImageHorizontal={"/assets/series/wutang.jpg"}
-              infoSerie="Wu-Tang: An American Saga"
-            />
-
-            <CartazHorizontal
-              ImageHorizontal={"/assets/series/stranger.jpg"}
-              infoSerie="Stranger Things"
-            />
-          </div>
-        </div>
-      </section>
-      
       <section className={styles.homeWrapperSlider}>
         <div className={`container ${styles.homeNews}`}>
           <Novidades />

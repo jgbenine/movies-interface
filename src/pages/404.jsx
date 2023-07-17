@@ -1,6 +1,8 @@
 import React from "react";
 import styles from "../app/css/404.scss";
 import "../app/globals.css";
+import Link from "next/link";
+import { Home } from "lucide-react";
 
 function NotFound() {
   return (
@@ -35,15 +37,18 @@ function NotFound() {
         </section>
         <section className="sectionContent">
           <div className="message-container">
-            <p className="message">Sem Sinal</p>
+            <p className="message">Not Found</p>
             <p className="message2">
               Rota não encontrada.. Infelizmente essa rota ainda não está
               disponível, acesse outra página.
             </p>
+              <Link href="/" className="notFound-link">
+                <Home size={20} color="#e3e3e3"  />
+              </Link>
           </div>
         </section>
       </section>
-      <div class="interference"></div>
+      <div className="interference"></div>
     </>
   );
 }

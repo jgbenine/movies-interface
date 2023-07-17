@@ -1,16 +1,15 @@
-.header{
+.header {
   width: 100%;
   padding: 20px 15px;
-  background: #090C15;
+  background: #090c15;
   color: white;
   border-radius: 5px;
-  box-shadow: 10px 10px 40px -19px rgba(0,0,0,0.75);
+  box-shadow: 10px 10px 40px -19px rgba(0, 0, 0, 0.75);
   position: relative;
   z-index: 2000;
-
 }
 
-.headerContainer{
+.headerContainer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -19,7 +18,7 @@
   margin: 0 auto;
 }
 
-.logo{
+.logo {
   height: 50px;
   width: 50px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -29,7 +28,7 @@
   justify-content: center;
 }
 
-.headerNav{
+.headerNav {
   display: flex;
   flex-direction: column;
   position: absolute;
@@ -44,7 +43,7 @@
   padding: 40px 10px;
   animation: fromTopSmooth 0.2s ease-in;
 
-  li{
+  li {
     display: flex;
     gap: 15px;
     align-items: center;
@@ -53,6 +52,11 @@
     text-transform: uppercase;
     padding-bottom: 10px;
     border-bottom: 1px solid #e3e3e325;
+
+    a:hover {
+      color: #f08e43;
+      transition: all 0.2s ease-in;
+    }
   }
 
   @media (min-width: 680px) {
@@ -68,11 +72,11 @@
     box-shadow: unset;
     min-width: unset;
 
-    svg{
+    svg {
       display: none;
     }
 
-    li{
+    li {
       font-size: unset;
       border-bottom: unset;
       padding-bottom: unset;
@@ -80,20 +84,25 @@
   }
 }
 
-.headerLinks{
+.headerLinks {
   display: flex;
   align-items: center;
   gap: 20px;
 
-  a{
+  a {
     display: flex;
     align-items: center;
     gap: 10px;
+
+    &:hover {
+      color: #f08e43;
+      transition: all 0.2s ease-in;
+    }
   }
 }
 
-.btnMobile{
+.btnMobile {
   @media (min-width: 680px) {
-    display: none
+    display: none;
   }
 }
