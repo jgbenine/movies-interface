@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Footer from "@/app/components/Footer";
 import Header from "@/app/components/Header";
 import HeadEdit from "@/app/helpers/Head";
@@ -7,6 +7,28 @@ import styles from "../../../src/app/css/pages/Faq.module.scss";
 import { PlusIcon } from "lucide-react";
 
 function Faq() {
+  const [activeQuest, setActiveQuest] = useState(false);
+
+  const dataQuest = [
+    {
+      titleQuest: "Quest Title 1",
+      answerQuest: "Resposta 1",
+    },
+    {
+      titleQuest: "Quest Title 2",
+      answerQuest: "Resposta 2",
+    },
+    {
+      titleQuest: "Quest Title 3",
+      answerQuest: "Resposta 3",
+    },
+  ];
+
+  function handleActiveQuest(index) {
+    // setActiveQuest(index);
+    console.log(index)
+  }
+
   return (
     <>
       <HeadEdit titlePage="FAQ" descriptionPage="Tire sua dúvida conosco." />
@@ -14,19 +36,20 @@ function Faq() {
       <section className={styles.faq}>
         <div className="container">
           <h2 className="title-main">Perguntas frequentes</h2>
-            <p className="description">Tire suas dúvidas, as perguntas realizadas com mais frequência.</p>
+          <p className="description">
+            Tire suas dúvidas, as perguntas realizadas com mais frequência.
+          </p>
           <div className={styles.faqContent}>
-            <article>
-              <button>Quest content?
-                <PlusIcon size={25} color="white" />
-              </button>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod
-                atque eligendi consectetur modi, dolores natus incidunt
-                accusamus unde. Blanditiis iure cum dolores aliquam et velit
-                sapiente fugit sed, provident tenetur.
-              </p>
-            </article>
+            {dataQuest.map((quest, index) => (
+              <article key={index}>
+                <button onClick={() => handleActiveQuest(index)}>
+                  {quest.titleQuest}
+                  ok
+                  <PlusIcon size={25} />
+                </button>
+                {activeQuest === index && <p>{item.answerQuest}</p>}
+              </article>
+            ))}
           </div>
         </div>
       </section>

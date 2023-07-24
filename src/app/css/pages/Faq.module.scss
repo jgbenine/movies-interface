@@ -15,9 +15,7 @@
   padding: 10px 0px;
   width: 100%;
   min-height: 400px;
-
-
-
+  
   article{
     padding-top: 60px;
     button{
@@ -46,6 +44,7 @@
       font-size: 0.9rem;
       line-height: 26px;
       padding: 10px 0px;
+      display: none;
     }
   }
 }
