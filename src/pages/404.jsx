@@ -11,17 +11,18 @@ function NotFound() {
       <section className="notFound">
         <div className="notFound-filter"></div>
         <section className="sectionTop">
-          <div className="bg-red"></div>
-          <div className="bg-light-blue"></div>
-          <div className="bg-blue"></div>
+          <div className="bg-white"></div>
           <div className="bg-shell"></div>
-          <div className="bg-purple"></div>
+          <div className="bg-light-blue"></div>
           <div className="bg-green"></div>
           <div className="bg-yellow"></div>
+          <div className="bg-red"></div>
+          <div className="bg-purple"></div>
+          <div className="bg-blue"></div>
         </section>
         <section className="sectionMiddle">
           <div className="bg-blue"></div>
-          <div className="bg-black"></div>
+          <div className="bg-white"></div>
           <div className="bg-purple"></div>
           <div className="bg-black"></div>
           <div className="bg-white"></div>
@@ -29,8 +30,8 @@ function NotFound() {
           <div className="bg-black"></div>
         </section>
         <section className="sectionBottom">
+          <div className="bg-shell"></div>
           <div className="bg-dark-blue"></div>
-          <div className="bg-blue"></div>
           <div className="bg-black"></div>
           <div className="bg-black"></div>
           <div className="bg-dark-blue"></div>

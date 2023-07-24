@@ -40,7 +40,7 @@ body{
 
 .notFound .sectionTop {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(8, 1fr);
 }
 
 .notFound .sectionMiddle {
@@ -90,6 +90,8 @@ body{
   flex-direction: column;
   background: #090C15;
   justify-items: center;
+  z-index: 1001;
+  box-shadow: 10px 10px 40px 3px rgba(0,0,0,.75);
 }
 
 .bg-shell {
@@ -142,7 +144,6 @@ body{
   background-color: rgba(0, 0, 0, 0.13);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.25);
   animation: interferenceAnimation 5s linear infinite;
-  z-index: 999;
 }
 
 .interference:before,

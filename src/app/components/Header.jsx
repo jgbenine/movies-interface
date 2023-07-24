@@ -49,14 +49,14 @@ function Header() {
               </li>
               <li>
                 <Play size={15} color='#e3e3e3' />
-                <Link href="/series">
-                  Séries
+                <Link href="/faq">
+                  FAQ
                 </Link>
               </li>
               <li>
                 <Play size={15} color='#e3e3e3' />
-                <Link href="/episodios">
-                  Episódios
+                <Link href="/about">
+                  SOBRE
                 </Link>
               </li>
             </ul>

@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import styles from "../../app/css/pages/Filme.module.scss";
 import Header from "@/app/components/Header";
-import "../../app/globals.css";
 import Footer from "@/app/components/Footer";
 import { Star, Play } from "lucide-react";
 import TopSection from "@/app/components/TopSection";
 import Modal from "@/app/components/Modal";
 import HeadEdit from "@/app/helpers/Head";
+import "../../app/globals.css";
 
 function Filme() {
   const [isModalOpen, setIsModalOpen] = React.useState(null);
@@ -67,14 +67,12 @@ function Filme() {
         <Modal
           isOpen={isModalOpen}
           onClose={handleCloseModal}
+          titleModal="Assista o trailer:"
           contentModal={
             <iframe
               className="rounded-md shadow-md border border-zinc-400"
-              width="100%"
-              height="100%"
               src="https://www.youtube.com/embed/IVmf82obaaA"
               title="YouTube video player"
-              // frameBorder="0"
               allow="accelerometer; autoplay;
                 clipboard-write; encrypted-media; gyroscope;
                 picture-in-picture; web-share"

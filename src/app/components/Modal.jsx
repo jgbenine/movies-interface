@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import styles from "../css/components/Modal.module.scss";
 import { X } from "lucide-react";
 
-function Modal({ contentModal, isOpen, onClose, children }) {
+function Modal({ contentModal, isOpen, onClose, children, titleModal }) {
   const [modalStyles, setModalStyles] = useState({});
   const modalRef = useRef(null);
 
@@ -10,7 +10,6 @@ function Modal({ contentModal, isOpen, onClose, children }) {
     if (isOpen) {
       const windowHeight = window.innerHeight;
       const windowWidth = window.innerWidth;
-
       const top = windowHeight / 2;
       const left = windowWidth / 2;
 
@@ -33,6 +32,7 @@ function Modal({ contentModal, isOpen, onClose, children }) {
   return (
     <div className={styles.modal} onClick={handleOutsideClick}>
       <div className={`${styles.modalWrapper}`} style={modalStyles} ref={modalRef}>
+        <h4>{titleModal}</h4>
         <button className={styles.modalClose} onClick={onClose}>
           <X color="#090C15" strokeWidth={3} />
         </button>
