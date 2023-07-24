@@ -25,7 +25,7 @@ function Faq() {
   ];
 
   function handleActiveQuest(index) {
-    // setActiveQuest(index);
+    setActiveQuest(index);
     console.log(index)
   }
 
@@ -44,10 +44,9 @@ function Faq() {
               <article key={index}>
                 <button onClick={() => handleActiveQuest(index)}>
                   {quest.titleQuest}
-                  ok
                   <PlusIcon size={25} />
                 </button>
-                {activeQuest === index && <p>{item.answerQuest}</p>}
+                {activeQuest === index && <p>{quest.answerQuest}</p>}
               </article>
             ))}
           </div>
