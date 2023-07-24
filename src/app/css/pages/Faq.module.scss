@@ -1,10 +1,9 @@
 .faq{
   padding: 60px 0px;
-  border: 1px solid red;
-  height: 100vh;
   display: flex;
   justify-content: center;
   color: white;
+  font-family: 'Barlow', sans-serif;
 
   .container{
     margin: 0 auto;
@@ -40,10 +39,12 @@
     }
 
     p{
+      font-family: 'Segoe UI';
       opacity: 0.9;
       font-size: 0.9rem;
       line-height: 26px;
-      padding: 10px;
+      padding: 10px 0px;
+      letter-spacing: 0.5px;
     }
   }
 }
