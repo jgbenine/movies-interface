@@ -1,22 +1,21 @@
-import React from 'react'
-import styles from '../css/components/CartazHorizontal.module.scss'
-import { PlusCircle } from 'lucide-react'
+import React from "react";
+import styles from "../css/components/CartazHorizontal.module.scss";
+import { PlusCircle } from "lucide-react";
+import Image from "next/image";
 
 function CartazHorizontal({ infoSerie, ImageHorizontal, altItem, topFilme }) {
   return (
     <div className={styles.cartazHorizontal}>
       <div className={styles.horizontalImg}>
-        <img src={ImageHorizontal} alt={altItem} />
+        <Image src={ImageHorizontal} alt={altItem} width={100} height={130} sizes="100vw" />
         <span className={styles.filter}>
-          <PlusCircle color='#f3f3f3a5' size={30} />
+          <PlusCircle color="#f3f3f3a5" size={30} />
           <p className={styles.topFilme}>{topFilme}</p>
         </span>
       </div>
-      <p className={styles.horizontalInfo}>
-        {infoSerie}
-      </p>
+      <p className={styles.horizontalInfo}>{infoSerie}</p>
     </div>
-  )
+  );
 }
 
-export default CartazHorizontal
+export default CartazHorizontal;
