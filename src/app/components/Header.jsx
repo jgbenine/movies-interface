@@ -34,7 +34,7 @@ function Header() {
         </div>
         <nav className={styles.nav}>
           {menuMobile && (
-            <ul className={styles.headerNav} >
+            <ul className={`${styles.headerNav} slide-right`} >
               <li>
                 <Home size={15} color='#e3e3e3' />
                 <Link href="/">

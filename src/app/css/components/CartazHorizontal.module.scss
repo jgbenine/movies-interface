@@ -10,7 +10,6 @@
   &:hover {
     .filter{
       display: flex;
-      animation: slideFromTop 0.5s ease-in-out;
     }
   }
 
@@ -41,7 +40,6 @@
   align-items: center;
   justify-content: center;
   background: rgba(0, 0, 0, 0.8);
-  animation: slideFromTop 0.5s ease-in-out;
 }
 
 .horizontalInfo{

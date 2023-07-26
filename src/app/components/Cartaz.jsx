@@ -9,7 +9,7 @@ function Cartaz({ backgroundImage, children, titleMovie, sinceFilme, director })
   }
   return (
     <Link href="/filme" className={styles.cartaz} style={stylesBg}>
-      <div className={styles.cartazFilter}>
+      <div className={`${styles.cartazFilter} anima-opacity`}>
         <Plus 
         className={styles.cartazFilterIcon}
         color='#f3f3f3a5'

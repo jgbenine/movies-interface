@@ -8,7 +8,7 @@ function CartazHorizontal({ infoSerie, ImageHorizontal, altItem, topFilme }) {
     <div className={styles.cartazHorizontal}>
       <div className={styles.horizontalImg}>
         <Image src={ImageHorizontal} alt={altItem} width={100} height={130} sizes="100vw" />
-        <span className={styles.filter}>
+        <span className={`${styles.filter} slide-top`}>
           <PlusCircle color="#f3f3f3a5" size={30} />
           <p className={styles.topFilme}>{topFilme}</p>
         </span>

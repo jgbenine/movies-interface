@@ -134,14 +134,17 @@ body{
   border-bottom: unset;
 }
 
-.active{
-  display: flex !important;
+.slide-top{
+  animation: slideFromTop 0.5s ease-in;
 }
 
-.hidden{
-  display: none !important;
+.slide-right{
+  animation: slideFromRight 0.5s ease forwards;
 }
 
+.anima-opacity{
+  animation: animaOpacity 0.5s ease forwards;
+}
 
 @keyframes slideFromTop {
   0% {
@@ -149,6 +152,29 @@ body{
   } 
   100% {
     top: 0;
+  }
+}
+
+@keyframes slideFromRight {
+  0% {
+    right: -200px;
+  } 
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes animaOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
 
