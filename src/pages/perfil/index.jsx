@@ -1,23 +1,13 @@
-"use client";
-import React, { useState } from "react";
-import styles from "../../app/css/pages/Perfil.module.scss"
-import "../../pages/pages.css";
+import styles from "../../app/css/pages/Perfil.module.scss";
 import Input from "@/app/components/Input";
 import Label from "@/app/components/Label";
-import Button from "@/app/components/Button";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
-import "../../app/globals.css";
 import HeadEdit from "@/app/helpers/Head";
 import Image from "next/image";
+import "../../app/globals.css";
 
 function Perfil() {
-  const [isEmailDisabled, setEmailDisabled] = useState(true);
-
-  const handleEmailClick = () => {
-    setEmailDisabled(false);
-  };
-
   return (
     <>
       <HeadEdit titlePage="Seu Perfil" descriptionPage="Pefil." />
@@ -28,10 +18,10 @@ function Perfil() {
             <div className={styles.perfilIntro}>
               <h3>Bem-vindo, ...</h3>
               <div className={styles.perfilUser}>
-                  <Image alt="imagem Perfil" />
+                <Image alt="imagem Perfil" />
               </div>
             </div>
-            <div className={styles.perfilData}>
+            <>
               <h2 className="text-2xl py-4 font-thin">Dados do Pefil:</h2>
               <div className={styles.perfilGrid}>
                 <div className={styles.perfilEdit}>
@@ -40,12 +30,11 @@ function Perfil() {
                     idInput="email"
                     type="text"
                     placeholder="email-ficticio@gmail.com"
-                    disabled={isEmailDisabled}
                   />
-                  <Button textInfo="Editar e-mail" onClick={handleEmailClick} />
+                  {/* <Button textInfo="Editar e-mail" /> */}
                 </div>
               </div>
-            </div>
+            </>
           </div>
         </main>
       </section>
