@@ -1,5 +1,5 @@
 import React from 'react'
-import styles from '../css/components/Sliders.module.scss'
+import styles from "../css/components/Sliders.module.scss";
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay } from "swiper";
 import 'swiper/css';

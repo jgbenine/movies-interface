@@ -2,9 +2,15 @@ import React from 'react'
 import { Search, UserCircle, LogIn, Clapperboard, Menu, Play, Home } from 'lucide-react'
 import Link from 'next/link'
 import styles from '../css/components/Header.module.scss'
+import { usePathname } from 'next/navigation'
 
 function Header() {
   const [menuMobile, setMenuMobile] = React.useState(false);
+  const pathname = usePathname();
+
+  function activeMenu(hrefLink){
+    return pathname === hrefLink;
+  }
 
   function toggleMenuMobile() {
     setMenuMobile(!menuMobile);
@@ -22,6 +28,9 @@ function Header() {
     handleResize(); 
     window.addEventListener('resize', handleResize);
 
+    return() =>{
+      window.removeEventListener('resize', handleResize);
+    }
   }, []);
   
   return (
@@ -32,22 +41,22 @@ function Header() {
             <Clapperboard size={22} color='#e3e3e3' />
           </Link>
         </div>
-        <nav className={styles.nav}>
+        <nav>
           {menuMobile && (
             <ul className={`${styles.headerNav} slide-right`} >
-              <li>
+              <li className={activeMenu('/') ? 'activeItemMenu' : ''}>
                 <Home size={15} color='#e3e3e3' />
                 <Link href="/">
                   Home
                 </Link>
               </li>
-              <li>
+              <li className={activeMenu('/filme') ? 'activeItemMenu' : ''}>
                 <Play size={15} color='#e3e3e3' />
                 <Link href="/filme">
                   Filmes
                 </Link>
               </li>
-              <li>
+              <li className={activeMenu('/faq') ? 'activeItemMenu' : ''}>
                 <Play size={15} color='#e3e3e3' />
                 <Link href="/faq">
                   FAQ
