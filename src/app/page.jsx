@@ -50,7 +50,7 @@ export default function Home() {
           />
           <Cartaz
             backgroundImage="/assets/cartaz-img6.jpg"
-            titleMovie="Interstelar"
+            titleMovie="Interstellar"
             sinceFilme="2014"
             director="Christopher Nolan"
           />

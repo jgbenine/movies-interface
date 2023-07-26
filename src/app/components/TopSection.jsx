@@ -30,7 +30,7 @@ function TopSection() {
           />
           <CartazHorizontal
             ImageHorizontal={"/assets/cartaz-img6.jpg"}
-            infoSerie="Interstelar"
+            infoSerie="Interstellar"
             topFilme="4"
             altItem="Cartaz top filmes"
           />

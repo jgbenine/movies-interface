@@ -1,20 +1,30 @@
-.topSection{
+.topSection {
   display: flex;
   align-items: center;
   padding: 40px 0px;
   width: 100%;
-  font-family: 'Segoe UI';
-}
+  font-family: "Segoe UI";
+  text-align: center;
 
-.topGrid{
-  display: flex;
-  flex-direction: column;
-  gap: 5px;
-  margin: 0 auto;
-}
+  @media (min-width: 920px) {
+   text-align: left;
+  }
 
-.topContent{
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  .topGrid {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .topContent {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    @media (min-width: 920px) {
+      flex-wrap: nowrap;
+      justify-content: flex-start;
+    }
+  }
 }
