@@ -15,7 +15,6 @@ select:-webkit-autofill:hover,
 select:-webkit-autofill:focus {
   border: 1px solid white;
   -webkit-text-fill-color: white;
-  -webkit-box-shadow: transparent;
   transition: background-color 5000s ease-in-out 0s;
 }
 
@@ -61,7 +60,7 @@ body{
 }
 
 .description{
-  padding: 10px 0px;
+  padding: 15px 0px;
   opacity: 0.5;
   font-size: 0.8rem;
   color: white;
@@ -134,14 +133,21 @@ body{
   border-bottom: unset;
 }
 
-.active{
-  display: flex !important;
+.activeItemMenu{
+  color: #f08e43;
 }
 
-.hidden{
-  display: none !important;
+.slide-top{
+  animation: slideFromTop 0.5s ease-in;
 }
 
+.slide-right{
+  animation: slideFromRight 0.5s ease forwards;
+}
+
+.anima-opacity{
+  animation: animaOpacity 0.5s ease forwards;
+}
 
 @keyframes slideFromTop {
   0% {
@@ -151,3 +157,31 @@ body{
     top: 0;
   }
 }
+
+@keyframes slideFromRight {
+  0% {
+    right: -200px;
+  } 
+  100% {
+    right: 0;
+  }
+}
+
+@keyframes animaOpacity {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+
+
+
+

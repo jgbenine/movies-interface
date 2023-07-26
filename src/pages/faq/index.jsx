@@ -18,11 +18,13 @@ function Faq() {
   const dataQuest = [
     {
       titleQuest: "Quest Title 1",
-      answerQuest: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      answerQuest:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     },
     {
       titleQuest: "Quest Title 2",
-      answerQuest: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      answerQuest:
+        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
     },
     {
       titleQuest: "Quest Title 3",
@@ -47,13 +49,17 @@ function Faq() {
                 <button onClick={() => handleActiveQuest(index)}>
                   {quest.titleQuest}
 
-                  {activeQuest === index ? (
-                    <MinusIcon size={25} />
-                  ) : (
-                    <PlusIcon size={25} />
-                  )}
+                  <span className="anima-opacity">
+                    {activeQuest === index ? (
+                      <MinusIcon size={25} />
+                    ) : (
+                      <PlusIcon size={25} />
+                    )}
+                  </span>
                 </button>
-                {activeQuest === index && <p>{quest.answerQuest}</p>}
+                {activeQuest === index && (
+                  <p className="anima-opacity">{quest.answerQuest}</p>
+                )}
               </article>
             ))}
           </div>

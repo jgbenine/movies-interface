@@ -8,7 +8,7 @@ import HeadEdit from "./helpers/Head";
 
 export default function Home() {
   return (
-    <main className={styles.home}>
+    <main>
       <HeadEdit
         titlePage="Home"
         descriptionPage="Melhor informação sobre seu filme."
@@ -50,7 +50,7 @@ export default function Home() {
           />
           <Cartaz
             backgroundImage="/assets/cartaz-img6.jpg"
-            titleMovie="Interstelar"
+            titleMovie="Interstellar"
             sinceFilme="2014"
             director="Christopher Nolan"
           />
@@ -81,7 +81,7 @@ export default function Home() {
         </div>
       </section>
       <section className={styles.homeWrapperSlider}>
-        <div className={`container ${styles.homeNews}`}>
+        <div className="container">
           <Novidades />
         </div>
       </section>

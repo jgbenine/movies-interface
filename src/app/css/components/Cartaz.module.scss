@@ -31,17 +31,12 @@
   justify-content: center;
 }
 
-.cartazFilterIcon{
-  animation: opacityFade 0.5s ease-in;
-}
-
 .cartazDescription{
   font-size: 0.9rem;
   display: none;
   width: 100%;
   padding: 10px;
   z-index: 999;
-  animation: opacityFade 0.8s ease-in-out;
   color: white;
   border: 1px solid rgba(0, 0, 0, 0.216);
 
@@ -60,21 +55,6 @@
     font-size: 0.7rem;
   }
 }
-
-@keyframes opacityFade {
-  0% {
-    opacity: 0;
-  }
-
-  50% {
-    opacity: 0.5;
-  }
-
-  100% {
-    opacity: 1;
-  }
-}
-
 
 @keyframes heightFullRadius {
   to {
