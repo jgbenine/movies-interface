@@ -7,9 +7,13 @@ import TopSection from "@/app/components/TopSection";
 import Modal from "@/app/components/Modal";
 import HeadEdit from "@/app/helpers/Head";
 import "../../app/globals.css";
+import { useRouter } from "next/router";
+import fetchMain from "@/app/api/axiosConfig";
 
 function Filme() {
   const [isModalOpen, setIsModalOpen] = React.useState(null);
+  const router = useRouter();
+  const { id } = router.query;
 
   function handleModalOpen() {
     setIsModalOpen(true);
@@ -19,8 +23,24 @@ function Filme() {
     setIsModalOpen(false);
   }
 
+  useEffect(() => {
+    if (id) {
+      async function MovieInfo() {
+        try {
+          const response = await fetchMain(`/3/movie/${id}`);
+          const dataMovie = await response.data;
+          console.log(dataMovie);
+        } catch (error) {
+          console.error("Erro na requisição", error);
+        }
+      }
+      MovieInfo();
+    }
+  }, [id]);
+
   return (
     <>
+      {console.log(id)}
       <HeadEdit
         titlePage="
         Mad Max: Estrada da Fúria"

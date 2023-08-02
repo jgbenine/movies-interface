@@ -6,6 +6,7 @@ import TopSection from "./components/TopSection";
 import styles from "./css/pages/Home.module.scss";
 import HeadEdit from "./helpers/Head";
 import fetchMain from "../app/api/axiosConfig";
+import Link from "next/link";
 import { useEffect, useState } from "react";
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
       try {
         const response = await fetchMain("/3/discover/movie");
         const data = await response.data.results;
+        console.log(data);
         setNewsMovies(data);
       } catch (error) {
         console.error("Erro na requisição:", error);
@@ -36,13 +38,14 @@ export default function Home() {
         <p className="description">Selecione um filme da lista</p>
         <div className={styles.homeGrid}>
           {newsMovies?.map((movie) => (
-            <Cartaz
-              key={movie.id}
-              backgroundImage={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
-              titleMovie={movie.original_title}
-              sinceFilme={movie.release_date}
-              rate={movie.vote_average}
-            />
+            <Link key={movie.id} href={`/filme/${movie.id}`}>
+              <Cartaz
+                backgroundImage={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                titleMovie={movie.original_title}
+                sinceFilme={movie.release_date}
+                rate={movie.vote_average}
+              />
+            </Link>
           ))}
         </div>
       </section>
