@@ -17,12 +17,12 @@ function Cartaz({ backgroundImage, children, titleMovie, sinceFilme, rate }) {
         />
       </div>
       <div className={styles.cartazDescription}>
-        <article>
+        <article className={styles.cartazTitle}>
           <label>Título:</label>
           <p>{titleMovie}</p>
         </article>
         <article>
-          <label>Ano:</label>
+          <label>Lançamento:</label>
           <p>{sinceFilme}</p>
         </article>
         <article>

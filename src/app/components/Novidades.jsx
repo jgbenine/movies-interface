@@ -2,8 +2,11 @@
 import React, { useEffect, useState } from "react";
 import Cartaz from "@/app/components/Cartaz";
 import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
+import { Pagination, Navigation } from "swiper/modules";
 import styles from "../css/components/Novidades.module.scss";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import fetchMain from "../api/axiosConfig";
 
 function Novidades() {
@@ -24,12 +27,15 @@ function Novidades() {
 
   return (
     <section className={`container ${styles.news}`}>
-      <div className={styles.newsWrapper}>
+      <div>
         <h2 className="title-main">Series</h2>
         <p className="description">Series disponíveis</p>
-        <div className={styles.newsSlider}>
+        <div>
           <Swiper
             spaceBetween={50}
+            modules={[Pagination, Navigation]}
+            pagination={{ clickable: true }}
+            navigation={{hideOnClick: true}}
             breakpoints={{
               400: {
                 slidesPerView: 2,
@@ -55,7 +61,6 @@ function Novidades() {
                 />
               </SwiperSlide>
             ))}
-            teste2
           </Swiper>
         </div>
       </div>

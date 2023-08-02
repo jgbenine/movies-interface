@@ -1,11 +1,10 @@
 import React from 'react'
-import styles from "../css/components/Sliders.module.scss";
-import { Swiper, SwiperSlide } from 'swiper/react'
-import { Autoplay } from "swiper";
-import 'swiper/css';
-import 'swiper/css/autoplay';
-import 'swiper/css/effect-fade'
 import MovieWrapper from './MovieWrapper';
+import styles from "../css/components/Sliders.module.scss";
+import 'swiper/css';
+import 'swiper/css/effect-fade'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Autoplay } from 'swiper/modules';
 
 function SliderDry() {
   return (
