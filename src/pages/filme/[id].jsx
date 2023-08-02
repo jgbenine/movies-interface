@@ -13,6 +13,7 @@ import fetchMain from "@/app/api/axiosConfig";
 function Filme() {
   const [isModalOpen, setIsModalOpen] = React.useState(null);
   const [dataMovie, setDataMovie] = React.useState([]);
+  const [revenueInUSD, setRevenueInUSD] = React.useState(null);
   const router = useRouter();
   const { id } = router.query;
 
@@ -31,7 +32,13 @@ function Filme() {
           const response = await fetchMain(`/3/movie/${id}`);
           const data = await response.data;
           setDataMovie(data);
-          console.log(data);
+          
+          //Convertendo receita do filme
+          const revenueUSD = Number(data.revenue).toLocaleString('en-US', {
+            style: 'currency',
+            currency: 'USD'
+          })
+          setRevenueInUSD(revenueUSD);
         } catch (error) {
           console.error("Erro na requisição", error);
         }
@@ -62,7 +69,7 @@ function Filme() {
               ))}
             </li>
             <li>{dataMovie.runtime} min</li>
-            <li> US$ {dataMovie.revenue}</li>
+            <li>{revenueInUSD}</li>
             <li>{dataMovie.release_date}</li>
             <li className={styles.movieRating}>
               <Star size={15} />
