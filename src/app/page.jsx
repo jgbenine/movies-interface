@@ -24,7 +24,6 @@ export default function Home() {
     NewsMovies();
   }, []);
 
-
   return (
     <main>
       <HeadEdit
@@ -35,18 +34,17 @@ export default function Home() {
       <section className={`container ${styles.homeSection}`}>
         <h2 className="title-main">Novos Filmes</h2>
         <p className="description">Selecione um filme da lista</p>
-
-          <div className={styles.homeGrid}>
+        <div className={styles.homeGrid}>
           {newsMovies?.map((movie) => (
-            <Cartaz key={movie.id}
+            <Cartaz
+              key={movie.id}
               backgroundImage={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
               titleMovie={movie.original_title}
               sinceFilme={movie.release_date}
               rate={movie.vote_average}
             />
           ))}
-          </div>
-
+        </div>
       </section>
       <section className={styles.homeWrapperSlider}>
         <div className="container">
