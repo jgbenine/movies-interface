@@ -12,6 +12,7 @@ import fetchMain from "@/app/api/axiosConfig";
 
 function Filme() {
   const [isModalOpen, setIsModalOpen] = React.useState(null);
+  const [dataMovie, setDataMovie] = React.useState([]);
   const router = useRouter();
   const { id } = router.query;
 
@@ -28,8 +29,9 @@ function Filme() {
       async function MovieInfo() {
         try {
           const response = await fetchMain(`/3/movie/${id}`);
-          const dataMovie = await response.data;
-          console.log(dataMovie);
+          const data = await response.data;
+          setDataMovie(data);
+          console.log(data);
         } catch (error) {
           console.error("Erro na requisição", error);
         }
@@ -40,7 +42,6 @@ function Filme() {
 
   return (
     <>
-      {console.log(id)}
       <HeadEdit
         titlePage="
         Mad Max: Estrada da Fúria"
@@ -50,12 +51,19 @@ function Filme() {
       <section className={styles.movie}>
         <div className={styles.viewIntro}></div>
         <article className={`container ${styles.movieContent}`}>
-          <h3>Mad Max: Estrada da Fúria</h3>
+          <h3>{dataMovie.title}</h3>
+          <p className={styles.tagline}>{dataMovie.tagline}</p>
           <ul>
-            <li>2015</li>
-            <li>120 Min</li>
-            <li>Ação / Ficção Científica</li>
-            <li> US$ 150 milhões</li>
+            <li>
+              {dataMovie.genres?.map((genre) => (
+                <p key={genre.id} className={styles.genre}>
+                  {genre.name}  
+                </p>
+              ))}
+            </li>
+            <li>{dataMovie.runtime} min</li>
+            <li> US$ {dataMovie.revenue}</li>
+            <li>{dataMovie.release_date}</li>
             <li className={styles.movieRating}>
               <Star size={15} />
               <Star size={15} />
@@ -67,14 +75,7 @@ function Filme() {
               <p>A16</p>
             </li>
           </ul>
-          <p>
-            Em um mundo pós-apocalíptico, Max Rockatansky acredita que a melhor
-            forma de sobreviver é não depender de ninguém. Porém, após ser
-            capturado pelo tirano Immortan Joe e seus rebeldes, Max se vê no
-            meio de uma guerra mortal iniciada pela Imperatriz Furiosa, que
-            tenta salvar um grupo de garotas. Também tentando fugir, Max aceita
-            ajudá-la.
-          </p>
+          <p>{dataMovie.overview}</p>
           <button onClick={handleModalOpen}>
             <Play color="#f3f3f3" />
             Assistir Trailer
