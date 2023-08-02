@@ -3,7 +3,7 @@ import {Plus} from 'lucide-react'
 import styles from '../css/components/Cartaz.module.scss'
 import Link from 'next/link'
 
-function Cartaz({ backgroundImage, children, titleMovie, sinceFilme, director }) {
+function Cartaz({ backgroundImage, children, titleMovie, sinceFilme, rate }) {
   const stylesBg = {
     backgroundImage: `url(${backgroundImage})`,
   }
@@ -26,8 +26,8 @@ function Cartaz({ backgroundImage, children, titleMovie, sinceFilme, director })
           <p>{sinceFilme}</p>
         </article>
         <article>
-          <label>Diretor:</label>
-          <p>{director}</p>
+          <label>Nota:</label>
+          <p>{rate}</p>
         </article>
       </div>
       {children}
