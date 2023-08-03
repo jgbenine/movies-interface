@@ -8,6 +8,8 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import fetchMain from "../api/axiosConfig";
+import { convertDate } from "../api/utils/utils";
+import Link from "next/link";
 
 function Novidades() {
   const [newsTv, setNewsTv] = useState([]);
@@ -15,7 +17,7 @@ function Novidades() {
   useEffect(() => {
     async function newsSeries() {
       try {
-        const response = await fetchMain("/3/discover/tv");
+        const response = await fetchMain("/3/trending/tv/day");
         const data = await response.data.results;
         setNewsTv(data);
       } catch (error) {
@@ -53,12 +55,14 @@ function Novidades() {
           >
             {newsTv?.map((tvSerie) => (
               <SwiperSlide key={tvSerie.id}>
+                <Link href={`/details/${tvSerie.id}?type=tv`}>
                 <Cartaz
                   backgroundImage={`https://image.tmdb.org/t/p/w200/${tvSerie.poster_path}`}
                   titleMovie={tvSerie.name}
-                  sinceFilme={tvSerie.first_air_date}
+                  sinceFilme={convertDate(tvSerie.first_air_date)}
                   rate={tvSerie.vote_average}
                 />
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>

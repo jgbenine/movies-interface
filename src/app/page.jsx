@@ -38,7 +38,7 @@ export default function Home() {
         <p className="description">Selecione um filme da lista</p>
         <div className={styles.homeGrid}>
           {newsMovies?.map((movie) => (
-            <Link key={movie.id} href={`/filme/${movie.id}`}>
+            <Link key={movie.id} href={`/details/${movie.id}?type=movie`}>
               <Cartaz
                 backgroundImage={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
                 titleMovie={movie.original_title}
