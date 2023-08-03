@@ -2,16 +2,13 @@ import React, { useEffect } from "react";
 import styles from "../../app/css/pages/Filme.module.scss";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
-import { Play } from "lucide-react";
 import TopSection from "@/app/components/TopSection";
-import Modal from "@/app/components/Modal";
 import HeadEdit from "@/app/helpers/Head";
 import "../../app/globals.css";
 import { useRouter } from "next/router";
 import fetchMain from "@/app/api/axiosConfig";
 
 function Filme() {
-  const [isModalOpen, setIsModalOpen] = React.useState(null);
   const [dataMovie, setDataMovie] = React.useState([]);
   const [revenueInUSD, setRevenueInUSD] = React.useState(null);
   const router = useRouter();
@@ -38,15 +35,6 @@ function Filme() {
       MovieInfo();
     }
   }, [id]);
-
-  //Funções Modais
-  function handleModalOpen() {
-    setIsModalOpen(true);
-  }
-
-  function handleCloseModal() {
-    setIsModalOpen(false);
-  }
 
   // Função para converter a data para o formato "DD-MM-YYYY"
   function convertDate(date) {
@@ -98,32 +86,10 @@ function Filme() {
             </li>
           </ul>
           <p>{dataMovie.overview}</p>
-          <button onClick={handleModalOpen}>
-            <Play color="#f3f3f3" />
-            Assistir Trailer
-          </button>
         </article>
         <TopSection />
       </section>
       <Footer />
-      {isModalOpen && (
-        <Modal
-          isOpen={isModalOpen}
-          onClose={handleCloseModal}
-          titleModal="Assista o trailer:"
-          contentModal={
-            <iframe
-              className="rounded-md shadow-md border border-zinc-400"
-              src="https://www.youtube.com/embed/IVmf82obaaA"
-              title="YouTube video player"
-              allow="accelerometer; autoplay;
-                clipboard-write; encrypted-media; gyroscope;
-                picture-in-picture; web-share"
-              allowFullScreen
-            ></iframe>
-          }
-        />
-      )}
     </>
   );
 }
