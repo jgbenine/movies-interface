@@ -4,6 +4,7 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import TopSection from "@/app/components/TopSection";
 import HeadEdit from "@/app/helpers/Head";
+import Link from "next/link";
 import "../../app/globals.css";
 import { useRouter } from "next/router";
 import fetchMain from "@/app/api/axiosConfig";
@@ -20,7 +21,7 @@ function Filme() {
         const response = await fetchMain(`/3/movie/${id}`);
         const data = await response.data;
         setDataMovie(data);
-
+        
         //Convertendo receita do filme
         const revenueUSD = Number(data.revenue).toLocaleString("en-US", {
           style: "currency",
@@ -46,9 +47,8 @@ function Filme() {
   return (
     <>
       <HeadEdit
-        titlePage="
-        Mad Max: Estrada da Fúria"
-        descriptionPage="Filme Mad Max: Estrada da Fúria"
+        titlePage={dataMovie.title}
+        descriptionPage={dataMovie.tagline}
       />
       <Header />
       <section className={styles.movie}>
@@ -67,25 +67,36 @@ function Filme() {
         >
           <h3>{dataMovie.title}</h3>
           <p className={styles.tagline}>{dataMovie.tagline}</p>
+          <div className={styles.genres}>
+            {dataMovie.genres?.map((genre) => (
+              <p key={genre.id}>{genre.name}</p>
+            ))}
+          </div>
           <ul>
             <li>
-              {dataMovie.genres?.map((genre) => (
-                <p key={genre.id} className={styles.genre}>
-                  {genre.name}
-                </p>
-              ))}
+              <label>Duração:</label>
+              {dataMovie.runtime} min
             </li>
-            <li>{dataMovie.runtime} min</li>
-            <li>{revenueInUSD}</li>
-            <li>{convertDate(dataMovie.release_date)}</li>
-            <li className={styles.movieRating}>
-              Nota: {dataMovie.vote_average}
+            <li>
+              <label>Receita:</label>
+              {revenueInUSD}
             </li>
-            <li className={styles.movieClassification}>
-              <p>A16</p>
+            <li>
+              <label>Lançamento:</label>
+              {convertDate(dataMovie.release_date)}
+            </li>
+            <li>
+              <label>Nota:</label>
+              {dataMovie.vote_average}
+            </li>
+            <li className={styles.imdb}>
+              <Link href={`https://www.imdb.com/title/${dataMovie.imdb_id}`} target="_blank">IMDb</Link>
             </li>
           </ul>
-          <p>{dataMovie.overview}</p>
+          <p>
+            <label>Sinopse:</label>
+            {dataMovie.overview}
+          </p>
         </article>
         <TopSection />
       </section>

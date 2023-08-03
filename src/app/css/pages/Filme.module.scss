@@ -47,6 +47,13 @@
     padding: 40px 50px;
   }
 
+  label {
+    padding-right: 5px;
+    opacity: 0.8;
+    font-size: 0.8rem;
+  }
+
+
   h3 {
     color: #f3f3f3;
     font-size: 1.5rem;
@@ -61,12 +68,11 @@
       border: 1px solid #f3f3f3;
     }
   }
-  
-  .tagline{
+  .tagline {
     padding-top: 20px;
   }
-
   ul {
+    font-family: 'Segoe UI';
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -83,23 +89,6 @@
       font-weight: 300;
       display: flex;
       align-items: center;
-
-      .genre {
-        padding-right: 15px;
-        position: relative;
-        &:before {
-          content: "•";
-          position: absolute;
-          right: 5px;
-        }
-
-        &:last-child {
-          padding-right: unset;
-          &:before {
-            content: unset;
-          }
-        }
-      }
 
       @media (min-width: 680px) {
         padding: 0px 10px;
@@ -123,24 +112,17 @@
         }
       }
     }
-
-    .movieRating {
-      display: flex;
-      gap: 8px;
-
-      svg {
-        color: #f1c304;
-      }
-    }
   }
 
-  .movieClassification {
-    p {
-      color: #f3f3f3;
-      background: #d7262d;
+  .imdb {
+    a {
+      color: black;
+      background: #F5C518;
       padding: 0px 5px;
       font-weight: bold;
       font-size: 0.8rem;
+      border-radius: 3px;
+      font-weight: bold;
     }
   }
 
@@ -168,6 +150,27 @@
     text-transform: uppercase;
     max-width: 200px;
     margin: 40px 0px;
+  }
+
+  .genres {
+    display: flex;
+    p {
+      padding-right: 15px;
+      position: relative;
+      opacity: 0.8;
+      &:before {
+        content: "•";
+        position: absolute;
+        right: 5px;
+      }
+
+      &:last-child {
+        padding-right: unset;
+        &:before {
+          content: unset;
+        }
+      }
+    }
   }
 }
 
