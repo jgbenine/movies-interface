@@ -8,6 +8,7 @@ import Link from "next/link";
 import "../../app/globals.css";
 import { useRouter } from "next/router";
 import fetchMain from "@/app/api/axiosConfig";
+import { convertDate } from "@/app/api/utils/utils";
 
 function Filme() {
   const [dataMovie, setDataMovie] = React.useState([]);
@@ -36,13 +37,6 @@ function Filme() {
       MovieInfo();
     }
   }, [id]);
-
-  // Função para converter a data para o formato "DD-MM-YYYY"
-  function convertDate(date) {
-    if (!date) return "";
-    const [year, month, day] = date.split("-");
-    return `${day}/${month}/${year}`;
-  }
 
   return (
     <>

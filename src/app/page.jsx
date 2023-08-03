@@ -8,6 +8,7 @@ import HeadEdit from "./helpers/Head";
 import fetchMain from "../app/api/axiosConfig";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { convertDate } from "./api/utils/utils";
 
 export default function Home() {
   const [newsMovies, setNewsMovies] = useState([]);
@@ -41,7 +42,7 @@ export default function Home() {
               <Cartaz
                 backgroundImage={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
                 titleMovie={movie.original_title}
-                sinceFilme={movie.release_date}
+                sinceFilme={convertDate(movie.release_date)}
                 rate={movie.vote_average}
               />
             </Link>
