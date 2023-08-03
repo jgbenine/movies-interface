@@ -17,28 +17,26 @@ function Filme() {
   const router = useRouter();
   const { id } = router.query;
 
-
   useEffect(() => {
-      async function MovieInfo() {
-        try {
-          const response = await fetchMain(`/3/movie/${id}`);
-          const data = await response.data;
-          setDataMovie(data);
-          console.log(data)
-          
-          //Convertendo receita do filme
-          const revenueUSD = Number(data.revenue).toLocaleString('en-US', {
-            style: 'currency',
-            currency: 'USD'
-          })
-          setRevenueInUSD(revenueUSD);
-        } catch (error) {
-          console.error("Erro na requisição", error);
-        }
+    async function MovieInfo() {
+      try {
+        const response = await fetchMain(`/3/movie/${id}`);
+        const data = await response.data;
+        setDataMovie(data);
+
+        //Convertendo receita do filme
+        const revenueUSD = Number(data.revenue).toLocaleString("en-US", {
+          style: "currency",
+          currency: "USD",
+        });
+        setRevenueInUSD(revenueUSD);
+      } catch (error) {
+        console.error("Erro na requisição", error);
       }
-      if (id) {
-        MovieInfo();
-      }
+    }
+    if (id) {
+      MovieInfo();
+    }
   }, [id]);
 
   //Funções Modais
@@ -50,9 +48,9 @@ function Filme() {
     setIsModalOpen(false);
   }
 
-   // Função para converter a data para o formato "DD-MM-YYYY"
-   function convertDate(date) {
-    if (!date) return ""; 
+  // Função para converter a data para o formato "DD-MM-YYYY"
+  function convertDate(date) {
+    if (!date) return "";
     const [year, month, day] = date.split("-");
     return `${day}/${month}/${year}`;
   }
@@ -66,15 +64,26 @@ function Filme() {
       />
       <Header />
       <section className={styles.movie}>
-        <div className={styles.viewIntro} style={{backgroundImage: `url(https://image.tmdb.org/t/p/w500/${dataMovie.backdrop_path})`}}></div>
-        <article className={`container ${styles.movieContent}`} style={{backgroundImage: `url(https://image.tmdb.org/t/p/w300/${dataMovie.poster_path})`}} >
+        <div
+          className={styles.viewIntro}
+          style={{
+            backgroundImage: `url(https://image.tmdb.org/t/p/w500/${dataMovie.backdrop_path})`,
+          }}
+        ></div>
+
+        <article
+          className={`${styles.movieContent}`}
+          style={{
+            backgroundImage: `url(https://image.tmdb.org/t/p/w300/${dataMovie.poster_path})`,
+          }}
+        >
           <h3>{dataMovie.title}</h3>
           <p className={styles.tagline}>{dataMovie.tagline}</p>
           <ul>
             <li>
               {dataMovie.genres?.map((genre) => (
                 <p key={genre.id} className={styles.genre}>
-                  {genre.name}  
+                  {genre.name}
                 </p>
               ))}
             </li>

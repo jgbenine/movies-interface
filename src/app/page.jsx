@@ -17,7 +17,6 @@ export default function Home() {
       try {
         const response = await fetchMain("/3/discover/movie");
         const data = await response.data.results;
-        console.log(data);
         setNewsMovies(data);
       } catch (error) {
         console.error("Erro na requisição:", error);

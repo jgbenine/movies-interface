@@ -35,15 +35,16 @@
   background-position: right;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
   border-radius: 5px;
-  padding: 40px 10px !important;
-
-  @media (min-width: 920px) {
-    // background-image: url("../../../../public/assets/cartaz-img11.jpg");
+  padding: 25px 10px;
+  width: 100%;
+  max-width: 1250px;
+  @media (max-width: 920px) {
+    background-image: none !important;
   }
 
   @media (min-width: 920px) {
     margin-top: -3rem;
-    padding: 40px 50px !important;
+    padding: 40px 50px;
   }
 
   h3 {
