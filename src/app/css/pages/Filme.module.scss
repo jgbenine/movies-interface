@@ -9,7 +9,6 @@
   position: relative;
   height: 100px;
   width: 100%;
-  background: url("../../../../public/assets/filme-view.jpg") no-repeat center bottom;
   background-size: cover;
   animation: smoothBackgroundAnimation 20s infinite;
   &::before {
@@ -36,15 +35,16 @@
   background-position: right;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
   border-radius: 5px;
-  padding: 40px 10px !important;
-
-  @media (min-width: 920px) {
-    background-image: url("../../../../public/assets/cartaz-img11.jpg");
+  padding: 25px 10px;
+  width: 100%;
+  max-width: 1250px;
+  @media (max-width: 920px) {
+    background-image: none !important;
   }
 
   @media (min-width: 920px) {
     margin-top: -3rem;
-    padding: 40px 50px !important;
+    padding: 40px 50px;
   }
 
   h3 {
@@ -61,13 +61,17 @@
       border: 1px solid #f3f3f3;
     }
   }
+  
+  .tagline{
+    padding-top: 20px;
+  }
 
   ul {
     display: flex;
     flex-direction: column;
     gap: 5px;
     font-size: 0.9rem;
-    padding: 30px 0px 15px 0px;
+    padding: 20px 0px 15px 0px;
     color: #f3f3f3;
 
     @media (min-width: 680px) {
@@ -79,6 +83,23 @@
       font-weight: 300;
       display: flex;
       align-items: center;
+
+      .genre {
+        padding-right: 15px;
+        position: relative;
+        &:before {
+          content: "•";
+          position: absolute;
+          right: 5px;
+        }
+
+        &:last-child {
+          padding-right: unset;
+          &:before {
+            content: unset;
+          }
+        }
+      }
 
       @media (min-width: 680px) {
         padding: 0px 10px;

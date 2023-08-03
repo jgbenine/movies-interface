@@ -1,37 +1,35 @@
 import React from 'react'
 import {Plus} from 'lucide-react'
 import styles from '../css/components/Cartaz.module.scss'
-import Link from 'next/link'
 
-function Cartaz({ backgroundImage, children, titleMovie, sinceFilme, director }) {
+function Cartaz({ backgroundImage, children, titleMovie, sinceFilme, rate }) {
   const stylesBg = {
     backgroundImage: `url(${backgroundImage})`,
   }
   return (
-    <Link href="/filme" className={styles.cartaz} style={stylesBg}>
+    <div className={styles.cartaz} style={stylesBg}>
       <div className={`${styles.cartazFilter} anima-opacity`}>
-        <Plus 
-        className={styles.cartazFilterIcon}
+        <Plus
         color='#f3f3f3a5'
         size={35} 
         />
       </div>
       <div className={styles.cartazDescription}>
-        <article>
+        <article className={styles.cartazTitle}>
           <label>Título:</label>
           <p>{titleMovie}</p>
         </article>
         <article>
-          <label>Ano:</label>
+          <label>Lançamento:</label>
           <p>{sinceFilme}</p>
         </article>
         <article>
-          <label>Diretor:</label>
-          <p>{director}</p>
+          <label>Nota:</label>
+          <p>{rate}</p>
         </article>
       </div>
       {children}
-    </Link>
+    </div>
   )
 }
 
