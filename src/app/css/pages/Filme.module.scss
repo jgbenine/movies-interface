@@ -9,7 +9,6 @@
   position: relative;
   height: 100px;
   width: 100%;
-  background: url("../../../../public/assets/filme-view.jpg") no-repeat center bottom;
   background-size: cover;
   animation: smoothBackgroundAnimation 20s infinite;
   &::before {
@@ -39,7 +38,7 @@
   padding: 40px 10px !important;
 
   @media (min-width: 920px) {
-    background-image: url("../../../../public/assets/cartaz-img11.jpg");
+    // background-image: url("../../../../public/assets/cartaz-img11.jpg");
   }
 
   @media (min-width: 920px) {

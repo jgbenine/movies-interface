@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import styles from "../../app/css/pages/Filme.module.scss";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
-import { Star, Play } from "lucide-react";
+import { Play } from "lucide-react";
 import TopSection from "@/app/components/TopSection";
 import Modal from "@/app/components/Modal";
 import HeadEdit from "@/app/helpers/Head";
@@ -17,21 +17,14 @@ function Filme() {
   const router = useRouter();
   const { id } = router.query;
 
-  function handleModalOpen() {
-    setIsModalOpen(true);
-  }
-
-  function handleCloseModal() {
-    setIsModalOpen(false);
-  }
 
   useEffect(() => {
-  
       async function MovieInfo() {
         try {
           const response = await fetchMain(`/3/movie/${id}`);
           const data = await response.data;
           setDataMovie(data);
+          console.log(data)
           
           //Convertendo receita do filme
           const revenueUSD = Number(data.revenue).toLocaleString('en-US', {
@@ -47,6 +40,15 @@ function Filme() {
         MovieInfo();
       }
   }, [id]);
+
+  //Funções Modais
+  function handleModalOpen() {
+    setIsModalOpen(true);
+  }
+
+  function handleCloseModal() {
+    setIsModalOpen(false);
+  }
 
    // Função para converter a data para o formato "DD-MM-YYYY"
    function convertDate(date) {
@@ -64,8 +66,8 @@ function Filme() {
       />
       <Header />
       <section className={styles.movie}>
-        <div className={styles.viewIntro}></div>
-        <article className={`container ${styles.movieContent}`}>
+        <div className={styles.viewIntro} style={{backgroundImage: `url(https://image.tmdb.org/t/p/w500/${dataMovie.backdrop_path})`}}></div>
+        <article className={`container ${styles.movieContent}`} style={{backgroundImage: `url(https://image.tmdb.org/t/p/w300/${dataMovie.poster_path})`}} >
           <h3>{dataMovie.title}</h3>
           <p className={styles.tagline}>{dataMovie.tagline}</p>
           <ul>
@@ -80,11 +82,7 @@ function Filme() {
             <li>{revenueInUSD}</li>
             <li>{convertDate(dataMovie.release_date)}</li>
             <li className={styles.movieRating}>
-              <Star size={15} />
-              <Star size={15} />
-              <Star size={15} />
-              <Star size={15} />
-              <Star size={15} />
+              Nota: {dataMovie.vote_average}
             </li>
             <li className={styles.movieClassification}>
               <p>A16</p>
