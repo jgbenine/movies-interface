@@ -26,7 +26,7 @@ function Filme() {
   }
 
   useEffect(() => {
-    if (id) {
+  
       async function MovieInfo() {
         try {
           const response = await fetchMain(`/3/movie/${id}`);
@@ -43,9 +43,17 @@ function Filme() {
           console.error("Erro na requisição", error);
         }
       }
-      MovieInfo();
-    }
+      if (id) {
+        MovieInfo();
+      }
   }, [id]);
+
+   // Função para converter a data para o formato "DD-MM-YYYY"
+   function convertDate(date) {
+    if (!date) return ""; 
+    const [year, month, day] = date.split("-");
+    return `${day}/${month}/${year}`;
+  }
 
   return (
     <>
@@ -70,7 +78,7 @@ function Filme() {
             </li>
             <li>{dataMovie.runtime} min</li>
             <li>{revenueInUSD}</li>
-            <li>{dataMovie.release_date}</li>
+            <li>{convertDate(dataMovie.release_date)}</li>
             <li className={styles.movieRating}>
               <Star size={15} />
               <Star size={15} />
