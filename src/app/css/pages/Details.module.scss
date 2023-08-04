@@ -1,4 +1,4 @@
-.movie {
+.details {
   // height: 100vh;
   display: flex;
   flex-direction: column;
@@ -25,7 +25,7 @@
   }
 }
 
-.movieContent {
+.detailsContent {
   display: flex;
   flex-direction: column;
   z-index: 999;
@@ -53,7 +53,6 @@
     font-size: 0.8rem;
   }
 
-
   h3 {
     color: #f3f3f3;
     font-size: 1.5rem;
@@ -72,7 +71,7 @@
     padding-top: 20px;
   }
   ul {
-    font-family: 'Segoe UI';
+    font-family: "Segoe UI";
     display: flex;
     flex-direction: column;
     gap: 5px;
@@ -117,12 +116,23 @@
   .imdb {
     a {
       color: black;
-      background: #F5C518;
+      background: #f5c518;
       padding: 0px 5px;
       font-weight: bold;
       font-size: 0.8rem;
       border-radius: 3px;
       font-weight: bold;
+    }
+  }
+
+  .linkSerie {
+    a {
+      text-align: center;
+      color: #f5c518;
+
+     &:hover{
+      text-decoration: underline;
+     }
     }
   }
 

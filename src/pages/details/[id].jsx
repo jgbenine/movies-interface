@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import styles from "../../app/css/pages/Filme.module.scss";
+import styles from "../../app/css/pages/Details.module.scss";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import TopSection from "@/app/components/TopSection";
@@ -22,15 +22,15 @@ function Details() {
         if (id && type) {
           let response;
 
-          //Removendo as "" do parametro URL
+          //Removendo "" do parametro URL
           const typeRemoveQuotes = type.replace(/"/g, "");
 
           if (typeRemoveQuotes === "movie") {
             response = await fetchMain(`/3/movie/${id}`);
-            console.log(data)
+            console.log(data);
           } else if (typeRemoveQuotes === "tv") {
             response = await fetchMain(`/3/tv/${id}`);
-            console.log(response)
+            console.log(response);
           }
           const data = await response.data;
           setDataDetails(data);
@@ -53,11 +53,11 @@ function Details() {
   return (
     <>
       <HeadEdit
-        titlePage={dataDetails.title}
+        titlePage={type === "tv" ? dataDetails.name : dataDetails.title}
         descriptionPage={dataDetails.tagline}
       />
       <Header />
-      <section className={styles.movie}>
+      <section className={styles.details}>
         <div
           className={styles.viewIntro}
           style={{
@@ -66,12 +66,12 @@ function Details() {
         ></div>
 
         <article
-          className={`${styles.movieContent}`}
+          className={`${styles.detailsContent}`}
           style={{
             backgroundImage: `url(https://image.tmdb.org/t/p/w300/${dataDetails.poster_path})`,
           }}
         >
-          <h3>{dataDetails.title}</h3>
+          <h3>{type === "tv" ? dataDetails.name : dataDetails.title}</h3>
           <p className={styles.tagline}>{dataDetails.tagline}</p>
           <div className={styles.genres}>
             {dataDetails.genres?.map((genre) => (
@@ -80,28 +80,64 @@ function Details() {
           </div>
           <ul>
             <li>
-              <label>Duração:</label>
-              {dataDetails.runtime} min
+              {type === "tv" ? (
+                <span>
+                  <label>Temporadas/Episódios:</label>
+                  {dataDetails.number_of_seasons}
+                  <span> / </span>
+                  {dataDetails.number_of_episodes}
+                </span>
+              ) : (
+                <span>
+                  <label>Duração:</label>
+                  {dataDetails.runtime} min
+                </span>
+              )}
             </li>
             <li>
-              <label>Receita:</label>
-              {revenueInUSD}
+              {type === "tv" ? (
+                <span>
+                  <label>Atividade:</label>
+                  {dataDetails.in_production === true
+                    ? "Em produção"
+                    : "Finalizada"}
+                </span>
+              ) : (
+                <span>
+                  <label>Receita:</label>
+                  {revenueInUSD}
+                </span>
+              )}
             </li>
             <li>
-              <label>Lançamento:</label>
-              {convertDate(dataDetails.release_date)}
+              <label> Lançamento: </label>
+              {type === "tv" ? (
+                <span>{convertDate(dataDetails.first_air_date)}</span>
+              ) : (
+                <span>{convertDate(dataDetails.release_date)}</span>
+              )}
             </li>
             <li>
               <label>Nota:</label>
               {dataDetails.vote_average}
             </li>
-            <li className={styles.imdb}>
-              <Link
-                href={`https://www.imdb.com/title/${dataDetails.imdb_id}`}
-                target="_blank"
-              >
-                IMDb
-              </Link>
+            <li>
+              {type === "tv" ? (
+                <span className={styles.linkSerie}>
+                  <Link href={`${dataDetails.homepage}`} target="_blank">
+                    Assistir
+                  </Link>
+                </span>
+              ) : (
+                <span className={styles.imdb}>
+                  <Link
+                    href={`https://www.imdb.com/title/${dataDetails.imdb_id}`}
+                    target="_blank"
+                  >
+                    IMDb
+                  </Link>
+                </span>
+              )}
             </li>
           </ul>
           <p>
