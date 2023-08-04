@@ -17,7 +17,7 @@ function Novidades() {
   useEffect(() => {
     async function newsSeries() {
       try {
-        const response = await fetchMain("/3/trending/tv/day");
+        const response = await fetchMain("/3/trending/tv/week");
         const data = await response.data.results;
         setNewsTv(data);
       } catch (error) {
@@ -30,7 +30,7 @@ function Novidades() {
   return (
     <section className={`container ${styles.news}`}>
       <div>
-        <h2 className="title-main">Series</h2>
+        <h2 className="title-main">Novas Series</h2>
         <p className="description">Series disponíveis</p>
         <div>
           <Swiper

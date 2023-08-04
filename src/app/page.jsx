@@ -16,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     async function NewsMovies() {
       try {
-        const response = await fetchMain("/3/discover/movie");
+        const response = await fetchMain("/3/trending/movie/day");
         const data = await response.data.results;
         setNewsMovies(data);
       } catch (error) {

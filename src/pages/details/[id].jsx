@@ -27,10 +27,8 @@ function Details() {
 
           if (typeRemoveQuotes === "movie") {
             response = await fetchMain(`/3/movie/${id}`);
-            console.log(data);
           } else if (typeRemoveQuotes === "tv") {
             response = await fetchMain(`/3/tv/${id}`);
-            console.log(response);
           }
           const data = await response.data;
           setDataDetails(data);
