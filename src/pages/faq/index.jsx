@@ -17,19 +17,24 @@ function Faq() {
 
   const dataQuest = [
     {
-      titleQuest: "Quest Title 1",
+      titleQuest: "Objetivo da plataforma?",
       answerQuest:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+        "Tem como objetivo prover informações sobre filmes e series. Atualmente sem disponibilidade de transmissão do conteúdo .",
     },
     {
-      titleQuest: "Quest Title 2",
-      answerQuest:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      titleQuest: "De onde vem as informações do conteúdo?",
+      answerQuest: (
+          <span>
+            Essas informações estão centralizadas em uma API onde não temos
+            controle total do conteúdo.
+
+            <a href="https://developer.themoviedb.org/" target="_blank"> Leia a documentação </a>
+          </span>
+      ),
     },
     {
-      titleQuest: "Quest Title 3",
-      answerQuest:
-        "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+      titleQuest: "Status",
+      answerQuest: "Em desenvolvimento.",
     },
   ];
 
