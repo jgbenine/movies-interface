@@ -34,7 +34,7 @@ function TopSection() {
           {topMovies.map((topMovie, index) => (
             <Link key={topMovie.id} href={`/details/${topMovie.id}?type=movie`}>
               <CartazHorizontal
-                ImageHorizontal={`https:/image.tmdb.org/t/p/w200${topMovie.backdrop_path}`}
+                ImageHorizontal={`https://image.tmdb.org/t/p/w200${topMovie.backdrop_path}`}
                 infoSerie={topMovie.title}
                 topFilme={index + 1}
                 altItem="Cartaz top filme votado"
