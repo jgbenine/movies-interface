@@ -23,6 +23,8 @@
     justify-content: center;
 
     @media (min-width: 920px) {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
       flex-wrap: nowrap;
       justify-content: flex-start;
     }

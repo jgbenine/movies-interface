@@ -8,6 +8,7 @@ import HeadEdit from "./helpers/Head";
 import fetchMain from "../app/api/axiosConfig";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { convertDate } from "./api/utils/utils";
 
 export default function Home() {
   const [newsMovies, setNewsMovies] = useState([]);
@@ -15,7 +16,7 @@ export default function Home() {
   useEffect(() => {
     async function NewsMovies() {
       try {
-        const response = await fetchMain("/3/discover/movie");
+        const response = await fetchMain("/3/trending/movie/day");
         const data = await response.data.results;
         setNewsMovies(data);
       } catch (error) {
@@ -37,11 +38,11 @@ export default function Home() {
         <p className="description">Selecione um filme da lista</p>
         <div className={styles.homeGrid}>
           {newsMovies?.map((movie) => (
-            <Link key={movie.id} href={`/filme/${movie.id}`}>
+            <Link key={movie.id} href={`/details/${movie.id}?type=movie`}>
               <Cartaz
                 backgroundImage={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
                 titleMovie={movie.original_title}
-                sinceFilme={movie.release_date}
+                sinceFilme={convertDate(movie.release_date)}
                 rate={movie.vote_average}
               />
             </Link>

@@ -50,22 +50,22 @@ function Header() {
                   Home
                 </Link>
               </li>
-              <li className={activeMenu('/filme') ? 'activeItemMenu' : ''}>
+              <li className={activeMenu('/filmes') ? 'activeItemMenu' : ''}>
                 <Play size={15} color='#e3e3e3' />
                 <Link href="/filme">
                   Filmes
+                </Link>
+              </li>
+              <li className={activeMenu('/series') ? 'activeItemMenu' : ''}>
+                <Play size={15} color='#e3e3e3' />
+                <Link href="/filme">
+                  Series
                 </Link>
               </li>
               <li className={activeMenu('/faq') ? 'activeItemMenu' : ''}>
                 <Play size={15} color='#e3e3e3' />
                 <Link href="/faq">
                   FAQ
-                </Link>
-              </li>
-              <li>
-                <Play size={15} color='#e3e3e3' />
-                <Link href="/about">
-                  SOBRE
                 </Link>
               </li>
             </ul>
