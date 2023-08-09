@@ -8,30 +8,19 @@ export function ContextApi({children}) {
 
 
   useEffect(() => {
-    async function fetchData(url, setDataCallback) {
+    async function fetchData(url, setDataCallback, countData) {
       try {
         const response = await fetchMain(url);
         const data = await response.data.results;
-        setDataCallback(data);
+        const resultsData = countData ? data.slice(0, countData) : data;
+        setDataCallback(resultsData);
       } catch (error) {
         console.error("Erro na requisição:", error);
       }
     }
 
-    async function fetchTopMovies() {
-      try {
-        const response = await fetchMain("/3/movie/top_rated");
-        const data = await response.data.results;
-        const firstFiveResults = data.slice(0, 5);
-        setInfoTopMovies(firstFiveResults);
-      } catch (error) {
-        console.error("Erro requisição TopFilmes", error);
-      }
-    }
-
-
+    fetchData("/3/movie/top_rated", setInfoTopMovies, 5);
     fetchData("/3/trending/movie/day", setInfoNewsMovies);
-    fetchTopMovies();
   }, []);
 
 
