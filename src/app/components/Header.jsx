@@ -52,7 +52,7 @@ function Header() {
               </li>
               <li className={activeMenu('/filmes') ? 'activeItemMenu' : ''}>
                 <Play size={15} color='#e3e3e3' />
-                <Link href="/filme">
+                <Link href="/filmes">
                   Filmes
                 </Link>
               </li>

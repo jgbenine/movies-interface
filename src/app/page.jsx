@@ -9,6 +9,7 @@ import TopSection from "./components/TopSection";
 import styles from "./css/pages/Home.module.scss";
 import HeadEdit from "./helpers/Head";
 import Link from "next/link";
+import Header from "./components/Header";
 
 export default function Home() {
   const { infoNewsMovies } = useContext(DataContext);
@@ -21,6 +22,7 @@ export default function Home() {
             titlePage="Home"
             descriptionPage="Melhor informação sobre seu filme."
           />
+            <Header />
           <SliderDry />
           <section className={`container ${styles.homeSection}`}>
             <h2 className="title-main">Novos Filmes</h2>

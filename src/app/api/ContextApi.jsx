@@ -15,6 +15,7 @@ export function ContextApi({ children}) {
           const data = await response.data.results;
           const resultsData = countData ? data.slice(0, countData) : data;
           setDataCallback(resultsData);
+          console.log(data)
         } catch (error) {
           console.error("Erro na requisição:", error);
         }
