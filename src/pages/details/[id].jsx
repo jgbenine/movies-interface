@@ -1,16 +1,15 @@
 import React, { useEffect } from "react";
 import { convertDate } from "@/app/api/utils/utils";
 import { useRouter } from "next/router";
+import { formatRevenue } from "@/app/api/utils/utils";
 import styles from "../../app/css/pages/Details.module.scss";
 import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import TopSection from "@/app/components/TopSection";
 import HeadEdit from "@/app/helpers/Head";
 import Link from "next/link";
-import "../../app/globals.css";
 import fetchMain from "@/app/api/axiosConfig";
-import ContextApi from "@/app/api/ContextApi";
-import { formatRevenue } from "@/app/api/utils/utils";
+import Novidades from "@/app/components/Novidades";
 
 function Details() {
   const [dataDetails, setDataDetails] = React.useState([]);
@@ -43,7 +42,7 @@ function Details() {
   }, [id, type]);
 
   return (
-    <ContextApi>
+    <>
       {dataDetails ? (
         <>
           <HeadEdit
@@ -58,7 +57,6 @@ function Details() {
                 backgroundImage: `url(https://image.tmdb.org/t/p/w500/${dataDetails.backdrop_path})`,
               }}
             ></div>
-
             <article
               className={`${styles.detailsContent}`}
               style={{
@@ -139,14 +137,14 @@ function Details() {
                 {dataDetails.overview}
               </p>
             </article>
-            <TopSection />
+            {type === "tv" ? <Novidades /> : <TopSection />}
           </section>
           <Footer />
         </>
       ) : (
         <p>Carregando</p>
       )}
-    </ContextApi>
+    </>
   );
 }
 

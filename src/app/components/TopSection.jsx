@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
-import "../../app/globals.css";
-import styles from "../css/components/TopSection.module.scss";
+import { DataContext } from "../api/ContextApi";
 import CartazHorizontal from "./CartazHorizontal";
 import Loading from "../components/Loading";
 import Link from "next/link";
-import { DataContext } from "../api/ContextApi";
+import styles from "../css/components/TopSection.module.scss";
+import "../../app/globals.css";
 
 function TopSection() {
   const { infoTopMovies } = useContext(DataContext);
@@ -14,7 +14,7 @@ function TopSection() {
       {infoTopMovies ? (
         <section className={styles.topSection}>
           <div className={`container ${styles.topGrid}`}>
-            <h3 className={`title-main`}>Top 5 melhores avaliados</h3>
+            <h3 className={`title-main`}>Top 5 Filmes</h3>
             <p className="description">
               Seleção dos filmes com melhores avaliações
             </p>

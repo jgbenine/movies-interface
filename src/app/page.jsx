@@ -1,4 +1,4 @@
-"use client";
+'use client'
 import { convertDate } from "./api/utils/utils";
 import { DataContext } from "./api/ContextApi";
 import { useContext } from "react";
@@ -25,7 +25,7 @@ export default function Home() {
             <Header />
           <SliderDry />
           <section className={`container ${styles.homeSection}`}>
-            <h2 className="title-main">Novos Filmes</h2>
+            <h2 className="title-main">Filmes Populares</h2>
             <p className="description">Selecione um filme da lista</p>
             <div className={styles.homeGrid}>
               {infoNewsMovies?.map((movie) => (

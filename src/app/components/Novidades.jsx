@@ -1,4 +1,3 @@
-"use client";
 import { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
@@ -19,8 +18,8 @@ function Novidades() {
       {infoNewsTv ? (
         <section className={`container ${styles.news}`}>
           <div>
-            <h2 className="title-main">Novas Series</h2>
-            <p className="description">Series disponíveis</p>
+            <h2 className="title-main">Series Populares</h2>
+            <p className="description">Seleção de series com melhores avaliações.</p>
             <div>
               <Swiper
                 spaceBetween={50}
