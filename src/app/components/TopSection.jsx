@@ -7,11 +7,11 @@ import Link from "next/link";
 import { DataContext } from "../api/ContextApi";
 
 function TopSection() {
-  const { InfoTopMovies } = useContext(DataContext);
+  const { infoTopMovies } = useContext(DataContext);
 
   return (
     <>
-      {InfoTopMovies ? (
+      {infoTopMovies ? (
         <section className={styles.topSection}>
           <div className={`container ${styles.topGrid}`}>
             <h3 className={`title-main`}>Top 5 melhores avaliados</h3>
@@ -19,7 +19,7 @@ function TopSection() {
               Seleção dos filmes com melhores avaliações
             </p>
             <div className={styles.topContent}>
-              {InfoTopMovies.map((topMovie, index) => (
+              {infoTopMovies.map((topMovie, index) => (
                 <Link
                   key={topMovie.id}
                   href={`/details/${topMovie.id}?type=movie`}
