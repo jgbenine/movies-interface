@@ -8,7 +8,8 @@ export function ContextApi({ children}) {
   const [infoNewsMovies, setInfoNewsMovies] = useState([]);
   const [infoNewsTv, setInfoNewsTv] = useState([]);
   const [infoGeneralMovies, setInfoGeneralMovies] = useState([]);
-  const [infoGeneralSeries, setInfoGeneralSeries] = useState([]);
+  const [infoGeneralSeries, setInfoGeneralSeries] = useState([]);// Número de filmes por página
+
 
   useEffect(() => {
     async function fetchData(url, setDataCallback, countData) {
@@ -17,7 +18,6 @@ export function ContextApi({ children}) {
           const data = await response.data.results;
           const resultsData = countData ? data.slice(0, countData) : data;
           setDataCallback(resultsData);
-          console.log(data)
         } catch (error) {
           console.error("Erro na requisição:", error);
         }
@@ -25,9 +25,21 @@ export function ContextApi({ children}) {
     fetchData("/3/movie/popular", setInfoNewsMovies);
     fetchData("/3/tv/top_rated", setInfoNewsTv);
     fetchData("/3/movie/top_rated", setInfoTopMovies, 5);
-    fetchData("/3/trending/movie/week", setInfoGeneralMovies);
+    fetchData("/3/discover/movie", setInfoGeneralMovies);
     fetchData("/3/trending/tv/week", setInfoGeneralSeries);
   }, []);
+
+  function calculatePaginationInfo(data, currentPage, moviesPerPage) {
+    const totalPages = Math.ceil(data.length / moviesPerPage);
+    const indexOfLastMovie = currentPage * moviesPerPage;
+    const indexOfFirstMovie = indexOfLastMovie - moviesPerPage;
+    const currentMovies = data.slice(indexOfFirstMovie, indexOfLastMovie);
+  
+    return {
+      totalPages,
+      currentMovies
+    };
+  }
 
   return (
     <DataContext.Provider
@@ -37,6 +49,7 @@ export function ContextApi({ children}) {
         infoNewsTv,
         infoGeneralMovies,
         infoGeneralSeries,
+
       }}
     >
       {children}
