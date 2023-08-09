@@ -9,6 +9,8 @@ import "../../app/globals.css";
 import { useRouter } from "next/router";
 import fetchMain from "@/app/api/axiosConfig";
 import { convertDate } from "@/app/api/utils/utils";
+import ContextApi from "@/app/api/ContextApi";
+
 
 function Details() {
   const [dataDetails, setDataDetails] = React.useState([]);
@@ -49,7 +51,7 @@ function Details() {
   }, [id, type]);
 
   return (
-    <>
+    <ContextApi>
       <HeadEdit
         titlePage={type === "tv" ? dataDetails.name : dataDetails.title}
         descriptionPage={dataDetails.tagline}
@@ -146,7 +148,7 @@ function Details() {
         <TopSection />
       </section>
       <Footer />
-    </>
+    </ContextApi>
   );
 }
 
