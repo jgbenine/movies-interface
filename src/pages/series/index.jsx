@@ -6,36 +6,34 @@ import Header from "@/app/components/Header";
 import Footer from "@/app/components/Footer";
 import Link from "next/link";
 import Cartaz from "@/app/components/Cartaz";
-import TopSection from "@/app/components/TopSection";
+import Novidades from "@/app/components/Novidades";
 
-function Movies() {
-  const { infoNewsMovies } = useContext(DataContext);
+function Series() {
+  const { infoNewsTv } = useContext(DataContext);
 
   return (
     <>
-      {infoNewsMovies ? (
+      {infoNewsTv ? (
         <>
           <HeadEdit titlePage="Filmes" />
           <Header />
           <section className="max-w-[1230px] m-auto py-14">
-          <h2 className="title-main">Filmes</h2>
-          <p className="description">Filmes atualizados e disponíveis.</p>
+            <h2 className="title-main">Series</h2>
+            <p className="description">Series atualizadas e disponíveis.</p>
             <div className="w-full grid grid-flow-row grid-cols-6 gap-2">
-              {infoNewsMovies?.map((serie) => (
-                <Link key={serie.id} href={`/details/${serie.id}?type=movie`}>
+              {infoNewsTv?.map((movie) => (
+                <Link key={movie.id} href={`/details/${movie.id}?type=movie`}>
                   <Cartaz
-                    backgroundImage={`https://image.tmdb.org/t/p/w200/${serie.poster_path}`}
-                    titleMovie={serie.original_title}
-                    sinceFilme={convertDate(serie.release_date)}
-                    rate={serie.vote_average}
+                    backgroundImage={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                    titleMovie={movie.original_title}
+                    sinceFilme={convertDate(movie.release_date)}
+                    rate={movie.vote_average}
                   />
                 </Link>
               ))}
             </div>
           </section>
-
-          <TopSection />
-
+          <Novidades />
           <Footer />
         </>
       ) : (
@@ -45,4 +43,4 @@ function Movies() {
   );
 }
 
-export default Movies;
+export default Series;
