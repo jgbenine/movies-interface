@@ -1,6 +1,3 @@
-"use client";
-import Footer from "./components/Footer";
-import Header from "./components/Header";
 import { ContextApi } from "./api/ContextApi";
 import "./globals.css";
 
@@ -14,9 +11,7 @@ export default function RootLayout({ children }) {
     <ContextApi>
       <html lang="pt-br">
         <body className="mx-auto">
-          <Header />
           <main>{children}</main>
-          <Footer />
         </body>
       </html>
     </ContextApi>

@@ -52,13 +52,13 @@ function Header() {
               </li>
               <li className={activeMenu('/filmes') ? 'activeItemMenu' : ''}>
                 <Play size={15} color='#e3e3e3' />
-                <Link href="/filme">
+                <Link href="/filmes">
                   Filmes
                 </Link>
               </li>
               <li className={activeMenu('/series') ? 'activeItemMenu' : ''}>
                 <Play size={15} color='#e3e3e3' />
-                <Link href="/filme">
+                <Link href="/series">
                   Series
                 </Link>
               </li>
@@ -66,6 +66,12 @@ function Header() {
                 <Play size={15} color='#e3e3e3' />
                 <Link href="/faq">
                   FAQ
+                </Link>
+              </li>
+              <li className={activeMenu('/about') ? 'activeItemMenu' : ''}>
+                <Play size={15} color='#e3e3e3' />
+                <Link href="/about">
+                  Sobre
                 </Link>
               </li>
             </ul>
