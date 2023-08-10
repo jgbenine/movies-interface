@@ -10,10 +10,10 @@ import styles from "./css/pages/Home.module.scss";
 import HeadEdit from "./helpers/Head";
 import Link from "next/link";
 import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export default function Home() {
   const { infoNewsMovies } = useContext(DataContext);
-
   return (
     <>
       {infoNewsMovies ? (
@@ -52,6 +52,7 @@ export default function Home() {
       ) : (
         <p>Carregando</p>
       )}
+      <Footer />
     </>
   );
 }
