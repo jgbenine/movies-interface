@@ -7,13 +7,20 @@ import Footer from "@/app/components/Footer";
 import Link from "next/link";
 import Cartaz from "@/app/components/Cartaz";
 import Novidades from "@/app/components/Novidades";
+import Pagination from "@/app/components/Pagination";
 
 function Series() {
-  const { infoGeneralSeries } = useContext(DataContext);
+  const {
+    allSeries,
+    currentPage,
+    setCurrentPage,
+    getCurrentPageData,
+    totalPages,
+  } = useContext(DataContext);
 
   return (
     <>
-      {infoGeneralSeries ? (
+      {getCurrentPageData ? (
         <>
           <HeadEdit titlePage="Séries" />
           <Header />
@@ -21,8 +28,8 @@ function Series() {
             <h2 className="title-main">Series</h2>
             <p className="description">Series atualizadas e disponíveis.</p>
             <div className="w-full grid grid-flow-row grid-cols-6 gap-2">
-              {infoGeneralSeries?.map((serie) => (
-                <Link key={serie.id} href={`/details/${serie.id}?type=tv`}>
+              {allSeries?.map((serie, index) => (
+                <Link key={index} href={`/details/${serie.id}?type=tv`}>
                   <Cartaz
                     backgroundImage={`https://image.tmdb.org/t/p/w200/${serie.poster_path}`}
                     titleMovie={serie.original_title}
@@ -32,6 +39,11 @@ function Series() {
                 </Link>
               ))}
             </div>
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={setCurrentPage}
+            />
           </section>
           <Novidades />
           <Footer />

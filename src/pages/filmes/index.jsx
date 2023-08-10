@@ -8,40 +8,20 @@ import Link from "next/link";
 import Cartaz from "@/app/components/Cartaz";
 import TopSection from "@/app/components/TopSection";
 import Pagination from "@/app/components/Pagination";
-import fetchMain from "@/app/api/axiosConfig";
 
 function Movies() {
-  const [allMovies, setAllMovies] = useState([]); // Estado para armazenar todos os filmes
+  const {
+    allMovies,
+    currentPage,
+    setCurrentPage,
+    getCurrentPageData,
+    totalPages,
+  } = useContext(DataContext);
 
-  const maxMovies = 54;
-  useEffect(() => {
-    async function fetchAllMovies() {
-      try {
-        let movies = [];
-        let page = 1;
-
-        while (movies.length < maxMovies) {
-          const response = await fetchMain(`/3/discover/movie?page=${page}`);
-          if (movies.length + response.data.results.length > maxMovies) {
-            // Se adicionar os resultados ultrapassar o limite de 25, pegue apenas os filmes que faltam
-            const remainingMovies = maxMovies - movies.length;
-            movies = movies.concat(response.data.results.slice(0, remainingMovies));
-          } else {
-            movies = movies.concat(response.data.results);
-          }
-          page++;
-        }
-        setAllMovies(movies);
-      } catch (error) {
-        console.error("Erro na requisição:", error);
-      }
-    }
-    fetchAllMovies();
-  },[]);
 
   return (
     <>
-      {allMovies ? (
+      {allMovies.length > 0 ? (
         <>
           <HeadEdit titlePage="Filmes" />
           <Header />
@@ -60,9 +40,11 @@ function Movies() {
                 </Link>
               ))}
             </div>
-            {/* <Pagination
-   
-            /> */}
+            <Pagination
+              currentPage={currentPage}
+              totalPages={totalPages}
+              onPageChange={setCurrentPage}
+            />
           </section>
           <TopSection />
           <Footer />
@@ -72,7 +54,6 @@ function Movies() {
       )}
     </>
   );
-  
 }
 
 export default Movies;
