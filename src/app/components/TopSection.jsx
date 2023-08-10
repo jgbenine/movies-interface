@@ -7,11 +7,12 @@ import styles from "../css/components/TopSection.module.scss";
 import "../../app/globals.css";
 
 function TopSection() {
-  const { infoTopMovies } = useContext(DataContext);
+  const { infoTopFiveMovies } = useContext(DataContext);
+
 
   return (
     <>
-      {infoTopMovies ? (
+      {infoTopFiveMovies ? (
         <section className={styles.topSection}>
           <div className={`container ${styles.topGrid}`}>
             <h3 className={`title-main`}>Top 5 Filmes</h3>
@@ -19,9 +20,9 @@ function TopSection() {
               Seleção dos filmes com melhores avaliações
             </p>
             <div className={styles.topContent}>
-              {infoTopMovies.map((topMovie, index) => (
+              {infoTopFiveMovies.map((topMovie, index) => (
                 <Link
-                  key={topMovie.id}
+                  key={index}
                   href={`/details/${topMovie.id}?type=movie`}
                 >
                   <CartazHorizontal

@@ -4,6 +4,7 @@ import fetchMain from "../api/axiosConfig";
 export const DataContext = createContext();
 
 export function ContextApi({ children }) {
+  const [infoTopFiveMovies, setInfoTopFiveMovies] = useState([]);
   const [infoTopMovies, setInfoTopMovies] = useState([]);
   const [infoNewsMovies, setInfoNewsMovies] = useState([]);
   const [infoNewsTv, setInfoNewsTv] = useState([]);
@@ -57,7 +58,8 @@ export function ContextApi({ children }) {
   useEffect(() => {
     fetchData("/3/movie/popular", setInfoNewsMovies);
     fetchData("/3/tv/top_rated", setInfoNewsTv);
-    fetchData("/3/movie/top_rated", setInfoTopMovies, 5);
+    fetchData("/3/movie/top_rated", setInfoTopFiveMovies, 5);
+    fetchData("/3/movie/top_rated", setInfoTopMovies);
     fetchData("/3/discover/movie", setInfoGeneralMovies);
     fetchData("/3/trending/tv/week", setInfoGeneralSeries);
     fetchAllDatasPages("/3/discover/movie", setAllMovies);
@@ -67,6 +69,7 @@ export function ContextApi({ children }) {
   return (
     <DataContext.Provider
       value={{
+        infoTopFiveMovies,
         infoTopMovies,
         infoNewsMovies,
         infoNewsTv,

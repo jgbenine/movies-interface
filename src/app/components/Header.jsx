@@ -81,7 +81,7 @@ function Header() {
           <Link href="/login" title='Login'>
             <LogIn size={18} />
           </Link>
-          <Link href="/perfil" title='Perfil'>
+          <Link href="/perfilt" title='Perfil'>
             <UserCircle size={18} />
           </Link>
           <Search size={18} />
