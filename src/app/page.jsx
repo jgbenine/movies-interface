@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import { convertDate } from "./api/utils/utils";
 import { DataContext } from "./api/ContextApi";
 import { useContext } from "react";
@@ -11,6 +11,7 @@ import HeadEdit from "./helpers/Head";
 import Link from "next/link";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import IntroSection from "./components/IntroSection";
 
 export default function Home() {
   const { infoNewsMovies } = useContext(DataContext);
@@ -22,11 +23,14 @@ export default function Home() {
             titlePage="Home"
             descriptionPage="Melhor informação sobre seu filme."
           />
-            <Header />
+          <Header />
           <SliderDry />
           <section className={`container ${styles.homeSection}`}>
-            <h2 className="title-main">Filmes Populares</h2>
-            <p className="description">Selecione um filme da lista</p>
+            <IntroSection
+              titleSection="Novos Filmes"
+              descriptionSection="Descubra novos filmes"
+              linkHrefSection={"/filmes"}
+            />
             <div className={styles.homeGrid}>
               {infoNewsMovies?.map((movie) => (
                 <Link key={movie.id} href={`/details/${movie.id}?type=movie`}>
@@ -39,13 +43,7 @@ export default function Home() {
                 </Link>
               ))}
             </div>
-          </section>
-          <section className={styles.homeWrapperSlider}>
-            <div className="container">
-              <Novidades />
-            </div>
-          </section>
-          <section>
+            <Novidades />
             <TopSection />
           </section>
         </>

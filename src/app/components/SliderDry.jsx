@@ -28,7 +28,7 @@ function SliderDry() {
           {infoTopMovies.map((dataInfo, index) => (
             <SwiperSlide key={index}>
               <MovieWrapper
-                backgroundImage={`https://image.tmdb.org/t/p/w200/${dataInfo.poster_path}`}
+                backgroundImage={`https://image.tmdb.org/t/p/w200/${dataInfo.backdrop_path}`}
                 title={dataInfo.title}
                 ano={convertDate(dataInfo.release_date)}
                 sinopse={dataInfo.overview}

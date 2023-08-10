@@ -8,6 +8,7 @@ import Link from "next/link";
 import Cartaz from "@/app/components/Cartaz";
 import Novidades from "@/app/components/Novidades";
 import Pagination from "@/app/components/Pagination";
+import IntroSection from "@/app/components/IntroSection";
 
 function Series() {
   const {
@@ -25,8 +26,10 @@ function Series() {
           <HeadEdit titlePage="Séries" />
           <Header />
           <section className="max-w-[1230px] m-auto py-14">
-            <h2 className="title-main">Series</h2>
-            <p className="description">Series atualizadas e disponíveis.</p>
+            <IntroSection
+              titleSection="Series"
+              descriptionSection="Navegue e encontre a sua série"
+            />
             <div className="w-full grid grid-flow-row grid-cols-6 gap-2">
               {allSeries?.map((serie, index) => (
                 <Link key={index} href={`/details/${serie.id}?type=tv`}>

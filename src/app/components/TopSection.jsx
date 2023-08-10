@@ -5,20 +5,20 @@ import Loading from "../components/Loading";
 import Link from "next/link";
 import styles from "../css/components/TopSection.module.scss";
 import "../../app/globals.css";
+import IntroSection from "./IntroSection";
 
 function TopSection() {
   const { infoTopFiveMovies } = useContext(DataContext);
-
 
   return (
     <>
       {infoTopFiveMovies ? (
         <section className={styles.topSection}>
           <div className={`container ${styles.topGrid}`}>
-            <h3 className={`title-main`}>Top 5 Filmes</h3>
-            <p className="description">
-              Seleção dos filmes com melhores avaliações
-            </p>
+          <IntroSection
+              titleSection="Aclamados pela crítica"
+              descriptionSection="Seleção dos melhores avaliados."
+            />
             <div className={styles.topContent}>
               {infoTopFiveMovies.map((topMovie, index) => (
                 <Link

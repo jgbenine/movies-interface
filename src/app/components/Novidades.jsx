@@ -9,6 +9,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Link from "next/link";
+import IntroSection from "./IntroSection";
 
 function Novidades() {
   const { infoNewsTv } = useContext(DataContext);
@@ -17,9 +18,12 @@ function Novidades() {
     <>
       {infoNewsTv ? (
         <section className={`container ${styles.news}`}>
-          <div>
-            <h2 className="title-main">Series Populares</h2>
-            <p className="description">Seleção de series com melhores avaliações.</p>
+          <>
+            <IntroSection
+              titleSection="Series Populares"
+              descriptionSection="Seleção de mais avaliadas."
+              linkHrefSection={"/series"}
+            />
             <div>
               <Swiper
                 spaceBetween={50}
@@ -55,7 +59,7 @@ function Novidades() {
                 ))}
               </Swiper>
             </div>
-          </div>
+          </>
         </section>
       ) : (
         <p>Carregando</p>

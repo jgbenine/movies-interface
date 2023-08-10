@@ -8,6 +8,7 @@ import Link from "next/link";
 import Cartaz from "@/app/components/Cartaz";
 import TopSection from "@/app/components/TopSection";
 import Pagination from "@/app/components/Pagination";
+import IntroSection from "@/app/components/IntroSection";
 
 function Movies() {
   const {
@@ -26,8 +27,10 @@ function Movies() {
           <HeadEdit titlePage="Filmes" />
           <Header />
           <section className="max-w-[1230px] m-auto py-14">
-            <h2 className="title-main">Filmes</h2>
-            <p className="description">Filmes atualizados e disponíveis.</p>
+          <IntroSection
+              titleSection="Filmes"
+              descriptionSection="Navegue e encontre o seu filme"
+            />
             <div className="w-full grid grid-flow-row grid-cols-6 gap-2">
               {allMovies?.map((movie, index) => (
                 <Link key={index} href={`/details/${movie.id}?type=movie`}>
