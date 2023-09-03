@@ -36,8 +36,8 @@ function Series() {
             <Link key={index} href={`/details/${serie.id}?type=tv`}>
               <Cartaz
                 backgroundImage={`https://image.tmdb.org/t/p/w200/${serie.poster_path}`}
-                titleMovie={serie.original_title}
-                sinceFilme={convertDate(serie.release_date)}
+                titleMovie={serie.name}
+                sinceFilme={convertDate(serie.first_air_date)}
                 rate={serie.vote_average}
               />
             </Link>
