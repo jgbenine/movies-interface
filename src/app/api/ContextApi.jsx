@@ -10,8 +10,6 @@ export function ContextApi({ children }) {
   const [infoNewsTv, setInfoNewsTv] = useState([]);
   const [infoGeneralMovies, setInfoGeneralMovies] = useState([]);
   const [infoGeneralSeries, setInfoGeneralSeries] = useState([]); // Número de filmes por página
-  const [allMovies, setAllMovies] = useState([]);
-  const [allSeries, setAllSeries] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState([]);
   const maxDataView = 24;
@@ -27,13 +25,14 @@ export function ContextApi({ children }) {
     }
   }
 
-  async function fetchAllDatasPages(url, setDataCallback) {
+  async function fetchAllDataPages(url, setDataCallback) {
     try {
       let data = [];
       let page = 1;
-
+   
       while (data.length < maxDataView * currentPage) {
         const response = await fetchMain(`${url}?page=${page}`);
+        console.log(`${url}?page=${page}`)
         data = data.concat(response.data.results);
         page++;
       }
@@ -52,8 +51,9 @@ export function ContextApi({ children }) {
   const getCurrentPageData = () => {
     const indexOfLastData = currentPage * maxDataView;
     const indexOfFirstData = indexOfLastData - maxDataView;
-    return allMovies.slice(indexOfFirstData, indexOfLastData);
+    return allMovies.slice(indexOfFirstData, indexOfLastData )
   };
+    
 
   useEffect(() => {
     fetchData("/3/movie/popular", setInfoNewsMovies);
@@ -62,8 +62,6 @@ export function ContextApi({ children }) {
     fetchData("/3/movie/top_rated", setInfoTopMovies);
     fetchData("/3/discover/movie", setInfoGeneralMovies);
     fetchData("/3/trending/tv/week", setInfoGeneralSeries);
-    fetchAllDatasPages("/3/discover/movie", setAllMovies);
-    fetchAllDatasPages("/3/discover/tv", setAllSeries);
   }, [currentPage]);
 
   return (
@@ -75,12 +73,11 @@ export function ContextApi({ children }) {
         infoNewsTv,
         infoGeneralMovies,
         infoGeneralSeries,
-        allMovies,
-        allSeries,
         currentPage,
         setCurrentPage,
         getCurrentPageData,
         totalPages,
+        fetchAllDataPages,
       }}
     >
       {children}

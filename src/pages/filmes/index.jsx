@@ -11,14 +11,12 @@ import Pagination from "@/app/components/Pagination";
 import IntroSection from "@/app/components/IntroSection";
 
 function Movies() {
-  const {
-    allMovies,
-    currentPage,
-    setCurrentPage,
-    getCurrentPageData,
-    totalPages,
-  } = useContext(DataContext);
+  const [allMovies, setAllMovies] = useState([]);
+  const { currentPage, setCurrentPage, totalPages, fetchAllDataPages } = useContext(DataContext);
 
+  useEffect(() => {
+    fetchAllDataPages("/3/discover/movie", setAllMovies);
+  }, [fetchAllDataPages]);
 
   return (
     <>
@@ -27,7 +25,7 @@ function Movies() {
           <HeadEdit titlePage="Filmes" />
           <Header />
           <section className="max-w-[1230px] m-auto py-14">
-          <IntroSection
+            <IntroSection
               titleSection="Filmes"
               descriptionSection="Navegue e encontre o seu filme"
             />
