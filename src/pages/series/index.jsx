@@ -18,6 +18,10 @@ function Series() {
     fetchAllDataPages("/3/discover/tv", setAllSeries)
   },[fetchAllDataPages])
 
+  useEffect(() => {
+    setCurrentPage(1)
+  },[]);
+
   return (
     <>
       <HeadEdit titlePage="Séries" />

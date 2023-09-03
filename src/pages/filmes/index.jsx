@@ -18,41 +18,39 @@ function Movies() {
     fetchAllDataPages("/3/discover/movie", setAllMovies);
   }, [fetchAllDataPages]);
 
+  useEffect(() => {
+    setCurrentPage(1)
+  },[]);
+
   return (
     <>
-      {allMovies.length > 0 ? (
-        <>
-          <HeadEdit titlePage="Filmes" />
-          <Header />
-          <section className="max-w-[1230px] m-auto py-14">
-            <IntroSection
-              titleSection="Filmes"
-              descriptionSection="Navegue e encontre o seu filme"
-            />
-            <div className="w-full grid grid-flow-row grid-cols-6 gap-2">
-              {allMovies?.map((movie, index) => (
-                <Link key={index} href={`/details/${movie.id}?type=movie`}>
-                  <Cartaz
-                    backgroundImage={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
-                    titleMovie={movie.original_title}
-                    sinceFilme={convertDate(movie.release_date)}
-                    rate={movie.vote_average}
-                  />
-                </Link>
-              ))}
-            </div>
-            <Pagination
-              currentPage={currentPage}
-              totalPages={totalPages}
-              onPageChange={setCurrentPage}
-            />
-          </section>
-          <TopSection />
-          <Footer />
-        </>
-      ) : (
-        <p>Carregando </p>
-      )}
+      <HeadEdit titlePage="Filmes" />
+      <Header />
+      <section className="max-w-[1230px] m-auto py-14">
+        <IntroSection
+          titleSection="Filmes"
+          descriptionSection="Navegue e encontre o seu filme"
+        />
+        <div className="w-full grid grid-flow-row grid-cols-6 gap-2">
+          {allMovies?.map((movie, index) => (
+            <Link key={index} href={`/details/${movie.id}?type=movie`}>
+              <Cartaz
+                backgroundImage={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                titleMovie={movie.original_title}
+                sinceFilme={convertDate(movie.release_date)}
+                rate={movie.vote_average}
+              />
+            </Link>
+          ))}
+        </div>
+        <Pagination
+          currentPage={currentPage}
+          totalPages={totalPages}
+          onPageChange={setCurrentPage}
+        />
+      </section>
+      <TopSection />
+      <Footer />
     </>
   );
 }

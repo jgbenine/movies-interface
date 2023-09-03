@@ -9,7 +9,7 @@ export function ContextApi({ children }) {
   const [infoNewsMovies, setInfoNewsMovies] = useState([]);
   const [infoNewsTv, setInfoNewsTv] = useState([]);
   const [infoGeneralMovies, setInfoGeneralMovies] = useState([]);
-  const [infoGeneralSeries, setInfoGeneralSeries] = useState([]); // Número de filmes por página
+  const [infoGeneralSeries, setInfoGeneralSeries] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState([]);
   const maxDataView = 24;
@@ -28,33 +28,23 @@ export function ContextApi({ children }) {
   async function fetchAllDataPages(url, setDataCallback) {
     try {
       let data = [];
-      let page = 1;
-   
+      let page = currentPage;
+
       while (data.length < maxDataView * currentPage) {
         const response = await fetchMain(`${url}?page=${page}`);
-        console.log(`${url}?page=${page}`)
         data = data.concat(response.data.results);
         page++;
       }
-
       const indexOfLastData = currentPage * maxDataView;
       const indexOfFirstData = indexOfLastData - maxDataView;
       const currentData = data.slice(indexOfFirstData, indexOfLastData);
-
       setTotalPages(Math.ceil(data.length / maxDataView));
       setDataCallback(currentData);
     } catch (error) {
       console.error("Erro na requisição:", error);
     }
   }
-
-  const getCurrentPageData = () => {
-    const indexOfLastData = currentPage * maxDataView;
-    const indexOfFirstData = indexOfLastData - maxDataView;
-    return allMovies.slice(indexOfFirstData, indexOfLastData )
-  };
     
-
   useEffect(() => {
     fetchData("/3/movie/popular", setInfoNewsMovies);
     fetchData("/3/tv/top_rated", setInfoNewsTv);
@@ -75,7 +65,6 @@ export function ContextApi({ children }) {
         infoGeneralSeries,
         currentPage,
         setCurrentPage,
-        getCurrentPageData,
         totalPages,
         fetchAllDataPages,
       }}
