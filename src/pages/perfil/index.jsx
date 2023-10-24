@@ -1,11 +1,11 @@
-import styles from "../../app/css/pages/Perfil.module.scss";
-import Input from "@/app/components/Input";
-import Label from "@/app/components/Label";
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
-import HeadEdit from "@/app/helpers/Head";
+import styles from "../../app/ui/css/pages/Perfil.module.scss";
+import Input from "@/app/ui/components/form/Input";
+import Label from "@/app/ui/components/form/Label";
+import Header from "@/app/ui/components/navigation/Header";
+import Footer from "@/app/ui/components/navigation/Footer";
+import HeadEdit from "@/app/ui/components/helpers/Head";
 import Image from "next/image";
-import "../../app/globals.css";
+// import "../../app/globals.css";
 
 function Perfil() {
   return (

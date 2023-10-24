@@ -1,7 +1,7 @@
 import React from 'react'
 import { Search, UserCircle, LogIn, Clapperboard, Menu, Play, Home } from 'lucide-react'
 import Link from 'next/link'
-import styles from '../css/components/Header.module.scss'
+import styles from '../../css/components/Header.module.scss'
 import { usePathname } from 'next/navigation'
 
 function Header() {
@@ -81,7 +81,7 @@ function Header() {
           <Link href="/login" title='Login'>
             <LogIn size={18} />
           </Link>
-          <Link href="/perfilt" title='Perfil'>
+          <Link href="/perfil" title='Perfil'>
             <UserCircle size={18} />
           </Link>
           <Search size={18} />

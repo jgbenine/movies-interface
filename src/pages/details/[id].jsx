@@ -1,19 +1,19 @@
-import React, { useEffect } from "react";
-import { convertDate } from "@/app/api/utils/utils";
-import { useRouter } from "next/router";
-import { formatRevenue } from "@/app/api/utils/utils";
-import styles from "../../app/css/pages/Details.module.scss";
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
-import TopSection from "@/app/components/TopSection";
-import HeadEdit from "@/app/helpers/Head";
+import { useEffect, useState } from "react";
+import Header from "@/app/ui/components/navigation/Header";
+import Footer from "../../app/ui/components/navigation/Footer";
+import TopSection from "@/app/ui/components/sections/TopSection";
+import HeadEdit from "@/app/ui/components/helpers/Head";
 import Link from "next/link";
-import fetchMain from "@/app/api/axiosConfig";
-import Novidades from "@/app/components/Novidades";
+import fetchMain from "@/app/data/services/api/axiosConfig";
+import Novidades from "@/app/ui/components/sections/Novidades";
+import styles from "../../app/ui/css/pages/Details.module.scss";
+import { convertDate } from "@/app/data/utils/utils";
+import { useRouter } from "next/router";
+import { formatRevenue } from "@/app/data/utils/utils";
 
 function Details() {
-  const [dataDetails, setDataDetails] = React.useState([]);
-  const [revenueInUSD, setRevenueInUSD] = React.useState(null);
+  const [dataDetails, setDataDetails] = useState([]);
+  const [revenueInUSD, setRevenueInUSD] = useState(null);
   const router = useRouter();
   const { id, type } = router.query;
 

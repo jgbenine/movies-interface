@@ -1,14 +1,14 @@
 import React from "react";
 import "tailwindcss/tailwind.css";
-import styles from "../../app/css/pages/Login.module.scss";
+import styles from "../../app/ui/css/pages/Login.module.scss";
 import '../../app/globals.css'
-import Button from "@/app/components/Button";
-import Input from "@/app/components/Input";
-import Label from "@/app/components/Label";
+import Button from "@/app/ui/components/form/Button";
+import Input from "@/app/ui/components/form/Input";
+import Label from "@/app/ui/components/form/Label";
 import Link from "next/link";
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header";
-import HeadEdit from "@/app/helpers/Head";
+import Footer from "@/app/ui/components/navigation/Footer";
+import Header from "@/app/ui/components/navigation/Header";
+import HeadEdit from "@/app/ui/components/helpers/Head";
 
 function Login() {
   return (

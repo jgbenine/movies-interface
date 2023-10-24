@@ -1,4 +1,4 @@
-import ContextApi from "../app/api/ContextApi"; 
+import ContextApi from "../app/data/hooks/ContextApi"; 
 import "../app/globals.css";
 
 function MyApp({ Component, pageProps }) {

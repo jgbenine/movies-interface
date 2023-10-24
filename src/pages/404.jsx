@@ -1,8 +1,8 @@
 import React from "react";
-import styles from "../app/css/pages/404.scss";
+import styles from "../app/ui/css/pages/404.scss";
 import Link from "next/link";
 import { Home } from "lucide-react";
-import HeadEdit from "@/app/helpers/Head";
+import HeadEdit from "@/app/ui/components/helpers/Head";
 
 function NotFound() {
   return (

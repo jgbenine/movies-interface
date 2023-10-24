@@ -1,14 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
-import { DataContext } from "../../app/api/ContextApi";
-import { convertDate } from "../../app/api/utils/utils";
-import HeadEdit from "@/app/helpers/Head";
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
+import { DataContext } from "../../app/data/hooks/ContextApi";
+import { convertDate } from "../../app/data/utils/utils";
+import HeadEdit from "@/app/ui/components/helpers/Head";
+import Header from "@/app/ui/components/navigation/Header";
+import Footer from "@/app/ui/components/navigation/Footer";
 import Link from "next/link";
-import Cartaz from "@/app/components/Cartaz";
-import Novidades from "@/app/components/Novidades";
-import Pagination from "@/app/components/Pagination";
-import IntroSection from "@/app/components/IntroSection";
+import Cartaz from "@/app/ui/components/partials/Cartaz";
+import Novidades from "@/app/ui/components/sections/Novidades";
+import Pagination from "@/app/ui/components/partials/Pagination";
+import IntroSection from "@/app/ui/components/sections/IntroSection";
+import styles from '../../app/ui/css/pages/Series.module.scss';
 
 function Series() {
   const { currentPage, setCurrentPage, totalPages, fetchAllDataPages } = useContext(DataContext);
@@ -20,18 +21,18 @@ function Series() {
 
   useEffect(() => {
     setCurrentPage(1)
-  },[]);
+  },);
 
   return (
     <>
       <HeadEdit titlePage="Séries" />
       <Header />
-      <section className="max-w-[1230px] m-auto py-14">
+      <section className={`container ${styles.series}`}>
         <IntroSection
           titleSection="Series"
           descriptionSection="Navegue e encontre a sua série"
         />
-        <div className="w-full grid grid-flow-row grid-cols-6 gap-2">
+        <div className={`gridMain`}>
           {allSeries?.map((serie, index) => (
             <Link key={index} href={`/details/${serie.id}?type=tv`}>
               <Cartaz

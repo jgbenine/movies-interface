@@ -1,14 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
-import { DataContext } from "../../app/api/ContextApi";
-import { convertDate } from "../../app/api/utils/utils";
-import HeadEdit from "@/app/helpers/Head";
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
+import { DataContext } from "../../app/data/hooks/ContextApi";
+import { convertDate } from "../../app/data/utils/utils";
+import HeadEdit from "@/app/ui/components/helpers/Head";
+import Header from "@/app/ui/components/navigation/Header";
+import Footer from "@/app/ui/components/navigation/Footer";
 import Link from "next/link";
-import Cartaz from "@/app/components/Cartaz";
-import TopSection from "@/app/components/TopSection";
-import Pagination from "@/app/components/Pagination";
-import IntroSection from "@/app/components/IntroSection";
+import Cartaz from "@/app/ui/components/partials/Cartaz";
+import TopSection from "@/app/ui/components/sections/TopSection";
+import Pagination from "@/app/ui/components/partials/Pagination";
+import IntroSection from "@/app/ui/components/sections/IntroSection";
+import styles from '../../app/ui/css/pages/Movies.module.scss'
 
 function Movies() {
   const [allMovies, setAllMovies] = useState([]);
@@ -20,18 +21,18 @@ function Movies() {
 
   useEffect(() => {
     setCurrentPage(1)
-  },[]);
+  },);
 
   return (
     <>
       <HeadEdit titlePage="Filmes" />
       <Header />
-      <section className="max-w-[1230px] m-auto py-14">
+      <section className={`container ${styles.movies}`}>
         <IntroSection
           titleSection="Filmes"
           descriptionSection="Navegue e encontre o seu filme"
         />
-        <div className="w-full grid grid-flow-row grid-cols-6 gap-2">
+        <div className={`gridMain`}>
           {allMovies?.map((movie, index) => (
             <Link key={index} href={`/details/${movie.id}?type=movie`}>
               <Cartaz
