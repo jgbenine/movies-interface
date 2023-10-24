@@ -3,13 +3,13 @@ import { convertDate } from "@/app/api/utils/utils";
 import { useRouter } from "next/router";
 import { formatRevenue } from "@/app/api/utils/utils";
 import styles from "../../app/css/pages/Details.module.scss";
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
-import TopSection from "@/app/components/TopSection";
+import Header from "@/app/components/navigation/Header";
+import Footer from "@/app/components/navigation/Footer";
+import TopSection from "@/app/components/sections/TopSection";
 import HeadEdit from "@/app/helpers/Head";
 import Link from "next/link";
 import fetchMain from "@/app/api/axiosConfig";
-import Novidades from "@/app/components/Novidades";
+import Novidades from "@/app/components/sections/Novidades";
 
 function Details() {
   const [dataDetails, setDataDetails] = React.useState([]);

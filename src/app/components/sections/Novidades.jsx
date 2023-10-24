@@ -1,10 +1,10 @@
 import { useContext } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
-import { convertDate } from "../api/utils/utils";
-import { DataContext } from "../api/ContextApi";
-import Cartaz from "@/app/components/Cartaz";
-import styles from "../css/components/Novidades.module.scss";
+import { convertDate } from "../../api/utils/utils";
+import { DataContext } from "../../api/ContextApi";
+import Cartaz from "@/app/components/partials/Cartaz";
+import styles from "../../css/components/Novidades.module.scss";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";

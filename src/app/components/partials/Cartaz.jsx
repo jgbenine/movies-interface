@@ -1,6 +1,6 @@
 import React from 'react'
 import {Plus} from 'lucide-react'
-import styles from '../css/components/Cartaz.module.scss'
+import styles from '../../css/components/Cartaz.module.scss'
 
 function Cartaz({ backgroundImage, children, titleMovie, sinceFilme, rate }) {
   const stylesBg = {

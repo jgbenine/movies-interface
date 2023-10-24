@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import styles from "../css/components/Modal.module.scss";
+import styles from "../../css/components/Modal.module.scss";
 import { X } from "lucide-react";
 
 function Modal({ contentModal, isOpen, onClose, children, titleModal }) {

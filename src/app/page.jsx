@@ -2,16 +2,16 @@
 import { convertDate } from "./api/utils/utils";
 import { DataContext } from "./api/ContextApi";
 import { useContext } from "react";
-import Novidades from "./components/Novidades";
-import Cartaz from "./components/Cartaz";
-import SliderDry from "./components/SliderDry";
-import TopSection from "./components/TopSection";
+import Novidades from "./components/sections/Novidades";
+import Cartaz from "./components/partials/Cartaz";
+import SliderDry from "./components/sections/SliderDry";
+import TopSection from "./components/sections/TopSection";
 import styles from "./css/pages/Home.module.scss";
 import HeadEdit from "./helpers/Head";
 import Link from "next/link";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import IntroSection from "./components/IntroSection";
+import Header from "./components/navigation/Header";
+import Footer from "./components/navigation/Footer";
+import IntroSection from "./components/sections/IntroSection";
 
 export default function Home() {
   const { infoNewsMovies } = useContext(DataContext);

@@ -1,8 +1,8 @@
 import styles from "../../app/css/pages/Perfil.module.scss";
-import Input from "@/app/components/Input";
-import Label from "@/app/components/Label";
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
+import Input from "@/app/components/form/Input";
+import Label from "@/app/components/form/Label";
+import Header from "@/app/components/navigation/Header";
+import Footer from "@/app/components/navigation/Footer";
 import HeadEdit from "@/app/helpers/Head";
 import Image from "next/image";
 import "../../app/globals.css";

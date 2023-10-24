@@ -1,10 +1,10 @@
 import React  from "react";
-import Footer from "@/app/components/Footer";
-import Header from "@/app/components/Header";
+import Footer from "@/app/components/navigation/Footer";
+import Header from "@/app/components/navigation/Header";
 import HeadEdit from "@/app/helpers/Head";
 import styles from "../../../src/app/css/pages/Faq.module.scss";
-import Accordion from "@/app/components/Accordion";
-import IntroSection from "@/app/components/IntroSection";
+import Accordion from "@/app/components/partials/Accordion";
+import IntroSection from "@/app/components/sections/IntroSection";
 
 function Faq() {
   return (

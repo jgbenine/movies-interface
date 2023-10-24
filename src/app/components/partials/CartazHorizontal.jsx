@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "../css/components/CartazHorizontal.module.scss";
+import styles from "../../css/components/CartazHorizontal.module.scss";
 import { PlusCircle } from "lucide-react";
 import Image from "next/image";
 

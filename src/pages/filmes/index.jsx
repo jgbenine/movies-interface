@@ -2,13 +2,13 @@ import React, { useContext, useEffect, useState } from "react";
 import { DataContext } from "../../app/api/ContextApi";
 import { convertDate } from "../../app/api/utils/utils";
 import HeadEdit from "@/app/helpers/Head";
-import Header from "@/app/components/Header";
-import Footer from "@/app/components/Footer";
+import Header from "@/app/components/navigation/Header";
+import Footer from "@/app/components/navigation/Footer";
 import Link from "next/link";
-import Cartaz from "@/app/components/Cartaz";
-import TopSection from "@/app/components/TopSection";
-import Pagination from "@/app/components/Pagination";
-import IntroSection from "@/app/components/IntroSection";
+import Cartaz from "@/app/components/partials/Cartaz";
+import TopSection from "@/app/components/sections/TopSection";
+import Pagination from "@/app/components/partials/Pagination";
+import IntroSection from "@/app/components/sections/IntroSection";
 
 function Movies() {
   const [allMovies, setAllMovies] = useState([]);

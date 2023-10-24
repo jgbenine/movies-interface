@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-import MovieWrapper from "./MovieWrapper";
-import styles from "../css/components/Sliders.module.scss";
+import MovieWrapper from "../partials/MovieWrapper";
+import styles from "../../css/components/Sliders.module.scss";
 import "swiper/css";
 import "swiper/css/effect-fade";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import { DataContext } from "../api/ContextApi";
-import { convertDate } from "../api/utils/utils";
+import { DataContext } from "../../api/ContextApi";
+import { convertDate } from "../../api/utils/utils";
 
 function SliderDry() {
   const { infoTopMovies } = useContext(DataContext);
