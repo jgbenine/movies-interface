@@ -10,6 +10,7 @@ export function ContextApi({ children }) {
   const [infoNewsTv, setInfoNewsTv] = useState([]);
   const [infoGeneralMovies, setInfoGeneralMovies] = useState([]);
   const [infoGeneralSeries, setInfoGeneralSeries] = useState([]);
+  const [infoSearch, setInfoSearch] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState([]);
   const maxDataView = 25;
@@ -52,6 +53,7 @@ export function ContextApi({ children }) {
     fetchData("/3/movie/top_rated", setInfoTopMovies);
     fetchData("/3/discover/movie", setInfoGeneralMovies);
     fetchData("/3/trending/tv/week", setInfoGeneralSeries);
+    fetchData("/3/search/movie?query=Jack+Reacher", setInfoSearch)
   }, [currentPage]);
 
   return (
@@ -63,6 +65,7 @@ export function ContextApi({ children }) {
         infoNewsTv,
         infoGeneralMovies,
         infoGeneralSeries,
+        infoSearch,
         currentPage,
         setCurrentPage,
         totalPages,

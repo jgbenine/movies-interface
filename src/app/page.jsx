@@ -1,7 +1,7 @@
 'use client';
 import { convertDate } from "./data/utils/utils";
 import { DataContext } from "./data/hooks/ContextApi";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Novidades from "./ui/components/sections/Novidades";
 import Cartaz from "./ui/components/partials/Cartaz";
 import SliderDry from "./ui/components/sections/SliderDry";
@@ -14,7 +14,13 @@ import Footer from "./ui/components/navigation/Footer";
 import IntroSection from "./ui/components/sections/IntroSection";
 
 export default function Home() {
-  const { infoNewsMovies } = useContext(DataContext);
+  const { infoNewsMovies, infoSearch } = useContext(DataContext);
+
+  useEffect(()=>{
+    console.log(infoSearch)
+  },[infoSearch])
+
+  
   return (
     <>
       {infoNewsMovies ? (
