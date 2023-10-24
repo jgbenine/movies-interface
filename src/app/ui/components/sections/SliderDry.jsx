@@ -5,8 +5,8 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
-import { DataContext } from "../../api/ContextApi";
-import { convertDate } from "../../api/utils/utils";
+import { DataContext } from "../../../data/hooks/ContextApi";
+import { convertDate } from "../../../data/utils/utils";
 
 function SliderDry() {
   const { infoTopMovies } = useContext(DataContext);

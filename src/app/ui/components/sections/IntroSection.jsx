@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
-import styles from "../../css/components/IntroSection.module.scss"
 import { Plus } from "lucide-react";
+import styles from "../../css/components/IntroSection.module.scss";
 
 function IntroSection({ titleSection, descriptionSection, linkHrefSection }) {
   return (

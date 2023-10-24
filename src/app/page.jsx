@@ -1,17 +1,17 @@
 'use client';
-import { convertDate } from "./api/utils/utils";
-import { DataContext } from "./api/ContextApi";
+import { convertDate } from "./data/utils/utils";
+import { DataContext } from "./data/hooks/ContextApi";
 import { useContext } from "react";
-import Novidades from "./components/sections/Novidades";
-import Cartaz from "./components/partials/Cartaz";
-import SliderDry from "./components/sections/SliderDry";
-import TopSection from "./components/sections/TopSection";
-import styles from "./css/pages/Home.module.scss";
-import HeadEdit from "./helpers/Head";
+import Novidades from "./ui/components/sections/Novidades";
+import Cartaz from "./ui/components/partials/Cartaz";
+import SliderDry from "./ui/components/sections/SliderDry";
+import TopSection from "./ui/components/sections/TopSection";
+import styles from "../app/ui/css/pages/Home.module.scss";
+import HeadEdit from "./ui/components/helpers/Head";
 import Link from "next/link";
-import Header from "./components/navigation/Header";
-import Footer from "./components/navigation/Footer";
-import IntroSection from "./components/sections/IntroSection";
+import Header from "./ui/components/navigation/Header";
+import Footer from "./ui/components/navigation/Footer";
+import IntroSection from "./ui/components/sections/IntroSection";
 
 export default function Home() {
   const { infoNewsMovies } = useContext(DataContext);

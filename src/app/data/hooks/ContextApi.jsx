@@ -1,6 +1,6 @@
 'use client';
 import React, { createContext, useEffect, useState } from "react";
-import fetchMain from "../api/axiosConfig";
+import fetchMain from "../services/api/axiosConfig";
 export const DataContext = createContext();
 
 export function ContextApi({ children }) {
@@ -12,7 +12,7 @@ export function ContextApi({ children }) {
   const [infoGeneralSeries, setInfoGeneralSeries] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState([]);
-  const maxDataView = 24;
+  const maxDataView = 25;
 
   async function fetchData(url, setDataCallback, countData) {
     try {

@@ -1,15 +1,15 @@
 import React, { useContext, useEffect, useState } from "react";
-import { DataContext } from "../../app/api/ContextApi";
-import { convertDate } from "../../app/api/utils/utils";
-import HeadEdit from "@/app/helpers/Head";
-import Header from "@/app/components/navigation/Header";
-import Footer from "@/app/components/navigation/Footer";
+import { DataContext } from "../../app/data/hooks/ContextApi";
+import { convertDate } from "../../app/data/utils/utils";
+import HeadEdit from "@/app/ui/components/helpers/Head";
+import Header from "@/app/ui/components/navigation/Header";
+import Footer from "@/app/ui/components/navigation/Footer";
 import Link from "next/link";
-import Cartaz from "@/app/components/partials/Cartaz";
-import TopSection from "@/app/components/sections/TopSection";
-import Pagination from "@/app/components/partials/Pagination";
-import IntroSection from "@/app/components/sections/IntroSection";
-import styles from '@/app/css/pages/Movies.module.scss'
+import Cartaz from "@/app/ui/components/partials/Cartaz";
+import TopSection from "@/app/ui/components/sections/TopSection";
+import Pagination from "@/app/ui/components/partials/Pagination";
+import IntroSection from "@/app/ui/components/sections/IntroSection";
+import styles from '../../app/ui/css/pages/Movies.module.scss'
 
 function Movies() {
   const [allMovies, setAllMovies] = useState([]);

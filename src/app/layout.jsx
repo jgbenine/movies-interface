@@ -1,4 +1,4 @@
-import { ContextApi } from "./api/ContextApi";
+import { ContextApi } from "./data/hooks/ContextApi";
 import "./globals.css";
 
 const metadata = {

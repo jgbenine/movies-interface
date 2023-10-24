@@ -1,10 +1,9 @@
 import React, { useContext } from "react";
-import { DataContext } from "../../api/ContextApi";
+import { DataContext } from "../../../data/hooks/ContextApi";
 import CartazHorizontal from "../partials/CartazHorizontal";
 import Loading from "../partials/Loading";
 import Link from "next/link";
 import styles from "../../css/components/TopSection.module.scss";
-import "../../../app/globals.css";
 import IntroSection from "./IntroSection";
 
 function TopSection() {

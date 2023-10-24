@@ -1,6 +1,6 @@
 import React from "react";
 import { PlusIcon, MinusIcon } from "lucide-react";
-import "../../../app/globals.css";
+// import "../../../global.css";
 
 
 function Accordion() {
