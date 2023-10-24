@@ -1,15 +1,15 @@
 import { useEffect, useState } from "react";
-import { convertDate } from "@/app/data/utils/utils";
-import { useRouter } from "next/router";
-import { formatRevenue } from "@/app/data/utils/utils";
 import Header from "@/app/ui/components/navigation/Header";
-import Footer from "../../app/";
+import Footer from "../../app/ui/components/navigation/Footer";
 import TopSection from "@/app/ui/components/sections/TopSection";
 import HeadEdit from "@/app/ui/components/helpers/Head";
 import Link from "next/link";
 import fetchMain from "@/app/data/services/api/axiosConfig";
 import Novidades from "@/app/ui/components/sections/Novidades";
 import styles from "../../app/ui/css/pages/Details.module.scss";
+import { convertDate } from "@/app/data/utils/utils";
+import { useRouter } from "next/router";
+import { formatRevenue } from "@/app/data/utils/utils";
 
 function Details() {
   const [dataDetails, setDataDetails] = useState([]);

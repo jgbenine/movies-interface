@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import MovieWrapper from "../partials/MovieWrapper";
 import styles from "../../css/components/Sliders.module.scss";
 import "swiper/css";
@@ -26,6 +26,7 @@ function SliderDry() {
           slidesPerView={1}
         >
           {infoTopMovies.map((dataInfo, index) => (
+      
             <SwiperSlide key={index}>
               <MovieWrapper
                 backgroundImage={`https://image.tmdb.org/t/p/w200/${dataInfo.backdrop_path}`}
@@ -33,6 +34,7 @@ function SliderDry() {
                 ano={convertDate(dataInfo.release_date)}
                 sinopse={dataInfo.overview}
                 linkMovie={`/details/${dataInfo.id}?type=movie`}
+                vote={dataInfo.vote_average}
               />
             </SwiperSlide>
           ))}
