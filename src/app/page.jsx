@@ -31,7 +31,7 @@ export default function Home() {
               descriptionSection="Descubra novos filmes"
               linkHrefSection={"/filmes"}
             />
-            <div className={styles.homeGrid}>
+            <div className={`gridMain`}>
               {infoNewsMovies?.map((movie) => (
                 <Link key={movie.id} href={`/details/${movie.id}?type=movie`}>
                   <Cartaz

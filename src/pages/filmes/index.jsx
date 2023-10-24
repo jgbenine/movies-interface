@@ -9,6 +9,7 @@ import Cartaz from "@/app/components/partials/Cartaz";
 import TopSection from "@/app/components/sections/TopSection";
 import Pagination from "@/app/components/partials/Pagination";
 import IntroSection from "@/app/components/sections/IntroSection";
+import styles from '@/app/css/pages/Movies.module.scss'
 
 function Movies() {
   const [allMovies, setAllMovies] = useState([]);
@@ -20,18 +21,18 @@ function Movies() {
 
   useEffect(() => {
     setCurrentPage(1)
-  },[]);
+  },);
 
   return (
     <>
       <HeadEdit titlePage="Filmes" />
       <Header />
-      <section className="max-w-[1230px] m-auto py-14">
+      <section className={`container ${styles.movies}`}>
         <IntroSection
           titleSection="Filmes"
           descriptionSection="Navegue e encontre o seu filme"
         />
-        <div className="w-full grid grid-flow-row grid-cols-6 gap-2">
+        <div className={`gridMain`}>
           {allMovies?.map((movie, index) => (
             <Link key={index} href={`/details/${movie.id}?type=movie`}>
               <Cartaz

@@ -24,7 +24,7 @@ function Novidades() {
               descriptionSection="Seleção de mais avaliadas."
               linkHrefSection={"/series"}
             />
-            <div>
+            <div className={styles.newsSlider}>
               <Swiper
                 spaceBetween={50}
                 modules={[Pagination, Navigation]}
