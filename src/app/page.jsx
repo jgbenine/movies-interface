@@ -14,13 +14,8 @@ import Footer from "./ui/components/navigation/Footer";
 import IntroSection from "./ui/components/sections/IntroSection";
 
 export default function Home() {
-  const { infoNewsMovies, infoSearch } = useContext(DataContext);
+  const { infoNewsMovies } = useContext(DataContext);
 
-  useEffect(()=>{
-    console.log(infoSearch)
-  },[infoSearch])
-
-  
   return (
     <>
       {infoNewsMovies ? (
