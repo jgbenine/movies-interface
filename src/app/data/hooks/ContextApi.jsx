@@ -10,7 +10,8 @@ export function ContextApi({ children }) {
   const [infoNewsTv, setInfoNewsTv] = useState([]);
   const [infoGeneralMovies, setInfoGeneralMovies] = useState([]);
   const [infoGeneralSeries, setInfoGeneralSeries] = useState([]);
-  const [infoSearch, setInfoSearch] = useState([]);
+  const [infoMovieSearch, setInfoMovieSearch] = useState([]);
+  const [infoTvSearch, setInfoTvSearch] = useState([]);
   const [searchQuery, setSearchQuery] = useState("")
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState([]);
@@ -54,7 +55,8 @@ export function ContextApi({ children }) {
     fetchData("/3/movie/top_rated", setInfoTopMovies);
     fetchData("/3/discover/movie", setInfoGeneralMovies);
     fetchData("/3/trending/tv/week", setInfoGeneralSeries);
-    fetchData(`/3/search/collection?query=${searchQuery}`, setInfoSearch)
+    fetchData(`/3/search/movie?query=${searchQuery}`, setInfoMovieSearch)
+    fetchData(`/3/search/tv?query=${searchQuery}`, setInfoTvSearch)
   }, [currentPage, searchQuery]);
 
   return (
@@ -66,11 +68,12 @@ export function ContextApi({ children }) {
         infoNewsTv,
         infoGeneralMovies,
         infoGeneralSeries,
-        infoSearch,
         currentPage,
         setCurrentPage,
         totalPages,
         fetchAllDataPages,
+        infoMovieSearch,
+        infoTvSearch,
         setSearchQuery,
         searchQuery
       }}
