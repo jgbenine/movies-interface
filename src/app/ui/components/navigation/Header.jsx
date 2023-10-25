@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import {
   Search,
   UserCircle,
@@ -11,17 +11,9 @@ import {
 import Link from "next/link";
 import styles from "../../css/components/Header.module.scss";
 import { usePathname } from "next/navigation";
-import { Input } from "../form/Input";
-import { DataContext } from "@/app/data/hooks/ContextApi";
 
 function Header() {
   const [menuMobile, setMenuMobile] = useState(false);
-  const { infoSearch, setSearchQuery } = useContext(DataContext);
-
-  useEffect(() => {
-    console.log(infoSearch)
-  }, [infoSearch]);
-
   const pathname = usePathname();
 
   function activeMenu(hrefLink) {
@@ -48,14 +40,6 @@ function Header() {
       window.removeEventListener("resize", handleResize);
     };
   }, []);
-
-  function handleInput(event) {
-    const valueQuery = event.target.value;
-    if(valueQuery){
-      const refactorQuery = valueQuery.replace(/ /g, '+')
-      setSearchQuery(refactorQuery)
-    }
-  }
 
   return (
     <header className={styles.header}>
@@ -92,15 +76,14 @@ function Header() {
           )}
         </nav>
         <div className={styles.headerLinks}>
-          <span>
-            <Input onChange={handleInput} />
-          </span>
-
-          <Link href="/login" title="Login">
-            <LogIn size={18} />
+          <Link href="/search" title="Login">
+            <Search size={18} />
           </Link>
           <Link href="/perfil" title="Perfil">
             <UserCircle size={18} />
+          </Link>
+          <Link href="/login" title="Login">
+            <LogIn size={18} />
           </Link>
 
           <button className={styles.btnMobile} onClick={toggleMenuMobile}>

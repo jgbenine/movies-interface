@@ -54,7 +54,7 @@ export function ContextApi({ children }) {
     fetchData("/3/movie/top_rated", setInfoTopMovies);
     fetchData("/3/discover/movie", setInfoGeneralMovies);
     fetchData("/3/trending/tv/week", setInfoGeneralSeries);
-    fetchData(`/3/search/movie?query=${searchQuery}`, setInfoSearch)
+    fetchData(`/3/search/collection?query=${searchQuery}`, setInfoSearch)
   }, [currentPage, searchQuery]);
 
   return (
