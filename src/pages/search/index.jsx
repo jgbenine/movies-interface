@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import HeadEdit from "@/app/ui/components/helpers/Head";
 import Header from "@/app/ui/components/navigation/Header";
 import Cartaz from "@/app/ui/components/partials/Cartaz";
@@ -8,6 +8,7 @@ import styles from "../../app/ui/css/pages/Search.module.scss";
 import { DataContext } from "@/app/data/hooks/ContextApi";
 import { convertDate } from "@/app/data/utils/utils";
 import { Input } from "@/app/ui/components/form/Input";
+import Footer from "@/app/ui/components/navigation/Footer";
 
 function Search() {
   const [contentSearchMovie, setContentSearchMovie] = useState([]);
@@ -15,7 +16,7 @@ function Search() {
   const { infoMovieSearch, infoTvSearch, setSearchQuery } =
     React.useContext(DataContext);
 
-  React.useEffect(() => {
+    useEffect(() => {
     setContentSearchMovie(infoMovieSearch);
     setContentSearchTv(infoTvSearch);
   }, [infoMovieSearch, infoTvSearch]);
@@ -35,13 +36,13 @@ function Search() {
       <section className={`container ${styles.search}`}>
         <IntroSection
           titleSection="Encontre seu conteúdo"
-          descriptionSection="Não encontrou em nossas pages? tente pesquisar pelo que procura"
+          descriptionSection="Não encontrou em nossas páginas? tente pesquisar pelo que procura"
         />
         <Input onChange={handleInput} placeholder="Pesquisar" />
         <>
           {infoMovieSearch.length !== 0 ? (
             <>
-              <h1 className="text-lg text-white pt-5">Filmes</h1>
+              <h1 className="text-lg text-center text-white pt-5 min-[720px]:text-left">Filmes</h1>
               <div className={`gridMain ${styles.searchGrid}`}>
                 {contentSearchMovie?.map((contentSearchMovie, index) => (
                   <Link
@@ -63,7 +64,7 @@ function Search() {
         <>
           {contentSearchTv.length !== 0 ? (
             <>
-              <h1 className="text-lg text-white pt-5">Series</h1>
+              <h1 className="text-lg text-center text-white pt-5 min-[720px]:text-left">Series</h1>
               <div className={`gridMain ${styles.searchGrid}`}>
                 {contentSearchTv?.map((contentSearchTv, index) => (
                   <Link
@@ -83,6 +84,7 @@ function Search() {
           ) : null}
         </>
       </section>
+      <Footer />
     </>
   );
 }
