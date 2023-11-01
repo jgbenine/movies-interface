@@ -1,0 +1,16 @@
+.search{
+  margin: 60px auto;
+}
+.searchGrid{
+  padding: 20px 0px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  align-content: stretch;
+
+  @media (min-width: 720px) {
+    justify-content: unset;
+  }
+}

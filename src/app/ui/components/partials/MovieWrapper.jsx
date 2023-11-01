@@ -10,7 +10,7 @@ function MovieWrapper({ backgroundImage, title, sinopse, ano, vote, linkMovie })
   return (
     <div className={styles.movieItem} style={stylesBg} >
       <div className={styles.movieFilter}>
-        <article className={`container ${styles.movieContent}`}>
+        <article className={`containerMain ${styles.movieContent}`}>
           <h4>{title}</h4>
           <ul className={styles.description}>
             <li>Lançamento {ano}</li>

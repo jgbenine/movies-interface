@@ -27,7 +27,7 @@ function Movies() {
     <>
       <HeadEdit titlePage="Filmes" />
       <Header />
-      <section className={`container ${styles.movies}`}>
+      <section className={`containerMain ${styles.movies}`}>
         <IntroSection
           titleSection="Filmes"
           descriptionSection="Navegue e encontre o seu filme"
