@@ -13,7 +13,7 @@ function TopSection() {
     <>
       {infoTopFiveMovies ? (
         <section className={styles.topSection}>
-          <div className={`container ${styles.topGrid}`}>
+          <div className={styles.topGrid}>
           <IntroSection
               titleSection="Aclamados pela crítica"
               descriptionSection="Seleção dos melhores avaliados."

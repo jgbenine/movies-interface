@@ -12,7 +12,7 @@ function Faq() {
       <HeadEdit titlePage="FAQ" descriptionPage="Tire sua dúvida conosco." />
       <Header />
       <section className={styles.faq}>
-        <div className="container">
+        <div className="containerMain">
         <IntroSection
             titleSection="Perguntas frequentes"
             descriptionSection="Tire sua dúvidas"

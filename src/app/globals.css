@@ -34,9 +34,11 @@ body{
   position: relative;
 }
 
-.container{
-  max-width: 1200px;
+.containerMain{
+  width: 100%;
+  max-width: 1250px;
   padding: 0px 10px;
+  min-height: 500px;
 }
 
 .gridMain {
@@ -45,7 +47,7 @@ body{
   justify-content: center;
   gap: 2rem;
   padding: 10px 0px;
-
+  
   @media (min-width: 680px) {grid-template-columns: repeat(3, 1fr);}
   @media (min-width: 720px) {justify-content: space-between;}
   @media (min-width: 920px) {grid-template-columns: repeat(4, 1fr);}

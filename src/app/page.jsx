@@ -26,7 +26,7 @@ export default function Home() {
           />
           <Header />
           <SliderDry />
-          <section className={`container ${styles.homeSection}`}>
+          <section className={`containerMain ${styles.homeSection}`}>
             <IntroSection
               titleSection="Novos Filmes"
               descriptionSection="Descubra novos filmes"

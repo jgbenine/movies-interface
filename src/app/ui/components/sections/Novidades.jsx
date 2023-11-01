@@ -17,7 +17,7 @@ function Novidades() {
   return (
     <>
       {infoNewsTv ? (
-        <section className={`container ${styles.news}`}>
+        <section className={`containerMain ${styles.news}`}>
           <>
             <IntroSection
               titleSection="Series Populares"

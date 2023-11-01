@@ -79,13 +79,6 @@ function Header() {
           <Link href="/search" title="Login">
             <Search size={18} />
           </Link>
-          <Link href="/perfil" title="Perfil">
-            <UserCircle size={18} />
-          </Link>
-          <Link href="/login" title="Login">
-            <LogIn size={18} />
-          </Link>
-
           <button className={styles.btnMobile} onClick={toggleMenuMobile}>
             <Menu color="#ffff00" size={21} />
           </button>
