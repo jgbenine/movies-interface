@@ -27,7 +27,7 @@ function Series() {
     <>
       <HeadEdit titlePage="Séries" />
       <Header />
-      <section className={`container ${styles.series}`}>
+      <section className={`containerMain ${styles.series}`}>
         <IntroSection
           titleSection="Series"
           descriptionSection="Navegue e encontre a sua série"
