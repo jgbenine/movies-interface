@@ -33,17 +33,17 @@ function Search() {
     <>
       <HeadEdit titlePage="Procurar Filme" />
       <Header />
-      <section className={`container ${styles.search}`}>
+      <section className={`containerMain ${styles.search}`}>
         <IntroSection
           titleSection="Encontre seu conteúdo"
           descriptionSection="Não encontrou em nossas páginas? tente pesquisar pelo que procura"
         />
-        <Input onChange={handleInput} placeholder="Pesquisar" />
+        <Input onChange={handleInput} placeholder="Pesquisar"/>
         <>
           {infoMovieSearch.length !== 0 ? (
             <>
-              <h1 className="text-lg text-center text-white pt-5 min-[720px]:text-left">Filmes</h1>
-              <div className={`gridMain ${styles.searchGrid}`}>
+              <h2 className="py-3 mt-5 border-b border-zinc-700 max-w-[300px] text-white  text-xl">Filmes</h2>
+              <div className={styles.searchGrid}>
                 {contentSearchMovie?.map((contentSearchMovie, index) => (
                   <Link
                     key={index}
@@ -64,8 +64,8 @@ function Search() {
         <>
           {contentSearchTv.length !== 0 ? (
             <>
-              <h1 className="text-lg text-center text-white pt-5 min-[720px]:text-left">Series</h1>
-              <div className={`gridMain ${styles.searchGrid}`}>
+              <h2 className="py-3 mt-5 border-b border-zinc-700 max-w-[300px] text-white text-xl">Series</h2>
+              <div className={styles.searchGrid}>
                 {contentSearchTv?.map((contentSearchTv, index) => (
                   <Link
                     key={index}
