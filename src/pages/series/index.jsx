@@ -21,7 +21,7 @@ function Series() {
 
   useEffect(() => {
     setCurrentPage(1)
-  },);
+  },[setCurrentPage]);
 
   return (
     <>

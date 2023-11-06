@@ -21,7 +21,7 @@ function Movies() {
 
   useEffect(() => {
     setCurrentPage(1)
-  },);
+  },[setCurrentPage]);
 
   return (
     <>
