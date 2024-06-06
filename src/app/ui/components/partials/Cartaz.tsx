@@ -2,7 +2,16 @@ import React from 'react'
 import {Plus} from 'lucide-react'
 import styles from '../../css/components/Cartaz.module.scss'
 
-function Cartaz({ backgroundImage, children, titleMovie, sinceFilme, rate }) {
+
+type CartazProps = {
+  backgroundImage: string,
+  children?: React.ReactNode,
+  titleMovie: string,
+  sinceFilme: string,
+  rate: string,
+}
+
+export function Cartaz({ backgroundImage, children, titleMovie, sinceFilme, rate }: CartazProps) {
   const stylesBg = {
     backgroundImage: `url(${backgroundImage})`,
   }
@@ -32,5 +41,3 @@ function Cartaz({ backgroundImage, children, titleMovie, sinceFilme, rate }) {
     </div>
   )
 }
-
-export default Cartaz
