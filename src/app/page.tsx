@@ -9,7 +9,6 @@ import styles from "../app/ui/css/pages/Home.module.scss";
 // import Link from "next/link";
 // import Header from "./ui/components/navigation/Header";
 // import Footer from "./ui/components/navigation/Footer";
-import Link from "next/link";
 import { IntroSection } from "./ui/components/sections/IntroSection";
 import { getNewsMovies, getPopularMovies, getTopFiveMovies, getTopSeries } from "./data/services/api/routes/routes";
 import { SliderDry } from "./ui/components/sections/SliderDry";
@@ -25,7 +24,6 @@ export default async function Home() {
   const newsMovies = await getNewsMovies();
   const topSeries = await getTopSeries();
 
-
   return (
     <>
       <section>
@@ -38,14 +36,15 @@ export default async function Home() {
           />
           <div className={`gridMain`}>
             {newsMovies?.map((movie) => (
-              <Link key={movie.id} href={`/details/${movie.id}?type=movie`}>
-                <Cartaz
-                  backgroundImage={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
-                  titleMovie={movie.original_title}
-                  sinceFilme={convertDate(movie.release_date)}
-                  rate={movie.vote_average}
-                />
-              </Link>
+              <Cartaz
+                id={movie.id}
+                key={movie.id}
+                type="filmes"
+                backgroundImage={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+                titleMovie={movie.original_title}
+                sinceFilme={convertDate(movie.release_date)}
+                rate={movie.vote_average}
+              />
             ))}
           </div>
           <Novidades results={topSeries} />
