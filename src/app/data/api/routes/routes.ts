@@ -1,9 +1,13 @@
-import fetchMain from "../axiosConfig";
+import fetchMain from "../apiConfig";
 
 export async function getPopularMovies() {
-  const response = await fetchMain("movie/popular?page=1");
-  const data = await response.data.results;
-  return data;
+  try{
+    const response = await fetchMain("movie/popular?page=1");
+    const data = await response.data.results;
+    return data;
+  }catch(err){
+    console.error(err);
+  }
 }
 
 export async function getTopFiveMovies() {
@@ -15,21 +19,32 @@ export async function getTopFiveMovies() {
 }
 
 export async function getNewsMovies() {
-  const response = await fetchMain("discover/movie");
-  const data = await response.data.results;
-  return data;
+   try{
+    const response = await fetchMain("discover/movie");
+    const data = await response.data.results;
+    return data;
+   }catch(err){
+      console.error(err);
+   }
 }
 
 export async function getNewsSeries() {
-  const response = await fetchMain("discover/tv");
-  const data = await response.data.results;
-  return data;
+  try{
+    const response = await fetchMain("discover/tv");
+    const data = await response.data.results;
+    return data;
+  }catch(err){console.error(err);}
 }
 
 export async function getTopSeries() {
-  const response = await fetchMain("tv/top_rated");
-  const data = await response.data.results;
-  return data;
+  try{
+    const response = await fetchMain("tv/top_rated");
+    const data = await response.data.results;
+    return data;
+  }
+  catch (err) {
+    console.log(err);
+  }
 }
 
 export async function getMovieId(id: number) {
