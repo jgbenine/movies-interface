@@ -1,4 +1,4 @@
-'use client';
+"use client"
 import "swiper/css/navigation";
 import styles from "../../css/components/Novidades.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -6,10 +6,14 @@ import { Pagination, Navigation } from "swiper/modules";
 import { convertDate } from "../../../data/utils/utils";
 import { IntroSection } from "./IntroSection";
 import { Cartaz } from "../partials/Cartaz";
-// import IntroSection from "./IntroSection";
 
 
 type CartazProps = {
+  introSection:{
+    titleSection: string,
+    descriptionSection: string,
+    linkHrefSection: string,
+  }
   results: {
     id: number,
     poster_path: string,
@@ -20,16 +24,14 @@ type CartazProps = {
   }[]
 }
 
-export function Novidades({ results }: CartazProps) {
-  // const { infoNewsTv } = useContext(DataContext);
-
+export function Novidades({ results, introSection }: CartazProps) {
   return (
     <section className={`containerMain ${styles.news}`}>
       <>
         <IntroSection
-          titleSection="Series Populares"
-          descriptionSection="Seleção de mais avaliadas."
-          linkHrefSection={"/series"}
+          titleSection={introSection.titleSection}
+          descriptionSection={introSection.descriptionSection}
+          linkHrefSection={introSection.linkHrefSection}
         />
         <div className={styles.newsSlider}>
           <Swiper
@@ -54,15 +56,10 @@ export function Novidades({ results }: CartazProps) {
           >
             {results?.map((tvSerie) => (
               <SwiperSlide key={tvSerie.id}>
-                {/* <Link href={`/details/${tvSerie.id}?type=tv`}>
-                      <Cartaz
-                        backgroundImage={`https://image.tmdb.org/t/p/w200/${tvSerie.poster_path}`}
-                        titleMovie={tvSerie.name}
-                        sinceFilme={convertDate(tvSerie.first_air_date)}
-                        rate={tvSerie.vote_average}
-                      />
-                    </Link> */}
                 <Cartaz
+                  key={tvSerie.id}
+                  id={tvSerie.id}
+                  type="series"
                   backgroundImage={`https://image.tmdb.org/t/p/w200/${tvSerie.poster_path}`}
                   titleMovie={tvSerie.name}
                   sinceFilme={convertDate(tvSerie.first_air_date)}

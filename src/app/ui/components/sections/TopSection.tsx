@@ -1,29 +1,30 @@
 import { CartazHorizontal } from "../partials/CartazHorizontal";
-import Loading from "../partials/Loading";
-import Link from "next/link";
+// import Loading from "../partials/Loading";
+// import Link from "next/link";
 import styles from "../../css/components/TopSection.module.scss";
 import { IntroSection } from "./IntroSection";
+import { getTopFiveMovies } from "../../../data/api/routes/routes";
 
 
 type TopMoviesProps = {
-  results: {
     id: number;
     title: string;
     backdrop_path: string;
-  }[]
 }
 
-export function TopSection({ results }: TopMoviesProps) {
+export async function TopSection() {
+  const topMovies = await getTopFiveMovies();
 
   return (
     <section className={styles.topSection}>
       <div className={styles.topGrid}>
-        {/* <IntroSection
+        <IntroSection
           titleSection="Aclamados pela crítica"
           descriptionSection="Seleção dos melhores avaliados."
-        /> */}
+          linkHrefSection=""
+        />
         <div className={styles.topContent}>
-          {results.map((topMovie, index: number) => (
+          {topMovies.map((topMovie: TopMoviesProps , index: number) => (
             <CartazHorizontal
               key={topMovie.id}
               ImageHorizontal={`https://image.tmdb.org/t/p/w200${topMovie.backdrop_path}`}

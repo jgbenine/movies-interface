@@ -1,8 +1,7 @@
+'use client'
 import { useEffect, useState } from "react";
 import {
   Search,
-  UserCircle,
-  LogIn,
   Clapperboard,
   Menu,
   Play,
@@ -16,7 +15,7 @@ function Header() {
   const [menuMobile, setMenuMobile] = useState(false);
   const pathname = usePathname();
 
-  function activeMenu(hrefLink) {
+  function activeMenu(hrefLink: string) {
     return pathname === hrefLink;
   }
 
