@@ -1,10 +1,7 @@
 import { CartazHorizontal } from "../partials/CartazHorizontal";
-// import Loading from "../partials/Loading";
-// import Link from "next/link";
 import styles from "../../css/components/TopSection.module.scss";
 import { IntroSection } from "./IntroSection";
 import { getTopFiveMovies } from "../../../data/api/routes/routes";
-
 
 type TopMoviesProps = {
     id: number;
@@ -24,7 +21,7 @@ export async function TopSection() {
           linkHrefSection=""
         />
         <div className={styles.topContent}>
-          {topMovies.map((topMovie: TopMoviesProps , index: number) => (
+          {topMovies.map((topMovie:TopMoviesProps , index: number) => (
             <CartazHorizontal
               key={topMovie.id}
               ImageHorizontal={`https://image.tmdb.org/t/p/w200${topMovie.backdrop_path}`}

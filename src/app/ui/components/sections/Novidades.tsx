@@ -1,30 +1,20 @@
 "use client"
-import "swiper/css/navigation";
-import styles from "../../css/components/Novidades.module.scss";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Navigation } from "swiper/modules";
 import { convertDate } from "../../../data/utils/utils";
-import { IntroSection } from "./IntroSection";
+import { IntroSection, IntroSectionProps } from "./IntroSection";
 import { Cartaz } from "../partials/Cartaz";
+import { SeriesProps } from "../../../data/api/routes/routes";
+import "swiper/css/navigation";
+import styles from "../../css/components/Novidades.module.scss";
 
 
-type CartazProps = {
-  introSection:{
-    titleSection: string,
-    descriptionSection: string,
-    linkHrefSection: string,
-  }
-  results: {
-    id: number,
-    poster_path: string,
-    name: string,
-    vote_average: string,
-    first_air_date: string,
-    rate: string,
-  }[]
+type NovidadesProps = {
+  introSection: IntroSectionProps
+  results: SeriesProps[]
 }
 
-export function Novidades({ results, introSection }: CartazProps) {
+export function Novidades({ results, introSection }: NovidadesProps) {
   return (
     <section className={`containerMain ${styles.news}`}>
       <>

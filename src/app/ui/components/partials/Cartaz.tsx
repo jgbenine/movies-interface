@@ -10,7 +10,7 @@ type CartazProps = {
   children?: React.ReactNode,
   titleMovie: string,
   sinceFilme: string,
-  rate: string,
+  rate: number,
 }
 
 export function Cartaz({id, type, backgroundImage, children, titleMovie, sinceFilme, rate }: CartazProps) {
