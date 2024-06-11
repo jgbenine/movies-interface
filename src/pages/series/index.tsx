@@ -2,21 +2,20 @@
 import { convertDate } from "../../app/data/utils/utils";
 import styles from '../../app/ui/css/pages/Series.module.scss';
 import { Cartaz } from "../../app/ui/components/partials/Cartaz";
-import { getNewsSeries } from "../../app/data/services/api/routes/routes";
+import { SeriesProps, getNewsSeries } from "../../app/data/api/routes/routes";
 import { IntroSection } from "../../app/ui/components/sections/IntroSection";
-import Header from "../../app/ui/components/navigation/Header";
 import HeadEdit from "../../app/ui/components/helpers/Head";
-import Footer from "../../app/ui/components/navigation/Footer";
 
 export async function getServerSideProps() {
-  const data = await getNewsSeries();
+  const newsSeries = await getNewsSeries();
   return {
     props: {
-      data
+      newsSeries
     }
   };
 }
-export default function Series({ data }) {
+
+export default function Series({ newsSeries }) {
   return (
     <>
       <HeadEdit titlePage="Séries" descriptionPage="Encontre sua série preferida!" />
@@ -27,7 +26,7 @@ export default function Series({ data }) {
           linkHrefSection=""
         />
         <div className={`gridMain`}>
-          {data.map((serie: any) => (
+          {newsSeries.map((serie: SeriesProps) => (
             <Cartaz
               id={serie.id}
               key={serie.id}
@@ -39,13 +38,7 @@ export default function Series({ data }) {
             />
           ))}
         </div>
-        {/* <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={setCurrentPage}
-        /> */}
       </section>
-      {/* <Novidades /> */}
     </>
   );
 }

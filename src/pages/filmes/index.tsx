@@ -1,20 +1,9 @@
-import { convertDate } from "../../app/data/utils/utils";
-// import HeadEdit from "@/app/ui/components/helpers/Head";
-// import Header from "@/app/ui/components/navigation/Header";
-// import Footer from "@/app/ui/components/navigation/Footer";
-import Link from "next/link";
-// import Cartaz from "@/app/ui/components/partials/Cartaz";
-// import TopSection from "@/app/ui/components/sections/TopSection";
-// import Pagination from "@/app/ui/components/partials/Pagination";
-// import IntroSection from "@/app/ui/components/sections/IntroSection";
-import styles from '../../app/ui/css/pages/Movies.module.scss'
-import { getNewsMovies } from "../../app/data/services/api/routes/routes";
 import HeadEdit from "../../app/ui/components/helpers/Head";
-import Footer from "../../app/ui/components/navigation/Footer";
+import { convertDate } from "../../app/data/utils/utils";
+import { getNewsMovies } from "../../app/data/api/routes/routes";
 import { Cartaz } from "../../app/ui/components/partials/Cartaz";
 import { IntroSection } from "../../app/ui/components/sections/IntroSection";
-import { TopSection } from "../../app/ui/components/sections/TopSection";
-
+import styles from "../../app/ui/css/pages/Movies.module.scss"
 
 export async function getServerSideProps() {
   const data = await getNewsMovies();
@@ -24,7 +13,8 @@ export async function getServerSideProps() {
     }
   };
 }
-function Movies({ data }) {
+
+export default function Movies({ data }) {
   return (
     <>
       <HeadEdit titlePage="Filmes" descriptionPage="Encontre seu filme preferido!" />
@@ -35,7 +25,7 @@ function Movies({ data }) {
           linkHrefSection=""
         />
         <div className={`gridMain`}>
-          {data?.map((movie, index) => (
+          {data?.map((movie) => (
             <Cartaz
               key={movie.id}
               id={movie.id}
@@ -57,5 +47,3 @@ function Movies({ data }) {
     </>
   );
 }
-
-export default Movies;

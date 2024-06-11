@@ -1,18 +1,10 @@
-// import Header from "@/app/ui/components/navigation/Header";
-// import Footer from "../../app/ui/components/navigation/Footer";
-// import TopSection from "@/app/ui/components/sections/TopSection";
 import HeadEdit from "../../app/ui/components/helpers/Head";
-import Header from "../../app/ui/components/navigation/Header";
 import Link from "next/link";
 import styles from "../../app/ui/css/pages/Details.module.scss";
 import { formatRevenue, convertDate } from "../../app/data/utils/utils";
-import Footer from "../../app/ui/components/navigation/Footer";
-import { Novidades } from "../../app/ui/components/sections/Novidades";
-import { TopSection } from "../../app/ui/components/sections/TopSection";
 
 
 export function Details({ data, type }) {
-
   return (
     <>
       <HeadEdit
@@ -20,12 +12,9 @@ export function Details({ data, type }) {
         descriptionPage={data.tagline}
       />
       <section className={styles.details}>
-        <div
-          className={styles.viewIntro}
-          style={{
-            backgroundImage: `url(https://image.tmdb.org/t/p/w500/${data.backdrop_path})`,
+        {/* <div className={styles.viewIntro} style={{backgroundImage: `url(https://image.tmdb.org/t/p/w500/${data.backdrop_path})`,
           }}
-        ></div>
+        ></div> */}
         <article
           className={`${styles.detailsContent}`}
           style={{
