@@ -1,11 +1,28 @@
 import fetchMain from "../apiConfig";
 
+export type MovieProps = {
+  id: number;
+  poster_path: string;
+  original_title: string;
+  overview: string;
+  release_date: string;
+  vote_average: number;
+};
+
+export type SeriesProps = {
+  id: number;
+  poster_path: string;
+  name: string;
+  first_air_date: string;
+  vote_average: number;
+}
+
 export async function getPopularMovies() {
-  try{
+  try {
     const response = await fetchMain("movie/popular?page=1");
     const data = await response.data.results;
     return data;
-  }catch(err){
+  } catch (err) {
     console.error(err);
   }
 }
@@ -19,30 +36,31 @@ export async function getTopFiveMovies() {
 }
 
 export async function getNewsMovies() {
-   try{
+  try {
     const response = await fetchMain("discover/movie");
-    const data = await response.data.results;
+    const data: MovieProps[] = await response.data.results;
     return data;
-   }catch(err){
-      console.error(err);
-   }
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 export async function getNewsSeries() {
-  try{
+  try {
     const response = await fetchMain("discover/tv");
-    const data = await response.data.results;
+    const data:SeriesProps[] = await response.data.results;
     return data;
-  }catch(err){console.error(err);}
+  } catch (err) {
+    console.error(err);
+  }
 }
 
 export async function getTopSeries() {
-  try{
+  try {
     const response = await fetchMain("tv/top_rated");
     const data = await response.data.results;
     return data;
-  }
-  catch (err) {
+  } catch (err) {
     console.log(err);
   }
 }
