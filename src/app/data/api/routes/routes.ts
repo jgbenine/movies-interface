@@ -4,6 +4,7 @@ export type MovieProps = {
   id: number;
   poster_path: string;
   original_title: string;
+  media_type?: string;
   overview: string;
   release_date: string;
   vote_average: number;
@@ -79,6 +80,16 @@ export async function getSerieById(id: number) {
   try {
     const response = await fetchMain(`tv/${id}`);
     const data = await response.data;
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+export async function getSearch(params: string) {
+  try {
+    const response = await fetchMain(`search/multi?query=${params}`);
+    const data = await response.data.results;
     return data;
   } catch (err) {
     console.log(err);
