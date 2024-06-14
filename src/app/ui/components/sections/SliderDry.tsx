@@ -28,7 +28,7 @@ export function SliderDry({ results }: SliderDryProps) {
           clickable: true,
         }}
         autoplay={{
-          delay: 12000,
+          delay: 3000,
           disableOnInteraction: false,
         }}
         loop={true}

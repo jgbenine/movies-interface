@@ -24,7 +24,7 @@ export function Cartaz({id, type, backgroundImage, children, titleMovie, sinceFi
       <div className={`${styles.cartazFilter} anima-opacity`}>
         <Plus
         color='#f3f3f3a5'
-        size={35} 
+        size={25} 
         />
       </div>
       <div className={styles.cartazDescription}>
