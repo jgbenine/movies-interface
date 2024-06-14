@@ -10,29 +10,41 @@
   overflow: hidden;
   position: relative;
   box-shadow: 10px 10px 40px 3px rgba(0, 0, 0, 0.75);
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Segoe UI", sans-serif;
   margin: 0 auto;
+  animation: animaOpacity .5s ease-in forwards;
   @media (min-width: 620px) {
     margin: unset;
   }
 
-  &:hover, &:focus {
-    .cartazFilter,
+  &:hover,
+  &:focus {
     .cartazDescription {
       display: flex;
       flex-direction: column;
+      animation: animaOpacity 0.8s ease-in forwards;
+    }
+    .cartazFilter {
+      animation: fromRight .5s ease-in-out forwards;
+      animation-play-state: running; 
+      opacity: 1;
     }
   }
+  
 }
 
 .cartazFilter {
-  display: none;
+  display: flex;
   position: absolute;
+  right: -305px;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8);
-  align-items: center;
-  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  justify-content: flex-end;
+  padding: 5px 5px 0 0;
+  animation: toRight .5s ease-in-out,
+  animaOpacity .3s ease-in reverse;
+  // animation-play-state: paused; 
 }
 
 .cartazDescription {
@@ -40,9 +52,9 @@
   display: none;
   width: 100%;
   padding: 10px;
-  z-index: 999;
+  z-index: 10;
   color: white;
-  
+
   article {
     display: flex;
     align-items: center;
@@ -77,4 +89,27 @@
     top: 0;
     left: 0;
   }
+}
+
+@keyframes animaOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fromRight {
+  from {
+    right: -305px;
+  }
+  to {
+    right: 0px;
+  }
+}
+
+@keyframes toRight {
+  from { right: 0px; }
+  to { right: -305px; }
 }

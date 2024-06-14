@@ -12,7 +12,7 @@ import Footer from "./ui/components/navigation/Footer";
 
 export default async function Home() {
   const popularMovies = await getPopularMovies();
-  const newsMovies = await getNewsMovies();
+  const newsMovies = await getNewsMovies(1);
   const topSeries = await getTopSeries();
 
   return (
