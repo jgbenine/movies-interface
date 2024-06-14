@@ -1,20 +1,51 @@
+'use client'
 import HeadEdit from "../../app/ui/components/helpers/Head";
 import { convertDate } from "../../app/data/utils/utils";
-import { getNewsMovies } from "../../app/data/api/routes/routes";
+import { MovieProps, getNewsMovies } from "../../app/data/api/routes/routes";
 import { Cartaz } from "../../app/ui/components/partials/Cartaz";
 import { IntroSection } from "../../app/ui/components/sections/IntroSection";
+import { useEffect, useState } from "react";
 import styles from "../../app/ui/css/pages/Movies.module.scss"
 
 export async function getServerSideProps() {
-  const data = await getNewsMovies();
+  const data = await getNewsMovies(1);
   return {
     props: {
-      data
-    }
+      initialData: data,
+    },
   };
 }
 
-export default function Movies({ data }) {
+export default function Movies({ initialData }) {
+  const [movies, setMovies] = useState<MovieProps[]>(initialData);
+  const [page, setPage] = useState(1);
+  const [loading, setLoading] = useState(false);
+
+  const loadMoreMovies = async () => {
+    setLoading(true);
+    const newPage = page + 1;
+    const newMovies = await getNewsMovies(newPage);
+    if (newMovies) {
+      setMovies((prevMovies) => [...prevMovies, ...newMovies]);
+    }
+    setPage(newPage);
+    setLoading(false);
+  };
+
+  const handleScroll = () => {
+    const { scrollTop, clientHeight, scrollHeight } = document.documentElement;
+    if (scrollTop + clientHeight >= scrollHeight) {
+      loadMoreMovies();
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  },);
+
   return (
     <>
       <HeadEdit titlePage="Filmes" descriptionPage="Encontre seu filme preferido!" />
@@ -25,9 +56,9 @@ export default function Movies({ data }) {
           linkHrefSection=""
         />
         <div className={`gridMain`}>
-          {data?.map((movie) => (
+          {movies?.map((movie, index) => (
             <Cartaz
-              key={movie.id}
+              key={index}
               id={movie.id}
               type="/filmes"
               backgroundImage={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
@@ -37,13 +68,7 @@ export default function Movies({ data }) {
             />
           ))}
         </div>
-        {/* <Pagination
-          currentPage={currentPage}
-          totalPages={totalPages}
-          onPageChange={setCurrentPage}
-        /> */}
       </section>
-      {/* <TopSection /> */}
     </>
   );
 }

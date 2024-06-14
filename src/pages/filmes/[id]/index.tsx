@@ -1,9 +1,9 @@
 
 import { getMovieId } from "../../../app/data/api/routes/routes";
-import { Details } from "../../details/Details";
+import Details  from "../../details/Details";
 
 
-export async function getServerSideProps(context) {
+ export async function getServerSideProps(context) {
   const { id } = context.params;
   const data = await getMovieId(id);
   return {

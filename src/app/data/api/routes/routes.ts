@@ -36,9 +36,9 @@ export async function getTopFiveMovies() {
   return resultsData;
 }
 
-export async function getNewsMovies() {
+export async function getNewsMovies(page: number) {
   try {
-    const response = await fetchMain("discover/movie");
+    const response = await fetchMain(`discover/movie?page=${page}`);
     const data: MovieProps[] = await response.data.results;
     return data;
   } catch (err) {
