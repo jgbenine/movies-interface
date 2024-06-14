@@ -4,28 +4,28 @@ import styles from "../../app/ui/css/pages/Details.module.scss";
 import { formatRevenue, convertDate } from "../../app/data/utils/utils";
 
 
-export function Details({ data, type }) {
+ function Details({ data, type }) {
   return (
     <>
       <HeadEdit
-        titlePage={type === "series" ? data.name : data.title}
-        descriptionPage={data.tagline}
+        titlePage={type === "series" ? data?.name : data?.title}
+        descriptionPage={data?.tagline}
       />
       <section className={styles.details}>
-        {/* <div className={styles.viewIntro} style={{backgroundImage: `url(https://image.tmdb.org/t/p/w500/${data.backdrop_path})`,
+        <div className={styles.viewIntro} style={{backgroundImage: `url(https://image.tmdb.org/t/p/original/${data?.backdrop_path})`,
           }}
-        ></div> */}
+        ></div>
         <article
           className={`${styles.detailsContent}`}
           style={{
-            backgroundImage: `url(https://image.tmdb.org/t/p/w300/${data.poster_path})`,
+            backgroundImage: `url(https://image.tmdb.org/t/p/w300/${data?.poster_path})`,
           }}
         >
-          <h3>{type === "series" ? data.name : data.title}</h3>
-          <p className={styles.tagline}>{data.tagline}</p>
+          <h3>{type === "series" ? data?.name : data?.title}</h3>
+          <p className={styles.tagline}>{data?.tagline}</p>
           <div className={styles.genres}>
-            {data.genres?.map((genre) => (
-              <p key={genre.id}>{genre.name}</p>
+            {data?.genres.map((genre) => (
+              <p key={genre?.id}>{genre?.name}</p>
             ))}
           </div>
           <ul>
@@ -33,14 +33,13 @@ export function Details({ data, type }) {
               {type === "series" ? (
                 <span>
                   <label>Temporadas/Episódios:</label>
-                  {data.number_of_seasons}
-                  <span> / </span>
-                  {data.number_of_episodes}
+                  {data?.number_of_seasons} / 
+                  {data?.number_of_episodes}
                 </span>
               ) : (
                 <span>
                   <label>Duração:</label>
-                  {data.runtime} min
+                  {data?.runtime} min
                 </span>
               )}
             </li>
@@ -48,40 +47,40 @@ export function Details({ data, type }) {
               {type === "series" ? (
                 <span>
                   <label>Atividade:</label>
-                  {data.in_production === true
+                  {data?.in_production === true
                     ? "Em produção"
                     : "Finalizada"}
                 </span>
               ) : (
                 <span>
                   <label>Receita:</label>
-                  {formatRevenue(data.revenue)}
+                  {formatRevenue(data?.revenue)}
                 </span>
               )}
             </li>
             <li>
               <label> Lançamento: </label>
               {type === "series" ? (
-                <span>{convertDate(data.first_air_date)}</span>
+                <span>{convertDate(data?.first_air_date)}</span>
               ) : (
-                <span>{convertDate(data.release_date)}</span>
+                <span>{convertDate(data?.release_date)}</span>
               )}
             </li>
             <li>
               <label>Nota:</label>
-              {data.vote_average}
+              {data?.vote_average}
             </li>
             <li>
               {type === "series" ? (
                 <span className={styles.linkSerie}>
-                  <Link href={`${data.homepage}`} target="_blank">
+                  <Link href={`${data?.homepage}`} target="_blank">
                     Assistir
                   </Link>
                 </span>
               ) : (
                 <span className={styles.imdb}>
                   <Link
-                    href={`https://www.imdb.com/title/${data.imdb_id}`}
+                    href={`https://www.imdb.com/title/${data?.imdb_id}`}
                     target="_blank"
                   >
                     IMDb
@@ -92,11 +91,11 @@ export function Details({ data, type }) {
           </ul>
           <p>
             <label>Sinopse:</label>
-            {data.overview}
+            {data?.overview}
           </p>
         </article>
-        {/* {type === "tv" ? <Novidades /> : <TopSection results={data} />} */}
       </section>
     </>
   );
 }
+export default Details;
