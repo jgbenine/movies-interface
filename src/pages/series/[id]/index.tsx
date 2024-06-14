@@ -1,5 +1,5 @@
 import { getSerieById } from "../../../app/data/api/routes/routes";
-import { Details } from "../../details/Details";
+import Details from "../../details/Details";
 
 export async function getServerSideProps(context) {
   const { id } = context.params;

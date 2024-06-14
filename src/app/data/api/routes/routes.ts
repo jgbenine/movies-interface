@@ -46,9 +46,9 @@ export async function getNewsMovies(page: number) {
   }
 }
 
-export async function getNewsSeries() {
+export async function getNewsSeries(page: number) {
   try {
-    const response = await fetchMain("discover/tv");
+    const response = await fetchMain(`discover/tv?page=${page}`);
     const data:SeriesProps[] = await response.data.results;
     return data;
   } catch (err) {
