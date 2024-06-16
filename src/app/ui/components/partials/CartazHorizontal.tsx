@@ -3,7 +3,14 @@ import styles from "../../css/components/CartazHorizontal.module.scss";
 import { PlusCircle } from "lucide-react";
 import Image from "next/image";
 
-function CartazHorizontal({ infoSerie, ImageHorizontal, altItem, topFilme }) {
+type CartazHorizontalProps ={
+  infoSerie: string;
+  ImageHorizontal: string;
+  altItem: string;
+  topFilme: number;
+}
+
+export function CartazHorizontal({ infoSerie, ImageHorizontal, altItem, topFilme }: CartazHorizontalProps) {
   return (
     <div className={styles.cartazHorizontal}>
       <div className={styles.horizontalImg}>
@@ -17,5 +24,3 @@ function CartazHorizontal({ infoSerie, ImageHorizontal, altItem, topFilme }) {
     </div>
   );
 }
-
-export default CartazHorizontal;

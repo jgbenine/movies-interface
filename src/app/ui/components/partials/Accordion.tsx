@@ -1,10 +1,9 @@
 import React from "react";
 import { PlusIcon, MinusIcon } from "lucide-react";
-// import "../../../global.css";
 
 
 function Accordion() {
-  const [activeQuest, setActiveQuest] = React.useState(false);
+  const [activeQuest, setActiveQuest] = React.useState(0);
 
   function handleActiveQuest(index) {
     setActiveQuest((prevActiveQuest) =>
@@ -25,15 +24,10 @@ function Accordion() {
           Essas informações estão centralizadas em uma API onde não temos
           controle total do conteúdo.
           <a href="https://developer.themoviedb.org/" target="_blank">
-            {" "}
-            Leia a documentação{" "}
+            Leia a documentação.
           </a>
         </span>
       ),
-    },
-    {
-      titleQuest: "Status",
-      answerQuest: "Em desenvolvimento.",
     },
   ];
 
@@ -45,7 +39,7 @@ function Accordion() {
             {quest.titleQuest}
 
             <span className="anima-opacity">
-              {activeQuest === index ? (
+              {activeQuest === index? (
                 <MinusIcon size={25} />
               ) : (
                 <PlusIcon size={25} />

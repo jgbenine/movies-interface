@@ -3,7 +3,13 @@ import Link from "next/link";
 import { Plus } from "lucide-react";
 import styles from "../../css/components/IntroSection.module.scss";
 
-function IntroSection({ titleSection, descriptionSection, linkHrefSection }) {
+export type IntroSectionProps = {
+  titleSection: string;
+  descriptionSection: string;
+  linkHrefSection?: string;
+}
+
+export function IntroSection({ titleSection, descriptionSection, linkHrefSection }: IntroSectionProps) {
   return (
     <div className={styles.introSection}>
       <span className="w-full">
@@ -21,4 +27,3 @@ function IntroSection({ titleSection, descriptionSection, linkHrefSection }) {
   );
 }
 
-export default IntroSection;
