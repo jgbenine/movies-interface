@@ -61,7 +61,7 @@ export default function Movies({ initialData }) {
               key={index}
               id={movie.id}
               type="/filmes"
-              backgroundImage={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}
+              backgroundImage={`https://image.tmdb.org/t/p/original/${movie.poster_path}`}
               titleMovie={movie.original_title}
               sinceFilme={convertDate(movie.release_date)}
               rate={movie.vote_average}

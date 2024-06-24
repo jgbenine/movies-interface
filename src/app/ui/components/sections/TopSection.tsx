@@ -24,7 +24,7 @@ export async function TopSection() {
           {topMovies.map((topMovie:TopMoviesProps , index: number) => (
             <CartazHorizontal
               key={topMovie.id}
-              ImageHorizontal={`https://image.tmdb.org/t/p/w200${topMovie.backdrop_path}`}
+              ImageHorizontal={`https://image.tmdb.org/t/p/original/${topMovie.backdrop_path}`}
               infoSerie={topMovie.title}
               topFilme={index + 1}
               altItem="Cartaz top filme votado"

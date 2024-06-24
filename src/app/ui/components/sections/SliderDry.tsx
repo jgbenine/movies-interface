@@ -24,12 +24,14 @@ export function SliderDry({ results }: SliderDryProps) {
       <Swiper
         modules={[Autoplay, Pagination]}
         effect={'creative'}
+        grabCursor={true}
         pagination={{
           clickable: true,
         }}
         autoplay={{
           delay: 3000,
           disableOnInteraction: false,
+          pauseOnMouseEnter: true, 
         }}
         loop={true}
         slidesPerView={1}
@@ -38,7 +40,7 @@ export function SliderDry({ results }: SliderDryProps) {
           <SwiperSlide key={index}>
             <MovieWrapper
               id={dataInfo.id}
-              backgroundImage={`https://image.tmdb.org/t/p/w200/${dataInfo.backdrop_path}`}
+              backgroundImage={`https://image.tmdb.org/t/p/original/${dataInfo.backdrop_path}`}
               title={dataInfo.title}
               ano={convertDate(dataInfo.release_date)}
               sinopse={dataInfo.overview}
