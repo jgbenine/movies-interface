@@ -16,8 +16,8 @@ type NovidadesProps = {
 
 export function Novidades({ results, introSection }: NovidadesProps) {
   return (
-    <section className={`containerMain ${styles.news}`}>
-      <>
+    <section className={styles.news}>
+      <div className="containerMain">
         <IntroSection
           titleSection={introSection.titleSection}
           descriptionSection={introSection.descriptionSection}
@@ -25,6 +25,7 @@ export function Novidades({ results, introSection }: NovidadesProps) {
         />
         <div className={styles.newsSlider}>
           <Swiper
+          className={styles.slider}
             spaceBetween={50}
             modules={[Pagination, Navigation]}
             pagination={{ clickable: true }}
@@ -50,7 +51,7 @@ export function Novidades({ results, introSection }: NovidadesProps) {
                   key={tvSerie.id}
                   id={tvSerie.id}
                   type="series"
-                  backgroundImage={`https://image.tmdb.org/t/p/w200/${tvSerie.poster_path}`}
+                  backgroundImage={`https://image.tmdb.org/t/p/original/${tvSerie.poster_path}`}
                   titleMovie={tvSerie.name}
                   sinceFilme={convertDate(tvSerie.first_air_date)}
                   rate={tvSerie.vote_average}
@@ -59,7 +60,7 @@ export function Novidades({ results, introSection }: NovidadesProps) {
             ))}
           </Swiper>
         </div>
-      </>
+      </div>
     </section>
 
   );

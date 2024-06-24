@@ -1,3 +1,8 @@
 .news{
-  margin: 40px auto 40px auto;
+  margin: 40px auto 0 auto;
+  .newsSlider{
+    .slider{
+      padding-bottom: 50px;
+    }
+  }
 }

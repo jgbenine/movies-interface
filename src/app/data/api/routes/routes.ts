@@ -1,4 +1,4 @@
-import fetchMain from "../apiConfig";
+import fetchMain from "../api";
 
 export type MovieProps = {
   id: number;
@@ -43,6 +43,7 @@ export async function getNewsMovies(page: number) {
     return data;
   } catch (err) {
     console.error(err);
+    throw err;
   }
 }
 
@@ -53,6 +54,7 @@ export async function getNewsSeries(page: number) {
     return data;
   } catch (err) {
     console.error(err);
+    throw err;
   }
 }
 
@@ -63,6 +65,7 @@ export async function getTopSeries() {
     return data;
   } catch (err) {
     console.log(err);
+    throw err;
   }
 }
 
@@ -73,6 +76,7 @@ export async function getMovieId(id: number) {
     return data;
   } catch (err) {
     console.log(err);
+    throw err;
   }
 }
 
@@ -83,6 +87,7 @@ export async function getSerieById(id: number) {
     return data;
   } catch (err) {
     console.log(err);
+    throw err;
   }
 }
 
@@ -93,5 +98,6 @@ export async function getSearch(params: string) {
     return data;
   } catch (err) {
     console.log(err);
+    throw err;
   }
 }
