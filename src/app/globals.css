@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@500&family=Josefin+Sans:wght@500&family=Press+Start+2P&family=Raleway:wght@300;400;600&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -161,6 +160,32 @@ body{
 
 .anima-opacity{
   animation: animaOpacity 0.5s ease forwards;
+}
+
+.swiper{
+  .swiper-pagination-bullet{
+    border: 1px solid white;
+    height: 10px;
+    width: 10px;
+  }
+  .swiper-pagination-bullet-active{
+    background: white; 
+    border-width: 0px;
+  }
+
+  .swiper-button-prev, .swiper-button-next{
+    background: rgba(0, 0, 0, 0.5);
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    top: 48%;
+    &:after{
+      font-size: 12px;
+      font-weight: 900;
+      color: white;
+  
+    }
+  }
 }
 
 @keyframes slideFromTop {
